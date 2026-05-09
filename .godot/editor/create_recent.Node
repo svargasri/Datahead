@@ -1,3 +1,7 @@
+AnimationTree
+AnimationPlayer
+Sprite2D
+CharacterBody2D
 TextureButton
 Control
 CenterContainer
@@ -6,9 +10,6 @@ TextureRect
 Button
 ColorRect
 RayCast2D
-Sprite2D
 CanvasLayer
 TileMap
 Timer
-CollisionShape2D
-Area2D

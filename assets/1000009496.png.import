@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tp0x46dl013d"
-path="res://.godot/imported/Animacion boton mutet2.png-ddab0758258016292d62a28c3a1ab0c0.ctex"
+uid="uid://bb7cls70isyy0"
+path="res://.godot/imported/1000009496.png-558a47914b533fdded21dc4860355963.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Animacion boton mutet2.png"
-dest_files=["res://.godot/imported/Animacion boton mutet2.png-ddab0758258016292d62a28c3a1ab0c0.ctex"]
+source_file="res://assets/1000009496.png"
+dest_files=["res://.godot/imported/1000009496.png-558a47914b533fdded21dc4860355963.ctex"]
 
 [params]
 
