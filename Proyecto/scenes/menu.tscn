@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://dvq1luttkxpic"]
+
+[ext_resource type="Script" uid="uid://djvcwoyfxrjdu" path="res://scripts/menu.gd" id="1_rn24w"]
+[ext_resource type="Texture2D" uid="uid://bfu36vjac4br7" path="res://assets/Animacion boton jugar1.png" id="2_okxxe"]
+[ext_resource type="Texture2D" uid="uid://chpow171fsvur" path="res://assets/Animacion boton jugar2.png" id="3_jnsy8"]
+[ext_resource type="Texture2D" uid="uid://bjmm2ypc2b1rk" path="res://assets/Animacion boton jugar3.png" id="4_22s1t"]
+[ext_resource type="Texture2D" uid="uid://dqj888cxdfuv" path="res://assets/Animacion boton carga1.png" id="5_ifiu3"]
+[ext_resource type="Texture2D" uid="uid://bh3gprl4mrk2l" path="res://assets/Animacion boton carga2.png" id="6_ha2cq"]
+[ext_resource type="Texture2D" uid="uid://didh5in70abnt" path="res://assets/Animacion boton carga3.png" id="7_clold"]
+[ext_resource type="Texture2D" uid="uid://sj4rmpjq8wvk" path="res://assets/Animacion boton opciones3.png" id="8_vsesn"]
+[ext_resource type="Texture2D" uid="uid://cdnvi1lrjp6xx" path="res://assets/Animacion boton opciones2.png" id="9_yk6r3"]
+[ext_resource type="Texture2D" uid="uid://ctrbagnbvx6e3" path="res://assets/Animacion boton opciones1.png" id="10_gv3u1"]
+[ext_resource type="Texture2D" uid="uid://dn0inkybc6ivv" path="res://assets/Animacion boton quit1.png" id="11_5iawq"]
+[ext_resource type="Texture2D" uid="uid://batkcy3fnx6np" path="res://assets/Animacion boton quit2.png" id="12_4mpwo"]
+
+[node name="Menu" type="Control" unique_id=2064999400]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_rn24w")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1974714440]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=824324527]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1803153903]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.178
+anchor_top = 0.117000006
+anchor_right = 0.822
+anchor_bottom = 0.883
+offset_left = 0.040000916
+offset_top = 0.035999298
+offset_right = -0.040008545
+offset_bottom = -0.036010742
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=422813189]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 95.5
+offset_right = 160.0
+offset_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1350734368]
+layout_mode = 2
+
+[node name="Jugar" type="TextureButton" parent="VBoxContainer/Control" unique_id=1928882227]
+layout_mode = 0
+offset_left = -75.0
+offset_top = -3.499998
+offset_right = -11.0
+offset_bottom = 28.500002
+scale = Vector2(0.8540429, 0.88019484)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture_normal = ExtResource("2_okxxe")
+texture_pressed = ExtResource("3_jnsy8")
+texture_hover = ExtResource("4_22s1t")
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer/Control" unique_id=1575852041]
+layout_mode = 0
+offset_left = 140.0
+offset_top = -90.5
+offset_right = 156.0
+offset_bottom = -74.5
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("11_5iawq")
+texture_pressed = ExtResource("12_4mpwo")
+texture_hover = ExtResource("12_4mpwo")
+
+[node name="Cargar" type="TextureButton" parent="VBoxContainer/Control" unique_id=1666192051]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -3.4999962
+offset_right = 91.0
+offset_bottom = 28.500004
+scale = Vector2(0.81891894, 0.871194)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ifiu3")
+texture_pressed = ExtResource("6_ha2cq")
+texture_hover = ExtResource("7_clold")
+
+[node name="Opciones" type="TextureButton" parent="VBoxContainer/Control" unique_id=14160225]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = 42.500004
+offset_right = 51.0
+offset_bottom = 74.50001
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.85547644, 0.79790896)
+size_flags_horizontal = 4
+texture_normal = ExtResource("8_vsesn")
+texture_pressed = ExtResource("9_yk6r3")
+texture_hover = ExtResource("10_gv3u1")
+
+[connection signal="pressed" from="VBoxContainer/Control/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/Cargar" to="." method="_on_cargar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/Opciones" to="." method="_on_opciones_pressed"]

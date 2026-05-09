@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://cht6dnb4u5y3q"]
+
+[ext_resource type="Texture2D" uid="uid://bheyqlfh1r7dv" path="res://assets/Animacion boton menu1.png" id="1_nvwin"]
+[ext_resource type="Script" uid="uid://b86dqp588he2k" path="res://scripts/opciones.gd" id="1_v8hao"]
+[ext_resource type="Texture2D" uid="uid://byx4bh8va0dx4" path="res://assets/Animacion boton menu2.png" id="2_v8hao"]
+[ext_resource type="Texture2D" uid="uid://24ax4kcoown5" path="res://assets/Animacion boton menu3.png" id="3_kxrfx"]
+[ext_resource type="Texture2D" uid="uid://dn0inkybc6ivv" path="res://assets/Animacion boton quit1.png" id="5_j58h0"]
+[ext_resource type="Texture2D" uid="uid://batkcy3fnx6np" path="res://assets/Animacion boton quit2.png" id="6_bij7g"]
+[ext_resource type="Texture2D" uid="uid://dqj888cxdfuv" path="res://assets/Animacion boton carga1.png" id="7_vmww1"]
+[ext_resource type="Texture2D" uid="uid://bh3gprl4mrk2l" path="res://assets/Animacion boton carga2.png" id="8_m6nuy"]
+[ext_resource type="Texture2D" uid="uid://didh5in70abnt" path="res://assets/Animacion boton carga3.png" id="9_8c6ol"]
+[ext_resource type="Texture2D" uid="uid://by5jgbjx2e8xp" path="res://assets/Animacion boton mutet1.png" id="9_eidec"]
+[ext_resource type="Texture2D" uid="uid://cye1v5gg7iddg" path="res://assets/Animacion boton mutet3.png" id="10_k7w5g"]
+[ext_resource type="Texture2D" uid="uid://dx5ln6bt3yxuw" path="res://assets/Animacion boton mutet2.png" id="11_j58h0"]
+
+[node name="Opciones" type="Control" unique_id=2064999400]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_v8hao")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1974714440]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=824324527]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1803153903]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.178
+anchor_top = 0.117000006
+anchor_right = 0.822
+anchor_bottom = 0.883
+offset_left = 0.040000916
+offset_top = 0.035999298
+offset_right = -0.040008545
+offset_bottom = -0.036010742
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=422813189]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 95.5
+offset_right = 160.0
+offset_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1350734368]
+layout_mode = 2
+
+[node name="Menu" type="TextureButton" parent="VBoxContainer/Control" unique_id=1928882227]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -36.499996
+offset_right = 38.0
+offset_bottom = -4.499996
+scale = Vector2(0.8540429, 0.88019484)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture_normal = ExtResource("1_nvwin")
+texture_pressed = ExtResource("2_v8hao")
+texture_hover = ExtResource("3_kxrfx")
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer/Control" unique_id=1575852041]
+layout_mode = 0
+offset_left = 41.0
+offset_top = -16.5
+offset_right = 57.0
+offset_bottom = -0.5
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("5_j58h0")
+texture_pressed = ExtResource("6_bij7g")
+texture_hover = ExtResource("6_bij7g")
+
+[node name="Cargar" type="TextureButton" parent="VBoxContainer/Control" unique_id=1666192051]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 3.499998
+offset_right = 45.0
+offset_bottom = 35.5
+scale = Vector2(0.81891894, 0.871194)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_vmww1")
+texture_pressed = ExtResource("8_m6nuy")
+texture_hover = ExtResource("9_8c6ol")
+
+[node name="Mute" type="TextureButton" parent="VBoxContainer/Control" unique_id=633491422]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 6.5
+offset_right = 82.0
+offset_bottom = 46.5
+texture_normal = ExtResource("9_eidec")
+texture_pressed = ExtResource("10_k7w5g")
+texture_hover = ExtResource("11_j58h0")
+
+[connection signal="pressed" from="VBoxContainer/Control/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/Cargar" to="." method="_on_cargar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/Mute" to="." method="_on_mute_pressed"]

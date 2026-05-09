@@ -1,0 +1,4 @@
+res://scripts/menu.gd
+res://Proyecto/scenes/menu.tscn
+res://Proyecto/scenes/Opciones.tscn
+res://scripts/opciones.gd
