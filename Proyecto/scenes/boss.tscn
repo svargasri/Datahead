@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://btuib7pwsalnx"]
+
+[ext_resource type="Script" uid="uid://b5eoxpbaoxbal" path="res://scripts/boss.gd" id="1_juacg"]
+[ext_resource type="PackedScene" uid="uid://dppl0ahfksjoi" path="res://Proyecto/scenes/rocket_t.tscn" id="2_ga8o7"]
+[ext_resource type="PackedScene" uid="uid://qoj3xg1xlv33" path="res://Proyecto/scenes/rayo.tscn" id="2_irgen"]
+[ext_resource type="Texture2D" uid="uid://dm83s4858daod" path="res://assets/AssetsBoss/Muerte/Jefe7.png" id="2_w124n"]
+[ext_resource type="PackedScene" uid="uid://bgn6j65nay21k" path="res://Proyecto/scenes/rocketLL.tscn" id="3_trx0q"]
+[ext_resource type="Texture2D" uid="uid://d3i0cullt3q47" path="res://assets/AssetsBoss/Muerte/Jefe8.png" id="3_xrnng"]
+[ext_resource type="PackedScene" uid="uid://bkurehodr41r1" path="res://Proyecto/scenes/bomba.tscn" id="4_1mchf"]
+[ext_resource type="Texture2D" uid="uid://7boyombew7n" path="res://assets/AssetsBoss/Muerte/Jefe9.png" id="4_mgse4"]
+[ext_resource type="Texture2D" uid="uid://bqds38oghrpai" path="res://assets/AssetsBoss/Muerte/Jefe10.png" id="5_ga8o7"]
+[ext_resource type="Texture2D" uid="uid://c073fhfrvv3p0" path="res://assets/AssetsBoss/Muerte/Jefe11.png" id="6_trx0q"]
+[ext_resource type="Texture2D" uid="uid://by2vlnh14gpw4" path="res://assets/AssetsBoss/Muerte/Jefe12.png" id="7_irgen"]
+[ext_resource type="Texture2D" uid="uid://bjeqba8tbdon5" path="res://assets/AssetsBoss/Muerte/Jefe13.png" id="8_1mchf"]
+[ext_resource type="Texture2D" uid="uid://dns1ank7cy8j8" path="res://assets/AssetsBoss/Daño/Jefe5.png" id="9_8p2cx"]
+[ext_resource type="Texture2D" uid="uid://pyxlof8lnnhe" path="res://assets/AssetsBoss/Daño/Jefe6.png" id="10_7cpud"]
+[ext_resource type="Texture2D" uid="uid://crbgihokbvm38" path="res://assets/AssetsBoss/HPBar/Marco barra jefe1.png" id="15_mgse4"]
+[ext_resource type="Texture2D" uid="uid://bmewa888bmiwp" path="res://assets/AssetsBoss/Idle/Jefe1.png" id="15_trx0q"]
+[ext_resource type="Texture2D" uid="uid://da7mejcvdprud" path="res://assets/AssetsBoss/HPBar/Marco barra jefe2.png" id="16_ga8o7"]
+[ext_resource type="Texture2D" uid="uid://bmxvpt5vnyvvi" path="res://assets/AssetsBoss/Idle/Jefe2.png" id="16_irgen"]
+[ext_resource type="Texture2D" uid="uid://b1m5auuf2kk1w" path="res://assets/AssetsBoss/Idle/Jefe3.png" id="17_1mchf"]
+[ext_resource type="Texture2D" uid="uid://dn3fpjt30b1j6" path="res://assets/AssetsBoss/Idle/Jefe4.png" id="18_8p2cx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_juacg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w124n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xrnng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mgse4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ga8o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w124n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xrnng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mgse4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ga8o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_trx0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_irgen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1mchf")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8p2cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7cpud")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_trx0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_irgen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_1mchf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8p2cx")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w124n"]
+size = Vector2(54, 140)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrnng"]
+radius = 24.0
+height = 140.0
+
+[node name="Boss" type="CharacterBody2D" unique_id=1431501249]
+position = Vector2(282, 107)
+script = ExtResource("1_juacg")
+rayo_scene = ExtResource("2_irgen")
+cohete_scene = ExtResource("2_ga8o7")
+bomba_scene = ExtResource("4_1mchf")
+lluvia_scene = ExtResource("3_trx0q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1095773606]
+sprite_frames = SubResource("SpriteFrames_juacg")
+animation = &"Hit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1644285242]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_w124n")
+disabled = true
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=34395041]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1032306172]
+position = Vector2(-1, 7)
+shape = SubResource("CapsuleShape2D_xrnng")
+debug_color = Color(0.9928401, 0, 0.25287512, 0.41960785)
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1976987816]
+
+[node name="BossHPBar" type="TextureProgressBar" parent="." unique_id=1602438044]
+offset_left = -150.0
+offset_top = -109.0
+offset_right = 26.0
+offset_bottom = -82.0
+value = 100.0
+texture_under = ExtResource("15_mgse4")
+texture_progress = ExtResource("16_ga8o7")
+metadata/_edit_use_anchors_ = true
+
+[node name="ShootPoint" type="Marker2D" parent="." unique_id=337014935]
+position = Vector2(-28, 2)
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

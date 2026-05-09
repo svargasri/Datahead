@@ -1,0 +1,68 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1778289172
+icon.svg::CompressedTexture2D::1307685038118650908::1775429101::1775431524::1::::<><><>0<>0<>19eb02a6f867230f74654bb5bb6de0ba<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://assets/::1776648370
+character2.0.png::CompressedTexture2D::6747656294630672707::1775429101::1775431524::1::::<><><>0<>0<>07b83f560aa2c86164961897de48ff56<>res://.godot/imported/character2.0.png-851c550ffbfa7b130a84341897090fa6.ctex::
+definitiva.png::CompressedTexture2D::882081308041908359::1775429101::1775431524::1::::<><><>0<>0<>091308363a79ddaa4139442b6ecf426b<>res://.godot/imported/definitiva.png-2c6f3cac49c8082e59d8ddd3e02d6e1c.ctex::
+especialm1.png::CompressedTexture2D::3708244095767577823::1775429101::1775431524::1::::<><><>0<>0<>6ddebdc23299c376ace51ab31b37c2b5<>res://.godot/imported/especialm1.png-e75089f261a28369cf6eba454eedff3a.ctex::
+Floors.png::CompressedTexture2D::2762742143670995215::1775429101::1775431524::1::::<><><>0<>0<>80ac3446e69580cc1246317525802eeb<>res://.godot/imported/Floors.png-bc6c72d0871f625b65097e05954e7ae9.ctex::
+Idle_walk.png::CompressedTexture2D::3127597295046423961::1775429101::1775431524::1::::<><><>0<>0<>432e095c2a9210a1d59fef6528121926<>res://.godot/imported/Idle_walk.png-1010c6ad206c45da950d5f133417151f.ctex::
+projectile.png::CompressedTexture2D::4108769067488899280::1775429101::1775431524::1::::<><><>0<>0<>beb19c706b553224d345ff7da5f45fb6<>res://.godot/imported/projectile.png-197bcbc76cb11b0c658014dfea4806d1.ctex::
+python.png::CompressedTexture2D::1744900050556620788::1775429101::1775431524::1::::<><><>0<>0<>a26d97136550c65cb50de85317991877<>res://.godot/imported/python.png-d5a0a59b8c1b250cf9552ba19882ba64.ctex::
+shoot.png::CompressedTexture2D::3593987586885653254::1775429101::1775431524::1::::<><><>0<>0<>6a87604cb4cb71fe00e83f1cb2fd8056<>res://.godot/imported/shoot.png-f6904f09e65e49cfdabc82df82040940.ctex::
+::res://assets/AssetsBoss/::1776635837
+::res://assets/AssetsBoss/Daño/::1776631591
+Jefe5.png::CompressedTexture2D::8110455159467912247::1774034302::1776631591::1::::<><><>0<>0<>3fe58d2fc6b1a31fdcb5bfa9affa4f9d<>res://.godot/imported/Jefe5.png-0069271e7e93aa6b12c512af377e7647.ctex::
+Jefe6.png::CompressedTexture2D::1103794599800021918::1774034302::1776631591::1::::<><><>0<>0<>291010dcf0f5265816fc6d43faaea56e<>res://.godot/imported/Jefe6.png-d4af44e541d7bd1b60ca7676c5ed6dc0.ctex::
+::res://assets/AssetsBoss/HPBar/::1776636036
+Marco barra jefe1.png::CompressedTexture2D::5968495065041894017::1776636001::1776636036::1::::<><><>0<>0<>c02e65ba7b4c719776089df9bfa4d346<>res://.godot/imported/Marco barra jefe1.png-63f50f59176f4f24c833c68bfc2fed6c.ctex::
+Marco barra jefe2.png::CompressedTexture2D::7226058363056556087::1776636001::1776636036::1::::<><><>0<>0<>411d024c0a93c7e31c5814154778c232<>res://.godot/imported/Marco barra jefe2.png-8e012dcf2bd273c3ef774aaf1393193f.ctex::
+::res://assets/AssetsBoss/Idle/::1776631591
+Jefe1.png::CompressedTexture2D::3238281877956878443::1776630822::1776631591::1::::<><><>0<>0<>34cccdeb1d3d8cad2915ceea6f5df3d9<>res://.godot/imported/Jefe1.png-d29116201279d8213466aa6156836be3.ctex::
+Jefe2.png::CompressedTexture2D::3277470384709803478::1776630822::1776631591::1::::<><><>0<>0<>3700ac20110f922110e914c2cfb9c56e<>res://.godot/imported/Jefe2.png-b942a5ee59edc78ebbb031906929cb38.ctex::
+Jefe3.png::CompressedTexture2D::4237925742740409170::1776630824::1776631591::1::::<><><>0<>0<>8d216c6261c3f71d1ed030c52e07cb38<>res://.godot/imported/Jefe3.png-5681b459a81c8039ce1e8c6d5412a19b.ctex::
+Jefe4.png::CompressedTexture2D::8129850470726908817::1776630827::1776631591::1::::<><><>0<>0<>bd578dbbba44e0116d1441963f42d966<>res://.godot/imported/Jefe4.png-a7796111ced00e0855305eba83d44b55.ctex::
+::res://assets/AssetsBoss/Muerte/::1776631269
+Jefe7.png::CompressedTexture2D::8071386436270393607::1774034302::1776631269::1::::<><><>0<>0<>253dd8a97979225a65ea481731a92e90<>res://.godot/imported/Jefe7.png-b45b6c00f9b4d945bf7d47731ef9adf6.ctex::
+Jefe8.png::CompressedTexture2D::9142587259369811050::1774034302::1776631269::1::::<><><>0<>0<>ee03f2e6bc582ecaec8fff3a9a7f553e<>res://.godot/imported/Jefe8.png-48a6c8890047e324b72f4ee376a44d52.ctex::
+Jefe9.png::CompressedTexture2D::66147088971758293::1774034302::1776631269::1::::<><><>0<>0<>1ae8ab067e94eb492210e6bc3ed9b664<>res://.godot/imported/Jefe9.png-6571f2ba068a00d271f637282ffcac22.ctex::
+Jefe10.png::CompressedTexture2D::3516779978443400956::1774034302::1776631269::1::::<><><>0<>0<>026411da997c79ac5993d296a6e84ef4<>res://.godot/imported/Jefe10.png-17f5a642a1f6d7e6855f59deb8f51867.ctex::
+Jefe11.png::CompressedTexture2D::6595331927422706655::1774034302::1776631269::1::::<><><>0<>0<>cb6cd17299e97fbec513f8e8da3daf21<>res://.godot/imported/Jefe11.png-11848044c728195c8fe1063c9c9a84c4.ctex::
+Jefe12.png::CompressedTexture2D::4127986525784053317::1774034302::1776631269::1::::<><><>0<>0<>e5f119c95e2766a11d2b2fab6b241640<>res://.godot/imported/Jefe12.png-ddd993a42955fbddce300c904ae359b0.ctex::
+Jefe13.png::CompressedTexture2D::3027351096973089624::1774034302::1776631269::1::::<><><>0<>0<>b83751b3c5a6a73dae8661c17017cf79<>res://.godot/imported/Jefe13.png-9082a0c3aec037da8a9f4a3b04453f9b.ctex::
+::res://assets/AssetsBossAbilities/::1776647731
+::res://assets/AssetsBossAbilities/Bomba/::1776660849
+aviso caida explosion.png::CompressedTexture2D::2560677473355424165::1776660836::1776660849::1::::<><><>0<>0<>6979ffb7075bfd294a775ad12ea17380<>res://.godot/imported/aviso caida explosion.png-aac1dca23dfcb1b78843451207c1dacb.ctex::
+explosion en area.png::CompressedTexture2D::6807879275537349127::1776660804::1776660849::1::::<><><>0<>0<>6444c1693405f49b48c6d8447d21f266<>res://.godot/imported/explosion en area.png-604bdbdb1e62924269a247825fc03b8b.ctex::
+explosion.png::CompressedTexture2D::3558485440992082261::1776638086::1776660849::1::::<><><>0<>0<>99051355c4f182dd6a24c67065a2c33c<>res://.godot/imported/explosion.png-6431ce266a3646ca8ca5d7c05ddf6352.ctex::
+::res://assets/AssetsBossAbilities/Explosion/::1776638103
+explosion.png::CompressedTexture2D::9108811887325979652::1776638086::1776638103::1::::<><><>0<>0<>b7546144bda6f49c5e6f3d1c1c0e1d6a<>res://.godot/imported/explosion.png-74295da28df1e110178e32b5b5c81ab3.ctex::
+::res://assets/AssetsBossAbilities/Rayo/::1776645967
+rayo jefe (1).png::CompressedTexture2D::4002143421134036959::1776645926::1776645967::1::::<><><>0<>0<>6148447a01c260280df5519b79e28485<>res://.godot/imported/rayo jefe (1).png-049756de2aee48527b780db938547607.ctex::
+::res://assets/AssetsBossAbilities/RocketLL/::1776642935
+lluvia cohetes (1).png::CompressedTexture2D::5446726682649105414::1776642893::1776642935::1::::<><><>0<>0<>ee086c14e6a146b0a18391f4f41c9c73<>res://.godot/imported/lluvia cohetes (1).png-90bd41a67454a3ec19e121adb7eaf587.ctex::
+::res://assets/AssetsBossAbilities/RocketT/::1776637856
+proyectil jefe (1).png::CompressedTexture2D::6227411712462158550::1776637767::1776637856::1::::<><><>0<>0<>a20a1a71f31f316a53f282b44ba6ad63<>res://.godot/imported/proyectil jefe (1).png-76ac39e28eca93ffc1e3643866d66a4b.ctex::
+::res://assets/TileSet/::1776648378
+::res://assets/TileSet/PlazaChe/::1776662466
+Plaza Che.png::CompressedTexture2D::7640061795154325815::1776662437::1776662466::1::::<><><>0<>0<>538d3c8c49f7a9dea2571c57916946a5<>res://.godot/imported/Plaza Che.png-765c465112cff6ce9c2db221b508a946.ctex::
+tile set plaza che preview.png::CompressedTexture2D::7760669803839819409::1776648360::1776648395::1::::<><><>0<>0<>9639cc6cfb1fd8ad18a2cdd7e0717f08<>res://.godot/imported/tile set plaza che preview.png-4d2dfe87c5fbc30c30dc9714d47ed7c8.ctex::
+::res://Proyecto/::1775429101
+::res://Proyecto/scenes/::1776667830
+bomba.tscn::PackedScene::3130636396658177180::1776664107::0::1::::<><><>0<>0<><>::uid://cvd3l5chx0irs::::res://scripts/bomba.gd<>uid://bcqn8pl5hynfx::::res://assets/AssetsBossAbilities/Bomba/aviso caida explosion.png<>uid://c3811oif2frrj::::res://assets/AssetsBossAbilities/Bomba/explosion en area.png<>uid://bqx00aax1n4hl::::res://assets/AssetsBossAbilities/Bomba/explosion.png
+boss.tscn::PackedScene::3761785494575865885::1776667830::0::1::::<><><>0<>0<><>::uid://b5eoxpbaoxbal::::res://scripts/boss.gd<>uid://dppl0ahfksjoi::::res://Proyecto/scenes/rocket_t.tscn<>uid://qoj3xg1xlv33::::res://Proyecto/scenes/rayo.tscn<>uid://dm83s4858daod::::res://assets/AssetsBoss/Muerte/Jefe7.png<>uid://bgn6j65nay21k::::res://Proyecto/scenes/rocketLL.tscn<>uid://d3i0cullt3q47::::res://assets/AssetsBoss/Muerte/Jefe8.png<>uid://bkurehodr41r1::::res://Proyecto/scenes/bomba.tscn<>uid://7boyombew7n::::res://assets/AssetsBoss/Muerte/Jefe9.png<>uid://bqds38oghrpai::::res://assets/AssetsBoss/Muerte/Jefe10.png<>uid://c073fhfrvv3p0::::res://assets/AssetsBoss/Muerte/Jefe11.png<>uid://by2vlnh14gpw4::::res://assets/AssetsBoss/Muerte/Jefe12.png<>uid://bjeqba8tbdon5::::res://assets/AssetsBoss/Muerte/Jefe13.png<>uid://dns1ank7cy8j8::::res://assets/AssetsBoss/Daño/Jefe5.png<>uid://pyxlof8lnnhe::::res://assets/AssetsBoss/Daño/Jefe6.png<>uid://crbgihokbvm38::::res://assets/AssetsBoss/HPBar/Marco barra jefe1.png<>uid://bmewa888bmiwp::::res://assets/AssetsBoss/Idle/Jefe1.png<>uid://da7mejcvdprud::::res://assets/AssetsBoss/HPBar/Marco barra jefe2.png<>uid://bmxvpt5vnyvvi::::res://assets/AssetsBoss/Idle/Jefe2.png<>uid://b1m5auuf2kk1w::::res://assets/AssetsBoss/Idle/Jefe3.png<>uid://dn3fpjt30b1j6::::res://assets/AssetsBoss/Idle/Jefe4.png
+game.tscn::PackedScene::6109582473364040254::1775429101::0::1::::<><><>0<>0<><>::uid://bkbb0i6kajp6d::::res://Proyecto/scenes/player.tscn<>uid://bfmj7ve2cecv4::::res://assets/Floors.png
+nivel1.tscn::PackedScene::513946959242794304::1776665317::0::1::::<><><>0<>0<><>::uid://ditldlc08nq62::::res://assets/TileSet/PlazaChe/tile set plaza che preview.png<>uid://btuib7pwsalnx::::res://Proyecto/scenes/boss.tscn<>uid://dg35x38kcyylb::::res://assets/TileSet/PlazaChe/Plaza Che.png
+player.tscn::PackedScene::3090479328198337957::1776625654::0::1::::<><><>0<>0<><>::uid://buhioq35w71jk::::res://scripts/player.gd<>uid://bktbcnraabsaj::::res://assets/Idle_walk.png<>uid://brg7pk0gnyck1::::res://assets/shoot.png<>uid://c3eu6b2ou10y6::::res://assets/character2.0.png
+projectile.tscn::PackedScene::6678830079878789728::1776625868::0::1::::<><><>0<>0<><>::uid://b87t6hgay6qol::::res://scripts/projectile.gd<>uid://bs3kidxcen7fn::::res://assets/especialm1.png<>uid://mtj0rkuqt1d8::::res://assets/definitiva.png
+rayo.tscn::PackedScene::1152520460447984432::1776648554::0::1::::<><><>0<>0<><>::uid://bxawynlxwujil::::res://assets/AssetsBossAbilities/Rayo/rayo jefe (1).png<>uid://7eu465lim33c::::res://scripts/rayo.gd
+rocketLL.tscn::PackedScene::2836290630404599754::1776664484::0::1::::<><><>0<>0<><>::uid://jtiv4hnr63hd::::res://scripts/rocket_ll.gd<>uid://cjuo17l0rm1j3::::res://assets/AssetsBossAbilities/RocketLL/lluvia cohetes (1).png<>uid://d21m2h6lkb73e::::res://assets/AssetsBossAbilities/Explosion/explosion.png
+rocket_t.tscn::PackedScene::8243772914783628824::1776664910::0::1::::<><><>0<>0<><>::uid://bq6vivakpb8hj::::res://scripts/rocket_t.gd<>uid://cuyutcuhndvus::::res://assets/AssetsBossAbilities/RocketT/proyectil jefe (1).png<>uid://d21m2h6lkb73e::::res://assets/AssetsBossAbilities/Explosion/explosion.png
+::res://scripts/::1776667830
+bomba.gd::GDScript::6254721515717365644::1776665918::0::1::::<>Area2D<><>0<>0<><>::
+boss.gd::GDScript::4501235404423525223::1776667830::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.gd::GDScript::3805159822810843588::1775429101::0::1::::<>CharacterBody2D<><>0<>0<><>::
+projectile.gd::GDScript::4769921971317284127::1775429101::0::1::::<>Area2D<><>0<>0<><>::
+rayo.gd::GDScript::2255568310390818922::1776655942::0::1::::<>Area2D<><>0<>0<><>::
+rocket_ll.gd::GDScript::671447542288976073::1776664484::0::1::::<>Area2D<><>0<>0<><>::
+rocket_t.gd::GDScript::3574728338941637171::1776665937::0::1::::<>Area2D<><>0<>0<><>::

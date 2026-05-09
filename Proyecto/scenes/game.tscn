@@ -1,0 +1,65 @@
+[gd_scene format=4 uid="uid://ctbr6v53e1623"]
+
+[ext_resource type="PackedScene" uid="uid://bkbb0i6kajp6d" path="res://Proyecto/scenes/player.tscn" id="1_2krws"]
+[ext_resource type="Texture2D" uid="uid://bfmj7ve2cecv4" path="res://assets/Floors.png" id="2_yulbe"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqvns"]
+texture = ExtResource("2_yulbe")
+texture_region_size = Vector2i(5, 5)
+36:55/size_in_atlas = Vector2i(25, 17)
+36:55/0 = 0
+36:55/0/physics_layer_0/polygon_0/points = PackedVector2Array(-62.950554, -42.44666, 62.41098, -42.44666, 62.590836, 42.266804, -62.23112, 42.44666)
+66:55/size_in_atlas = Vector2i(25, 17)
+66:55/0 = 0
+66:55/0/physics_layer_0/polygon_0/points = PackedVector2Array(-62.950554, -42.44666, 62.41098, -42.44666, 62.590836, 42.266804, -62.23112, 42.44666)
+36:76/size_in_atlas = Vector2i(25, 17)
+36:76/0 = 0
+66:76/size_in_atlas = Vector2i(25, 17)
+66:76/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_igdx2"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_pqvns")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yulbe"]
+size = Vector2(41.5, 473)
+
+[node name="Game" type="Node2D" unique_id=657649989]
+position = Vector2(1158, 754)
+scale = Vector2(2, 2)
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1221282775]
+tile_set = SubResource("TileSet_igdx2")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-131087, 2359296, 76, -458767, 2359296, 76, -131080, 2359296, 76, -458760, 2359296, 76, -458753, 2359296, 76, -131073, 2359296, 76, -196602, 2359296, 76, -524282, 2359296, 76, 131113, 2359296, 55, 131120, 2359296, 55, 131127, 2359296, 55, 131134, 2359296, 55, -196567, 2359296, 76, -524247, 2359296, 76, -851927, 4325376, 76, -1179607, 4325376, 76, -1507287, 4325376, 76, -196560, 2359296, 76, -196553, 2359296, 76, -196546, 4325376, 76, -524233, 4325376, 76, -851920, 4325376, 76, -1507280, 4325376, 76, -524240, 2359296, 76, -1179600, 2359296, 76, -851906, 2359296, 76, -1179593, 2359296, 76, -1507266, 2359296, 76, -524226, 4325376, 76, -851913, 4325376, 76, -1507273, 4325376, 76, -1179586, 4325376, 76, 458814, 2359296, 55, 458807, 2359296, 55, 458800, 4325376, 55, 458793, 2359296, 55, 458786, 2359296, 55, 458779, 2359296, 55, 458772, 2359296, 55, 524252, 2359296, 55, 524259, 4325376, 55, 524266, 4325376, 55, 524273, 4325376, 55, 524280, 2359296, 55, 524287, 4325376, 55, 458758, 2359296, 55, 458765, 4325376, 55, -1769508, 2359296, 76, -1769501, 2359296, 76, -1769494, 4325376, 76, -1769487, 4325376, 76, -1834946, 4325376, 76, -1834953, 4325376, 76, -1834960, 2359296, 76, -1834967, 2359296, 76, -1834974, 2359296, 76, -1834981, 2359296, 76, -1834988, 2359296, 76, -1834995, 2359296, 76, -1835002, 4325376, 76, -1769473, 4325376, 76, -1769480, 4325376, 76)
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap" unique_id=321381221]
+use_parent_material = true
+tile_map_data = PackedByteArray("AADq/wIAAAAkADcAAADq//3/AAAkAEwAAADq//j/AAAkAEwAAADx/wIAAABCADcAAAD4/wIAAAAkADcAAAD//wIAAABCADcAAAAGAAIAAAAkADcAAAANAAIAAAAkADcAAAAUAAIAAAAkADcAAAAbAAIAAABCADcAAADj/wIAAABCADcAAADc/wIAAAAkADcAAAAiAAIAAAAkADcAAAANAP3/AABCAEwAAAANAPj/AABCAEwAAAAUAPj/AABCAEwAAAAUAP3/AABCAEwAAADj//j/AAAkAEwAAADc//j/AAAkAEwAAADc//3/AABCAEwAAADj//3/AABCAEwAAADc//P/AABCAEwAAADc/+7/AABCAEwAAAAbAP3/AAAkAEwAAAAiAP3/AAAkAEwAAAAiAPj/AAAkAEwAAAANAPP/AAAkAEwAAAD4//P/AAAkAEwAAAD4/+7/AAAkAEwAAADq/+7/AAAkAEwAAADj/+n/AAAkAEwAAAAUAO7/AAAkAEwAAAAbAOn/AAAkAEwAAAAbAPj/AABCAEwAAAAUAPP/AABCAEwAAAAbAPP/AABCAEwAAAAiAPP/AABCAEwAAAAiAO7/AABCAEwAAAAbAO7/AABCAEwAAAAiAOn/AABCAEwAAAAGAPP/AABCAEwAAAD///P/AABCAEwAAAD//+7/AABCAEwAAAD//+n/AABCAEwAAADx//P/AABCAEwAAADq//P/AABCAEwAAADj//P/AABCAEwAAADj/+7/AABCAEwAAADc/+n/AABCAEwAAADq/+n/AABCAEwAAADx/+n/AABCAEwAAADx/+7/AABCAEwAAAD4/+n/AABCAEwAAAAGAO7/AABCAEwAAAANAO7/AABCAEwAAAANAOn/AABCAEwAAAAGAOn/AABCAEwAAAAUAOn/AABCAEwAAAA=")
+tile_set = SubResource("TileSet_igdx2")
+rendering_quadrant_size = 32
+
+[node name="Player" parent="." unique_id=698934556 instance=ExtResource("1_2krws")]
+position = Vector2(-1, 0)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1757504435]
+position = Vector2(-11, -60)
+zoom = Vector2(0.5, 0.5)
+limit_left = 0
+limit_top = 0
+limit_right = 3200
+limit_bottom = 900
+position_smoothing_enabled = true
+
+[node name="pared derecha" type="StaticBody2D" parent="." unique_id=298741202]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared derecha" unique_id=994170840]
+position = Vector2(1029, -238)
+shape = SubResource("RectangleShape2D_yulbe")
+
+[node name="pared izquierda" type="StaticBody2D" parent="." unique_id=1316193400]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared izquierda" unique_id=559537801]
+position = Vector2(-577, -239.5)
+shape = SubResource("RectangleShape2D_yulbe")

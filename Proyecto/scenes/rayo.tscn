@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://qoj3xg1xlv33"]
+
+[ext_resource type="Texture2D" uid="uid://bxawynlxwujil" path="res://assets/AssetsBossAbilities/Rayo/rayo jefe (1).png" id="1_403sx"]
+[ext_resource type="Script" uid="uid://7eu465lim33c" path="res://scripts/rayo.gd" id="1_hnpjr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_403sx"]
+atlas = ExtResource("1_403sx")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnpjr"]
+atlas = ExtResource("1_403sx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mjn8"]
+atlas = ExtResource("1_403sx")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wukmu"]
+atlas = ExtResource("1_403sx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mjn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_403sx")
+}],
+"loop": true,
+"name": &"CasiGrueso",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnpjr")
+}],
+"loop": true,
+"name": &"Delgado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mjn8")
+}],
+"loop": true,
+"name": &"Grueso",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wukmu")
+}],
+"loop": true,
+"name": &"Medio",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_403sx"]
+size = Vector2(240, 11)
+
+[node name="Rayo" type="Area2D" unique_id=363431824]
+script = ExtResource("1_hnpjr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=839707215]
+sprite_frames = SubResource("SpriteFrames_1mjn8")
+animation = &"CasiGrueso"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1962211716]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_403sx")
+debug_color = Color(0.990779, 0.09413368, 1.92523e-07, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=2129093017]

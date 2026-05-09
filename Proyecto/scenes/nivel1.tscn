@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://hk7vp22grwvw"]
+
+[ext_resource type="Texture2D" uid="uid://ditldlc08nq62" path="res://assets/TileSet/PlazaChe/tile set plaza che preview.png" id="1_odb7h"]
+[ext_resource type="PackedScene" uid="uid://btuib7pwsalnx" path="res://Proyecto/scenes/boss.tscn" id="2_n35pb"]
+[ext_resource type="Texture2D" uid="uid://dg35x38kcyylb" path="res://assets/TileSet/PlazaChe/Plaza Che.png" id="3_n35pb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs4ue"]
+texture = ExtResource("1_odb7h")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, -0.17985725, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, -0.17985725, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, -0.17985725, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, -0.17985725, 8, 8, -8, 8)
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_61m8t"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_fs4ue")
+
+[node name="Nivel1" type="Node2D" unique_id=1547605711]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1577954355 groups=["suelo"]]
+position = Vector2(160, 96)
+tile_set = SubResource("TileSet_61m8t")
+format = 2
+layer_0/tile_data = PackedInt32Array(393206, 0, 0, 327670, 0, 1, 262148, 0, 1, 262149, 0, 1, 262150, 0, 1, 262151, 0, 1, 262152, 0, 1, 262153, 0, 1, 327689, 0, 1, 327688, 0, 1, 327687, 0, 1, 327686, 0, 1, 327685, 0, 1, 327684, 0, 1, 327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 327683, 0, 0, 327682, 0, 0, 327681, 0, 0, 327680, 0, 0, 393215, 0, 0, 393214, 0, 0, 393213, 0, 0, 393212, 0, 0, 393211, 0, 0, 393210, 0, 0, 393209, 0, 0, 393208, 0, 0, 393207, 0, 0, 262135, 0, 4, 196617, 0, 4, 196612, 0, 4, 262134, 65536, 4, 196610, 65536, 4, 262139, 131072, 4, 196613, 131072, 4, 131063, 0, 3, 131064, 0, 3, -4, 0, 3, -3, 0, 3, -2, 0, 3, -196615, 0, 3, -196616, 0, 3, -196617, 0, 3, -196605, 0, 3)
+
+[node name="Boss" parent="." unique_id=1431501249 instance=ExtResource("2_n35pb")]
+position = Vector2(282, 109)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=875968580]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1273892447]
+texture = ExtResource("3_n35pb")
+offset = Vector2(160, 96)

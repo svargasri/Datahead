@@ -1,0 +1,14 @@
+RayCast2D
+Sprite2D
+CanvasLayer
+TileMap
+Timer
+CollisionShape2D
+Area2D
+AnimatedSprite2D
+CharacterBody2D
+StaticBody2D
+TextureProgressBar
+ProgressBar
+Marker2D
+AnimationPlayer

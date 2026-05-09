@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://bgn6j65nay21k"]
+
+[ext_resource type="Script" uid="uid://jtiv4hnr63hd" path="res://scripts/rocket_ll.gd" id="1_dg7u2"]
+[ext_resource type="Texture2D" uid="uid://cjuo17l0rm1j3" path="res://assets/AssetsBossAbilities/RocketLL/lluvia cohetes (1).png" id="2_dg7u2"]
+[ext_resource type="Texture2D" uid="uid://d21m2h6lkb73e" path="res://assets/AssetsBossAbilities/Explosion/explosion.png" id="3_0dic2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w21sd"]
+atlas = ExtResource("2_dg7u2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dic2"]
+atlas = ExtResource("2_dg7u2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egw3w"]
+atlas = ExtResource("2_dg7u2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yuss"]
+atlas = ExtResource("2_dg7u2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5p64e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w21sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dic2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egw3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yuss")
+}],
+"loop": true,
+"name": &"VolarA",
+"speed": 11.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m3knv"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p64e"]
+atlas = ExtResource("3_0dic2")
+region = Rect2(0, 0, 48, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xktwb"]
+atlas = ExtResource("3_0dic2")
+region = Rect2(48, 0, 48, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm8fh"]
+atlas = ExtResource("3_0dic2")
+region = Rect2(96, 0, 48, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25v1r"]
+atlas = ExtResource("3_0dic2")
+region = Rect2(144, 0, 48, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebvdk"]
+atlas = ExtResource("3_0dic2")
+region = Rect2(192, 0, 48, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6xhf"]
+atlas = ExtResource("3_0dic2")
+region = Rect2(0, 54, 48, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f4gqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p64e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xktwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm8fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25v1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebvdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6xhf")
+}],
+"loop": false,
+"name": &"Explosion",
+"speed": 9.0
+}]
+
+[node name="RocketLL" type="Area2D" unique_id=754645497]
+position = Vector2(2, 1)
+script = ExtResource("1_dg7u2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1879890797]
+position = Vector2(0, -6)
+rotation = -6.2831855
+sprite_frames = SubResource("SpriteFrames_5p64e")
+animation = &"VolarA"
+frame_progress = 0.40785232
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620570338]
+position = Vector2(-1, -4)
+shape = SubResource("CapsuleShape2D_m3knv")
+debug_color = Color(0.9792126, 0.14548251, 9.62615e-07, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=720802954]
+wait_time = 0.5
+
+[node name="SpriteExplosion" type="AnimatedSprite2D" parent="." unique_id=301065536]
+visible = false
+position = Vector2(-2, -1)
+sprite_frames = SubResource("SpriteFrames_f4gqa")
+animation = &"Explosion"
+frame = 3
+frame_progress = 0.17179571
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1515480193]
+target_position = Vector2(0, 16)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
