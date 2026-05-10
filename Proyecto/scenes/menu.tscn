@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ctrbagnbvx6e3" path="res://assets/Animacion boton opciones1.png" id="10_gv3u1"]
 [ext_resource type="Texture2D" uid="uid://dn0inkybc6ivv" path="res://assets/Animacion boton quit1.png" id="11_5iawq"]
 [ext_resource type="Texture2D" uid="uid://batkcy3fnx6np" path="res://assets/Animacion boton quit2.png" id="12_4mpwo"]
+[ext_resource type="Texture2D" uid="uid://mov1w3sgunty" path="res://assets/HUD (1)1.png" id="13_okxxe"]
 
 [node name="Menu" type="Control" unique_id=2064999400]
 layout_mode = 3
@@ -23,23 +24,11 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_rn24w")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1974714440]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=824324527]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2030034865]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 192.0
+texture = ExtResource("13_okxxe")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1803153903]
 layout_mode = 1
@@ -69,11 +58,11 @@ layout_mode = 2
 
 [node name="Jugar" type="TextureButton" parent="VBoxContainer/Control" unique_id=1928882227]
 layout_mode = 0
-offset_left = -75.0
-offset_top = -3.499998
-offset_right = -11.0
-offset_bottom = 28.500002
-scale = Vector2(0.8540429, 0.88019484)
+offset_left = -72.0
+offset_top = 8.500004
+offset_right = -8.0
+offset_bottom = 42.358967
+scale = Vector2(1.0085576, 0.9746312)
 size_flags_horizontal = 4
 size_flags_vertical = 6
 texture_normal = ExtResource("2_okxxe")
@@ -82,10 +71,10 @@ texture_hover = ExtResource("4_22s1t")
 
 [node name="Quit" type="TextureButton" parent="VBoxContainer/Control" unique_id=1575852041]
 layout_mode = 0
-offset_left = 140.0
-offset_top = -90.5
-offset_right = 156.0
-offset_bottom = -74.5
+offset_left = 129.0
+offset_top = -80.5
+offset_right = 145.0
+offset_bottom = -64.5
 size_flags_horizontal = 4
 size_flags_vertical = 0
 texture_normal = ExtResource("11_5iawq")
@@ -94,11 +83,11 @@ texture_hover = ExtResource("12_4mpwo")
 
 [node name="Cargar" type="TextureButton" parent="VBoxContainer/Control" unique_id=1666192051]
 layout_mode = 0
-offset_left = 21.0
-offset_top = -3.4999962
-offset_right = 91.0
-offset_bottom = 28.500004
-scale = Vector2(0.81891894, 0.871194)
+offset_left = 10.0
+offset_top = 8.499997
+offset_right = 80.0
+offset_bottom = 40.499996
+scale = Vector2(1.0242771, 1.0363592)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("5_ifiu3")
@@ -112,13 +101,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = 42.500004
-offset_right = 51.0
-offset_bottom = 74.50001
+offset_left = -47.0
+offset_top = 47.500004
+offset_right = 49.0
+offset_bottom = 79.50001
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.85547644, 0.79790896)
+scale = Vector2(0.97547644, 1.0379089)
 size_flags_horizontal = 4
 texture_normal = ExtResource("8_vsesn")
 texture_pressed = ExtResource("9_yk6r3")
