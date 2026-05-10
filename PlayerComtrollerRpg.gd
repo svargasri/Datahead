@@ -13,8 +13,15 @@ func validateInput():
 		velocity = moveDirection * speed
 
 func animatePlayer():
-	animationTree["parameters/Walking/blend_position"] = moveDirection
-	
+	if velocity.length() == 0:
+		animationTree["parameters/conditions/Idle"]=true
+		animationTree["parameters/conditions/Walk"]=false
+	else:
+		animationTree["parameters/Walking/blend_position"] = moveDirection
+		animationTree["parameters/Idle/blend_position"] = moveDirection
+		animationTree["parameters/conditions/Idle"]=false
+		animationTree["parameters/conditions/Walk"]=true
+		
 func _physics_process(_delta):
 	validateInput()
 	animatePlayer()

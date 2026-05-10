@@ -12,4 +12,3 @@ ColorRect
 RayCast2D
 CanvasLayer
 TileMap
-Timer
