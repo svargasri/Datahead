@@ -1,6 +1,2 @@
-res://scripts/menu.gd
-res://Proyecto/scenes/menu.tscn
-res://Proyecto/scenes/Opciones.tscn
-res://scripts/opciones.gd
-res://Proyecto/player_controller.tscn
-res://PlayerComtrollerRpg.gd
+res://Proyecto/scenes/arbol_habilidades.gd
+res://Proyecto/scenes/arbol_habilidades.tscn
