@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jqjn15t6t72d"
-path="res://.godot/imported/tileset mapa (1).png-ffddc8db1683e685a38d04efd641718a.ctex"
+uid="uid://bmc1knptyv20m"
+path="res://.godot/imported/Animacion boton quit.png-0c17818c8aab5b6f52be807479f81728.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset mapa (1).png"
-dest_files=["res://.godot/imported/tileset mapa (1).png-ffddc8db1683e685a38d04efd641718a.ctex"]
+source_file="res://assets/AssetsMejoras/Animacion boton quit.png"
+dest_files=["res://.godot/imported/Animacion boton quit.png-0c17818c8aab5b6f52be807479f81728.ctex"]
 
 [params]
 

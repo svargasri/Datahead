@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dl20pepfo7exh"]
 
-[ext_resource type="Script" uid="uid://dll0o0e758bnq" path="res://PlayerComtrollerRpg.gd" id="1_ii2ih"]
+[ext_resource type="Script" uid="uid://dll0o0e758bnq" path="res://scripts/PlayerComtrollerRpg.gd" id="1_ii2ih"]
 [ext_resource type="Texture2D" uid="uid://bb7cls70isyy0" path="res://assets/1000009496.png" id="2_qkd7k"]
+
 
 [sub_resource type="Animation" id="Animation_6nbh1"]
 resource_name = "Down"
