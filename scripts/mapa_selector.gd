@@ -1,0 +1,52 @@
+extends Node2D
+
+@onready var personaje     = $Personaje
+@onready var halo_nivel1   = $Halos/HaloNivel1
+@onready var halo_nivel2   = $Halos/HaloNivel2
+@onready var halo_mejoras  = $Halos/ChazaMejoras
+@onready var label_accion  = $UI/LabelAccion
+@onready var menu_nivel    = $UI/MenuNivel
+
+
+var halo_activo = null
+var menu_abierto = false
+
+func _ready():
+	label_accion.visible = false
+	menu_nivel.visible   = false
+	halo_nivel1.personaje_entro.connect(_al_entrar_halo)
+	halo_nivel1.personaje_salio.connect(_al_salir_halo)
+	halo_nivel2.personaje_entro.connect(_al_entrar_halo)
+	halo_nivel2.personaje_salio.connect(_al_salir_halo)
+	halo_mejoras.personaje_entro.connect(_al_entrar_halo)
+	halo_mejoras.personaje_salio.connect(_al_salir_halo)
+
+
+func _al_entrar_halo(halo):
+	halo_activo = halo
+	label_accion.text = "Presiona Enter para: " + halo.texto_accion
+	label_accion.visible = true
+
+func _al_salir_halo(_halo):
+	if not menu_abierto:
+		halo_activo = null
+		label_accion.visible = false
+
+func _al_presionar_jugar():
+	menu_nivel.visible  = false
+	label_accion.visible = false
+	menu_abierto = false
+	personaje.puede_moverse = true
+	get_tree().change_scene_to_file(halo_activo.escena_destino)
+
+func _al_presionar_cerrar():
+	get_tree().change_scene_to_file(halo_activo.escena_destino)
+	
+
+func _process(_delta):
+	if halo_activo != null and not menu_abierto:
+		if Input.is_action_just_pressed("ui_accept"):
+			menu_nivel.visible  = true
+			label_accion.visible = false
+			menu_abierto = true
+			personaje.puede_moverse = false

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 50
+@export var speed = 75
 var moveDirection = Vector2.ZERO
 
 @onready var animationTree =$AnimationTree
@@ -22,7 +22,12 @@ func animatePlayer():
 		animationTree["parameters/conditions/Idle"]=false
 		animationTree["parameters/conditions/Walk"]=true
 		
+var puede_moverse : bool = true		
 func _physics_process(_delta):
+	if not puede_moverse:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 	validateInput()
 	animatePlayer()
 	move_and_slide()

@@ -260,9 +260,12 @@ states/Idle/position = Vector2(426.66666, 98.888885)
 states/Walking/node = SubResource("AnimationNodeBlendSpace2D_gg8q1")
 states/Walking/position = Vector2(641.3333, 100.81481)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_vv0uw"), "Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_0ey1u"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_ccfq4")]
-graph_offset = Vector2(245.79945, 0)
+graph_offset = Vector2(151.45642, 0)
 
-[node name="PlayerController" type="CharacterBody2D" unique_id=538202706]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii2ih"]
+size = Vector2(16, 27)
+
+[node name="PlayerController" type="CharacterBody2D" unique_id=538202706 groups=["personaje"]]
 position = Vector2(0, -1)
 script = ExtResource("1_ii2ih")
 
@@ -283,3 +286,7 @@ parameters/conditions/Idle = false
 parameters/conditions/Walk = false
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walking/blend_position = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1783533974]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_ii2ih")

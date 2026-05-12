@@ -1,9 +1,8 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778379444
-HUD (1)3.png::CompressedTexture2D::4322168441145015428::1778379444::1778379444::1::::<><><>0<>0<>05eba592e2f600edf850fd6c196db1f3<>res://.godot/imported/HUD (1)3.png-5718a4653440b89876a5bf0cc9f861f2.ctex::
+::res://::1778544160
 icon.svg::CompressedTexture2D::1307685038118650908::1775429101::1775431524::1::::<><><>0<>0<>19eb02a6f867230f74654bb5bb6de0ba<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 PlayerComtrollerRpg.gd::GDScript::7955591733084440630::1778377351::0::1::::<>CharacterBody2D<><>0<>0<><>::
-::res://assets/::1778379501
+::res://assets/::1778540355
 1000009496.png::CompressedTexture2D::2522811689180889305::1778350907::1778350907::1::::<><><>0<>0<>da8f65853e111fd346b9bfa72d36dfd1<>res://.godot/imported/1000009496.png-558a47914b533fdded21dc4860355963.ctex::
 Animacion boton carga1.png::CompressedTexture2D::244203743483644761::1778338562::1778338562::1::::<><><>0<>0<>2425abc4757db7cb4239be7230fcf659<>res://.godot/imported/Animacion boton carga1.png-a6b41789c55e93288af8a14eb83f8081.ctex::
 Animacion boton carga2.png::CompressedTexture2D::2935937166362318705::1778338565::1778338565::1::::<><><>0<>0<>e471019112258adbb1bf056240a7996c<>res://.godot/imported/Animacion boton carga2.png-5c0690603bfc6d3a44ba350e3a91109a.ctex::
@@ -26,12 +25,16 @@ character2.0.png::CompressedTexture2D::6747656294630672707::1775429101::17754315
 definitiva.png::CompressedTexture2D::882081308041908359::1775429101::1775431524::1::::<><><>0<>0<>091308363a79ddaa4139442b6ecf426b<>res://.godot/imported/definitiva.png-2c6f3cac49c8082e59d8ddd3e02d6e1c.ctex::
 especialm1.png::CompressedTexture2D::3708244095767577823::1775429101::1775431524::1::::<><><>0<>0<>6ddebdc23299c376ace51ab31b37c2b5<>res://.godot/imported/especialm1.png-e75089f261a28369cf6eba454eedff3a.ctex::
 Floors.png::CompressedTexture2D::2762742143670995215::1775429101::1775431524::1::::<><><>0<>0<>80ac3446e69580cc1246317525802eeb<>res://.godot/imported/Floors.png-bc6c72d0871f625b65097e05954e7ae9.ctex::
+halos de luz (1)1.png::CompressedTexture2D::4531577243951411802::1778540149::1778540150::1::::<><><>0<>0<>6c0d160af5749a1bf2f58515c46d4787<>res://.godot/imported/halos de luz (1)1.png-4b54afac5b6c7c54e64afb2ad9819beb.ctex::
+halos de luz (1)2.png::CompressedTexture2D::902677268542823481::1778540146::1778540147::1::::<><><>0<>0<>7f8bafefef5f8052c24c1d42f1c7eaca<>res://.godot/imported/halos de luz (1)2.png-3d906ebda5f389d7f7471c2ea2afc3f7.ctex::
+halos de luz (1)3.png::CompressedTexture2D::3159111648560940855::1778540143::1778540144::1::::<><><>0<>0<>93b0646130f5b2b05e77a0ae128f9fdd<>res://.godot/imported/halos de luz (1)3.png-b2caa5a4ac9b55293665decf00722c64.ctex::
 HUD (1)1.png::CompressedTexture2D::872490099297732754::1778378191::1778378192::1::::<><><>0<>0<>163d08da1d7fef582b3156b57a0fc844<>res://.godot/imported/HUD (1)1.png-f9c2eb9f1f63d0b74f0f274d5104e003.ctex::
 HUD (1)3.png::CompressedTexture2D::8852339353888002242::1778379501::1778379502::1::::<><><>0<>0<>6bada4a86be50c282011770b2c79b773<>res://.godot/imported/HUD (1)3.png-a4b99c5d5b5e8cfb40cb84a96edcf400.ctex::
 Idle_walk.png::CompressedTexture2D::3127597295046423961::1775429101::1775431524::1::::<><><>0<>0<>432e095c2a9210a1d59fef6528121926<>res://.godot/imported/Idle_walk.png-1010c6ad206c45da950d5f133417151f.ctex::
 projectile.png::CompressedTexture2D::4108769067488899280::1775429101::1775431524::1::::<><><>0<>0<>beb19c706b553224d345ff7da5f45fb6<>res://.godot/imported/projectile.png-197bcbc76cb11b0c658014dfea4806d1.ctex::
 python.png::CompressedTexture2D::1744900050556620788::1775429101::1775431524::1::::<><><>0<>0<>a26d97136550c65cb50de85317991877<>res://.godot/imported/python.png-d5a0a59b8c1b250cf9552ba19882ba64.ctex::
 shoot.png::CompressedTexture2D::3593987586885653254::1775429101::1775431524::1::::<><><>0<>0<>6a87604cb4cb71fe00e83f1cb2fd8056<>res://.godot/imported/shoot.png-f6904f09e65e49cfdabc82df82040940.ctex::
+tileset mapa (1).png::CompressedTexture2D::982734324591257883::1778540355::1778540355::1::::<><><>0<>0<>c36a8bc551c3a59dd04c04e22a0c5752<>res://.godot/imported/tileset mapa (1).png-ffddc8db1683e685a38d04efd641718a.ctex::
 ::res://assets/AssetsBoss/::1776635837
 ::res://assets/AssetsBoss/Daño/::1776631591
 Jefe5.png::CompressedTexture2D::8110455159467912247::1774034302::1776631591::1::::<><><>0<>0<>3fe58d2fc6b1a31fdcb5bfa9affa4f9d<>res://.godot/imported/Jefe5.png-0069271e7e93aa6b12c512af377e7647.ctex::
@@ -52,7 +55,7 @@ Jefe10.png::CompressedTexture2D::3516779978443400956::1774034302::1776631269::1:
 Jefe11.png::CompressedTexture2D::6595331927422706655::1774034302::1776631269::1::::<><><>0<>0<>cb6cd17299e97fbec513f8e8da3daf21<>res://.godot/imported/Jefe11.png-11848044c728195c8fe1063c9c9a84c4.ctex::
 Jefe12.png::CompressedTexture2D::4127986525784053317::1774034302::1776631269::1::::<><><>0<>0<>e5f119c95e2766a11d2b2fab6b241640<>res://.godot/imported/Jefe12.png-ddd993a42955fbddce300c904ae359b0.ctex::
 Jefe13.png::CompressedTexture2D::3027351096973089624::1774034302::1776631269::1::::<><><>0<>0<>b83751b3c5a6a73dae8661c17017cf79<>res://.godot/imported/Jefe13.png-9082a0c3aec037da8a9f4a3b04453f9b.ctex::
-::res://assets/AssetsBossAbilities/::1776647731
+::res://assets/AssetsBossAbilities/::1778540308
 ::res://assets/AssetsBossAbilities/Bomba/::1776660849
 aviso caida explosion.png::CompressedTexture2D::2560677473355424165::1776660836::1776660849::1::::<><><>0<>0<>6979ffb7075bfd294a775ad12ea17380<>res://.godot/imported/aviso caida explosion.png-aac1dca23dfcb1b78843451207c1dacb.ctex::
 explosion en area.png::CompressedTexture2D::6807879275537349127::1776660804::1776660849::1::::<><><>0<>0<>6444c1693405f49b48c6d8447d21f266<>res://.godot/imported/explosion en area.png-604bdbdb1e62924269a247825fc03b8b.ctex::
@@ -65,31 +68,35 @@ rayo jefe (1).png::CompressedTexture2D::4002143421134036959::1776645926::1776645
 lluvia cohetes (1).png::CompressedTexture2D::5446726682649105414::1776642893::1776642935::1::::<><><>0<>0<>ee086c14e6a146b0a18391f4f41c9c73<>res://.godot/imported/lluvia cohetes (1).png-90bd41a67454a3ec19e121adb7eaf587.ctex::
 ::res://assets/AssetsBossAbilities/RocketT/::1776637856
 proyectil jefe (1).png::CompressedTexture2D::6227411712462158550::1776637767::1776637856::1::::<><><>0<>0<>a20a1a71f31f316a53f282b44ba6ad63<>res://.godot/imported/proyectil jefe (1).png-76ac39e28eca93ffc1e3643866d66a4b.ctex::
-::res://assets/TileSet/::1776648378
+::res://assets/TileSet/::1778540351
+tileset mapa (1).png::CompressedTexture2D::7955874741010969298::1778540351::1778540287::1::::<><><>0<>0<>ca85658697d52117af7bcd4069e3a6fa<>res://.godot/imported/tileset mapa (1).png-dfb14f505dff772cfb776928268e9468.ctex::
 ::res://assets/TileSet/PlazaChe/::1776662466
 Plaza Che.png::CompressedTexture2D::7640061795154325815::1776662437::1776662466::1::::<><><>0<>0<>538d3c8c49f7a9dea2571c57916946a5<>res://.godot/imported/Plaza Che.png-765c465112cff6ce9c2db221b508a946.ctex::
 tile set plaza che preview.png::CompressedTexture2D::7760669803839819409::1776648360::1776648395::1::::<><><>0<>0<>9639cc6cfb1fd8ad18a2cdd7e0717f08<>res://.godot/imported/tile set plaza che preview.png-4d2dfe87c5fbc30c30dc9714d47ed7c8.ctex::
-::res://Proyecto/::1778377564
-player_controller.tscn::PackedScene::7988622475697624165::1778377564::0::1::::<><><>0<>0<><>::uid://dll0o0e758bnq::::res://PlayerComtrollerRpg.gd<>uid://bb7cls70isyy0::::res://assets/1000009496.png
-::res://Proyecto/scenes/::1778379359
+::res://Proyecto/::1778543909
+player_controller.tscn::PackedScene::7988622475697624165::1778543909::0::1::::<><><>0<>0<><>::uid://dll0o0e758bnq::::res://PlayerComtrollerRpg.gd<>uid://bb7cls70isyy0::::res://assets/1000009496.png
+::res://Proyecto/scenes/::1778546189
 bomba.tscn::PackedScene::3130636396658177180::1776664107::0::1::::<><><>0<>0<><>::uid://cvd3l5chx0irs::::res://scripts/bomba.gd<>uid://bcqn8pl5hynfx::::res://assets/AssetsBossAbilities/Bomba/aviso caida explosion.png<>uid://c3811oif2frrj::::res://assets/AssetsBossAbilities/Bomba/explosion en area.png<>uid://bqx00aax1n4hl::::res://assets/AssetsBossAbilities/Bomba/explosion.png
 boss.tscn::PackedScene::3761785494575865885::1776667830::0::1::::<><><>0<>0<><>::uid://b5eoxpbaoxbal::::res://scripts/boss.gd<>uid://dppl0ahfksjoi::::res://Proyecto/scenes/rocket_t.tscn<>uid://qoj3xg1xlv33::::res://Proyecto/scenes/rayo.tscn<>uid://dm83s4858daod::::res://assets/AssetsBoss/Muerte/Jefe7.png<>uid://bgn6j65nay21k::::res://Proyecto/scenes/rocketLL.tscn<>uid://d3i0cullt3q47::::res://assets/AssetsBoss/Muerte/Jefe8.png<>uid://bkurehodr41r1::::res://Proyecto/scenes/bomba.tscn<>uid://7boyombew7n::::res://assets/AssetsBoss/Muerte/Jefe9.png<>uid://bqds38oghrpai::::res://assets/AssetsBoss/Muerte/Jefe10.png<>uid://c073fhfrvv3p0::::res://assets/AssetsBoss/Muerte/Jefe11.png<>uid://by2vlnh14gpw4::::res://assets/AssetsBoss/Muerte/Jefe12.png<>uid://bjeqba8tbdon5::::res://assets/AssetsBoss/Muerte/Jefe13.png<>uid://dns1ank7cy8j8::::res://assets/AssetsBoss/Daño/Jefe5.png<>uid://pyxlof8lnnhe::::res://assets/AssetsBoss/Daño/Jefe6.png<>uid://crbgihokbvm38::::res://assets/AssetsBoss/HPBar/Marco barra jefe1.png<>uid://bmewa888bmiwp::::res://assets/AssetsBoss/Idle/Jefe1.png<>uid://da7mejcvdprud::::res://assets/AssetsBoss/HPBar/Marco barra jefe2.png<>uid://bmxvpt5vnyvvi::::res://assets/AssetsBoss/Idle/Jefe2.png<>uid://b1m5auuf2kk1w::::res://assets/AssetsBoss/Idle/Jefe3.png<>uid://dn3fpjt30b1j6::::res://assets/AssetsBoss/Idle/Jefe4.png
 game.tscn::PackedScene::6109582473364040254::1775429101::0::1::::<><><>0<>0<><>::uid://bkbb0i6kajp6d::::res://Proyecto/scenes/player.tscn<>uid://bfmj7ve2cecv4::::res://assets/Floors.png
+mapa_selector.tscn::PackedScene::777926591394845633::1778546208::0::1::::<><><>0<>0<><>::uid://o42tdrygf417::::res://Proyecto/scenes/mapa_selector.gd<>uid://oabqxkksbmwx::::res://assets/tileset mapa (1).png<>uid://30m7fepc1sx1::::res://scripts/halo_nivel_1.gd<>uid://b5teod5rnnas5::::res://assets/halos de luz (1)1.png<>uid://m4i7y6e5lhmn::::res://assets/halos de luz (1)2.png<>uid://blakdwbkuned0::::res://assets/halos de luz (1)3.png<>uid://dl20pepfo7exh::::res://Proyecto/player_controller.tscn
 menu.tscn::PackedScene::8667857177783666374::1778379093::0::1::::<><><>0<>0<><>::uid://djvcwoyfxrjdu::::res://scripts/menu.gd<>uid://bfu36vjac4br7::::res://assets/Animacion boton jugar1.png<>uid://chpow171fsvur::::res://assets/Animacion boton jugar2.png<>uid://bjmm2ypc2b1rk::::res://assets/Animacion boton jugar3.png<>uid://dqj888cxdfuv::::res://assets/Animacion boton carga1.png<>uid://bh3gprl4mrk2l::::res://assets/Animacion boton carga2.png<>uid://didh5in70abnt::::res://assets/Animacion boton carga3.png<>uid://sj4rmpjq8wvk::::res://assets/Animacion boton opciones3.png<>uid://cdnvi1lrjp6xx::::res://assets/Animacion boton opciones2.png<>uid://ctrbagnbvx6e3::::res://assets/Animacion boton opciones1.png<>uid://dn0inkybc6ivv::::res://assets/Animacion boton quit1.png<>uid://batkcy3fnx6np::::res://assets/Animacion boton quit2.png<>uid://mov1w3sgunty::::res://assets/HUD (1)1.png
 nivel1.tscn::PackedScene::513946959242794304::1776665317::0::1::::<><><>0<>0<><>::uid://ditldlc08nq62::::res://assets/TileSet/PlazaChe/tile set plaza che preview.png<>uid://btuib7pwsalnx::::res://Proyecto/scenes/boss.tscn<>uid://dg35x38kcyylb::::res://assets/TileSet/PlazaChe/Plaza Che.png
-Opciones.tscn::PackedScene::5305274720030957752::1778379359::0::1::::<><><>0<>0<><>::uid://bheyqlfh1r7dv::::res://assets/Animacion boton menu1.png<>uid://b86dqp588he2k::::res://scripts/opciones.gd<>uid://byx4bh8va0dx4::::res://assets/Animacion boton menu2.png<>uid://24ax4kcoown5::::res://assets/Animacion boton menu3.png<>uid://dn0inkybc6ivv::::res://assets/Animacion boton quit1.png<>uid://batkcy3fnx6np::::res://assets/Animacion boton quit2.png<>uid://dqj888cxdfuv::::res://assets/Animacion boton carga1.png<>uid://bh3gprl4mrk2l::::res://assets/Animacion boton carga2.png<>uid://didh5in70abnt::::res://assets/Animacion boton carga3.png<>uid://by5jgbjx2e8xp::::res://assets/Animacion boton mutet1.png<>uid://cye1v5gg7iddg::::res://assets/Animacion boton mutet3.png<>uid://dx5ln6bt3yxuw::::res://assets/Animacion boton mutet2.png
+Opciones.tscn::PackedScene::5305274720030957752::1778379786::0::1::::<><><>0<>0<><>::uid://bheyqlfh1r7dv::::res://assets/Animacion boton menu1.png<>uid://b86dqp588he2k::::res://scripts/opciones.gd<>uid://dyee0auq3njss::::res://assets/HUD (1)3.png<>uid://byx4bh8va0dx4::::res://assets/Animacion boton menu2.png<>uid://24ax4kcoown5::::res://assets/Animacion boton menu3.png<>uid://dn0inkybc6ivv::::res://assets/Animacion boton quit1.png<>uid://batkcy3fnx6np::::res://assets/Animacion boton quit2.png<>uid://dqj888cxdfuv::::res://assets/Animacion boton carga1.png<>uid://bh3gprl4mrk2l::::res://assets/Animacion boton carga2.png<>uid://didh5in70abnt::::res://assets/Animacion boton carga3.png<>uid://by5jgbjx2e8xp::::res://assets/Animacion boton mutet1.png<>uid://cye1v5gg7iddg::::res://assets/Animacion boton mutet3.png<>uid://dx5ln6bt3yxuw::::res://assets/Animacion boton mutet2.png
 player.tscn::PackedScene::3090479328198337957::1776625654::0::1::::<><><>0<>0<><>::uid://buhioq35w71jk::::res://scripts/player.gd<>uid://bktbcnraabsaj::::res://assets/Idle_walk.png<>uid://brg7pk0gnyck1::::res://assets/shoot.png<>uid://c3eu6b2ou10y6::::res://assets/character2.0.png
 projectile.tscn::PackedScene::6678830079878789728::1776625868::0::1::::<><><>0<>0<><>::uid://b87t6hgay6qol::::res://scripts/projectile.gd<>uid://bs3kidxcen7fn::::res://assets/especialm1.png<>uid://mtj0rkuqt1d8::::res://assets/definitiva.png
 rayo.tscn::PackedScene::1152520460447984432::1776648554::0::1::::<><><>0<>0<><>::uid://bxawynlxwujil::::res://assets/AssetsBossAbilities/Rayo/rayo jefe (1).png<>uid://7eu465lim33c::::res://scripts/rayo.gd
 rocketLL.tscn::PackedScene::2836290630404599754::1776664484::0::1::::<><><>0<>0<><>::uid://jtiv4hnr63hd::::res://scripts/rocket_ll.gd<>uid://cjuo17l0rm1j3::::res://assets/AssetsBossAbilities/RocketLL/lluvia cohetes (1).png<>uid://d21m2h6lkb73e::::res://assets/AssetsBossAbilities/Explosion/explosion.png
 rocket_t.tscn::PackedScene::8243772914783628824::1776664910::0::1::::<><><>0<>0<><>::uid://bq6vivakpb8hj::::res://scripts/rocket_t.gd<>uid://cuyutcuhndvus::::res://assets/AssetsBossAbilities/RocketT/proyectil jefe (1).png<>uid://d21m2h6lkb73e::::res://assets/AssetsBossAbilities/Explosion/explosion.png
-::res://scripts/::1778348198
+::res://scripts/::1778545945
 bomba.gd::GDScript::6254721515717365644::1776665918::0::1::::<>Area2D<><>0<>0<><>::
 boss.gd::GDScript::4501235404423525223::1776667830::0::1::::<>CharacterBody2D<><>0<>0<><>::
+halo_nivel_1.gd::GDScript::2017683084515771328::1778545945::0::1::::<>Area2D<><>0<>0<><>::
 menu.gd::GDScript::7834475070769090102::1778348198::0::1::::<>Control<><>0<>0<><>::
 opciones.gd::GDScript::4766859793542933912::1778348198::0::1::::<>Control<><>0<>0<><>::
 player.gd::GDScript::3805159822810843588::1775429101::0::1::::<>CharacterBody2D<><>0<>0<><>::
 projectile.gd::GDScript::4769921971317284127::1775429101::0::1::::<>Area2D<><>0<>0<><>::
 rayo.gd::GDScript::2255568310390818922::1776655942::0::1::::<>Area2D<><>0<>0<><>::
+mapa_selector.gd::GDScript::1044184239619499088::1778546189::0::1::::<>Node2D<><>0<>0<><>::
 rocket_ll.gd::GDScript::671447542288976073::1776664484::0::1::::<>Area2D<><>0<>0<><>::
 rocket_t.gd::GDScript::3574728338941637171::1776665937::0::1::::<>Area2D<><>0<>0<><>::
