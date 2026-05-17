@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c2fjmddsiq6v1"]
 
-[ext_resource type="Script" uid="uid://b87t6hgay6qol" path="res://scripts/projectile.gd" id="1_eram8"]
-[ext_resource type="Texture2D" uid="uid://bs3kidxcen7fn" path="res://assets/especialm1.png" id="2_eram8"]
-[ext_resource type="Texture2D" uid="uid://mtj0rkuqt1d8" path="res://assets/definitiva.png" id="3_i3444"]
+[ext_resource type="Script" uid="uid://b87t6hgay6qol" path="res://Proyecto/scripts/projectile.gd" id="1_eram8"]
+[ext_resource type="Texture2D" uid="uid://bs3kidxcen7fn" path="res://assets/AssetsJugador/especialm1.png" id="2_eram8"]
+[ext_resource type="Texture2D" path="res://assets/definitiva.png" id="3_i3444"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3444"]
 atlas = ExtResource("2_eram8")

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b7ddvylwuv3dl"]
 
-[ext_resource type="Script" uid="uid://dimjd312av3vv" path="res://scripts/texture_button.gd" id="1_1sgf3"]
-[ext_resource type="Script" uid="uid://djw1lhwjv3jg0" path="res://scripts/arbol_habilidades.gd" id="1_8io41"]
-[ext_resource type="Script" uid="uid://dkp2ja01m5csk" path="res://scripts/gestor_monedas.gd" id="2_1g42o"]
-[ext_resource type="Script" uid="uid://c8bjt5hx1ynyl" path="res://scripts/nodo_bonus.gd" id="2_620fl"]
+[ext_resource type="Script" uid="uid://dimjd312av3vv" path="res://Proyecto/scripts/texture_button.gd" id="1_1sgf3"]
+[ext_resource type="Script" uid="uid://djw1lhwjv3jg0" path="res://Proyecto/scripts/arbol_habilidades.gd" id="1_8io41"]
+[ext_resource type="Script" uid="uid://dkp2ja01m5csk" path="res://Proyecto/scripts/gestor_monedas.gd" id="2_1g42o"]
+[ext_resource type="Script" uid="uid://c8bjt5hx1ynyl" path="res://Proyecto/scripts/nodo_bonus.gd" id="2_620fl"]
 [ext_resource type="Texture2D" uid="uid://brpqdx7h8foeu" path="res://assets/AssetsMejoras/arbol de habilidades (2).png" id="2_cmhwd"]
 [ext_resource type="FontFile" uid="uid://c4el4jnvwvspy" path="res://assets/AssetsMejoras/PixelifySans-Medium.ttf" id="4_cmhwd"]
 [ext_resource type="Texture2D" uid="uid://d0yud4rs0chrq" path="res://assets/AssetsMejoras/animacion compra habilidad.png" id="4_kwx6o"]

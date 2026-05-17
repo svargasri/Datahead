@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://dy4pmu3ia7pon"]
+
+[ext_resource type="Script" uid="uid://bq6vivakpb8hj" path="res://Proyecto/scripts/rocket_t.gd" id="1_gfqtd"]
+[ext_resource type="Texture2D" uid="uid://ca72qobcbhejf" path="res://assets/AssetsBossAbilities/proyectil jefe (1).png" id="2_gfqtd"]
+[ext_resource type="Texture2D" uid="uid://d21m2h6lkb73e" path="res://assets/AssetsBossAbilities/Explosion/explosion.png" id="3_ex421"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36pvd"]
+atlas = ExtResource("2_gfqtd")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex421"]
+atlas = ExtResource("2_gfqtd")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56ert"]
+atlas = ExtResource("2_gfqtd")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22qeh"]
+atlas = ExtResource("2_gfqtd")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5p64e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36pvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex421")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56ert")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22qeh")
+}],
+"loop": true,
+"name": &"Volar",
+"speed": 11.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m3knv"]
+radius = 3.0
+height = 11.999992
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p64e"]
+atlas = ExtResource("3_ex421")
+region = Rect2(0, 0, 48, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xktwb"]
+atlas = ExtResource("3_ex421")
+region = Rect2(48, 0, 48, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm8fh"]
+atlas = ExtResource("3_ex421")
+region = Rect2(96, 0, 48, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25v1r"]
+atlas = ExtResource("3_ex421")
+region = Rect2(144, 0, 48, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebvdk"]
+atlas = ExtResource("3_ex421")
+region = Rect2(192, 0, 48, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6xhf"]
+atlas = ExtResource("3_ex421")
+region = Rect2(0, 54, 48, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f4gqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p64e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xktwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm8fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25v1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebvdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6xhf")
+}],
+"loop": false,
+"name": &"Explosion",
+"speed": 9.0
+}]
+
+[node name="RocketT" type="Area2D" unique_id=754645497]
+position = Vector2(2, 1)
+script = ExtResource("1_gfqtd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1879890797]
+position = Vector2(-4, -1)
+rotation = 3.1415927
+sprite_frames = SubResource("SpriteFrames_5p64e")
+animation = &"Volar"
+frame_progress = 0.06679326
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620570338]
+position = Vector2(-2, -1)
+rotation = 1.5681489
+shape = SubResource("CapsuleShape2D_m3knv")
+debug_color = Color(0.9792126, 0.14548251, 9.62615e-07, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=720802954]
+wait_time = 0.5
+
+[node name="SpriteExplosion" type="AnimatedSprite2D" parent="." unique_id=301065536]
+visible = false
+position = Vector2(-2, -1)
+sprite_frames = SubResource("SpriteFrames_f4gqa")
+animation = &"Explosion"
+frame = 5
+frame_progress = 1.0
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1028112102]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

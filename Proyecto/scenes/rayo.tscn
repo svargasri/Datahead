@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qoj3xg1xlv33"]
 
 [ext_resource type="Texture2D" uid="uid://bxawynlxwujil" path="res://assets/AssetsBossAbilities/Rayo/rayo jefe (1).png" id="1_403sx"]
-[ext_resource type="Script" uid="uid://7eu465lim33c" path="res://scripts/rayo.gd" id="1_hnpjr"]
+[ext_resource type="Script" uid="uid://7eu465lim33c" path="res://Proyecto/scripts/rayo.gd" id="1_hnpjr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_403sx"]
 atlas = ExtResource("1_403sx")

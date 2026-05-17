@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bkurehodr41r1"]
 
-[ext_resource type="Script" uid="uid://cvd3l5chx0irs" path="res://scripts/bomba.gd" id="1_rqllq"]
+[ext_resource type="Script" uid="uid://cvd3l5chx0irs" path="res://Proyecto/scripts/bomba.gd" id="1_rqllq"]
 [ext_resource type="Texture2D" uid="uid://bcqn8pl5hynfx" path="res://assets/AssetsBossAbilities/Bomba/aviso caida explosion.png" id="2_x86cx"]
 [ext_resource type="Texture2D" uid="uid://c3811oif2frrj" path="res://assets/AssetsBossAbilities/Bomba/explosion en area.png" id="3_2qtu7"]
 [ext_resource type="Texture2D" uid="uid://bqx00aax1n4hl" path="res://assets/AssetsBossAbilities/Bomba/explosion.png" id="4_ssfm7"]

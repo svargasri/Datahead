@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dppl0ahfksjoi"]
 
-[ext_resource type="Script" uid="uid://bq6vivakpb8hj" path="res://scripts/rocket_t.gd" id="1_aod1l"]
+[ext_resource type="Script" uid="uid://bq6vivakpb8hj" path="res://Proyecto/scripts/rocket_t.gd" id="1_aod1l"]
 [ext_resource type="Texture2D" uid="uid://cuyutcuhndvus" path="res://assets/AssetsBossAbilities/RocketT/proyectil jefe (1).png" id="2_e5gvk"]
 [ext_resource type="Texture2D" uid="uid://d21m2h6lkb73e" path="res://assets/AssetsBossAbilities/Explosion/explosion.png" id="3_m3knv"]
 
@@ -125,4 +125,5 @@ frame_progress = 1.0
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1028112102]
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

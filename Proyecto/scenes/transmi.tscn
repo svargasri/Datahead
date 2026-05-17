@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://6g50dnarqmj2"]
+
+[ext_resource type="Script" uid="uid://cn1qcuk2xpq8i" path="res://Proyecto/scripts/transmi.gd" id="1_x3nfg"]
+[ext_resource type="Texture2D" uid="uid://dbye7bh6of0r8" path="res://assets/AssetsBossAbilities/rayo transmi (1).png" id="2_x3nfg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mjn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x3nfg")
+}],
+"loop": true,
+"name": &"Transmi",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_403sx"]
+size = Vector2(188.5, 11)
+
+[node name="transmi" type="Area2D" unique_id=363431824]
+script = ExtResource("1_x3nfg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=839707215]
+sprite_frames = SubResource("SpriteFrames_1mjn8")
+animation = &"Transmi"
+frame_progress = 0.3878242
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1962211716]
+position = Vector2(-0.75, 0)
+shape = SubResource("RectangleShape2D_403sx")
+debug_color = Color(0.990779, 0.09413368, 1.92523e-07, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=2129093017]
