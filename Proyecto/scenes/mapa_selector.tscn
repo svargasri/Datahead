@@ -9,8 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://dl20pepfo7exh" path="res://Proyecto/scenes/player_controller.tscn" id="7_wsj7p"]
 [ext_resource type="Texture2D" uid="uid://dn0inkybc6ivv" path="res://assets/AssetsHUD/Animacion boton quit1.png" id="8_qursa"]
 [ext_resource type="Texture2D" uid="uid://batkcy3fnx6np" path="res://assets/AssetsHUD/Animacion boton quit2.png" id="9_4t3mf"]
+[ext_resource type="Texture2D" uid="uid://bjmm2ypc2b1rk" path="res://assets/AssetsHUD/Animacion boton jugar3.png" id="10_4t3mf"]
 [ext_resource type="Texture2D" uid="uid://bfu36vjac4br7" path="res://assets/AssetsHUD/Animacion boton jugar1.png" id="10_wsj7p"]
 [ext_resource type="Texture2D" uid="uid://chpow171fsvur" path="res://assets/AssetsHUD/Animacion boton jugar2.png" id="11_3t17l"]
+[ext_resource type="PackedScene" uid="uid://b7ddvylwuv3dl" path="res://Proyecto/scenes/arbol_habilidades.tscn" id="13_wsj7p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3t17l"]
 texture = ExtResource("2_uk4xb")
@@ -45,8 +47,10 @@ tile_set = SubResource("TileSet_y3jir")
 
 [node name="HaloNivel1" type="Area2D" parent="Halos" unique_id=1653643445]
 script = ExtResource("3_30ftl")
-escena_destino = "res://Proyecto/scenes/nivel1.tscn"
+escena_destino = "res://Proyecto/scenes/nivel2.tscn"
 texto_accion = "\"Jugar nivel 1\""
+imagen_jefe = ExtResource("4_xftrl")
+texto_historia = "\"Creo que no debí  colarme en transmilenio...\""
 
 [node name="Sprite2D" type="Sprite2D" parent="Halos/HaloNivel1" unique_id=789528384]
 position = Vector2(212, 141)
@@ -60,7 +64,10 @@ shape = SubResource("CircleShape2D_ogcll")
 
 [node name="HaloNivel2" type="Area2D" parent="Halos" unique_id=1913671054]
 script = ExtResource("3_30ftl")
-nivel_activo = false
+escena_destino = "res://Proyecto/scenes/nivel1.tscn"
+texto_accion = "\"Jugar Nivel 2\""
+imagen_jefe = ExtResource("5_qursa")
+texto_historia = "\"Y después de tanto cancelar materias el SIA despertó...\""
 
 [node name="Sprite2D" type="Sprite2D" parent="Halos/HaloNivel2" unique_id=1341666418]
 position = Vector2(126, 467)
@@ -74,7 +81,6 @@ shape = SubResource("CircleShape2D_ugond")
 
 [node name="ChazaMejoras" type="Area2D" parent="Halos" unique_id=1780730628]
 script = ExtResource("3_30ftl")
-nivel_activo = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Halos/ChazaMejoras" unique_id=1439519767]
 position = Vector2(381, 316)
@@ -99,17 +105,18 @@ position_smoothing_enabled = true
 [node name="UI" type="CanvasLayer" parent="." unique_id=1848951833]
 
 [node name="LabelAccion" type="Label" parent="UI" unique_id=854930469]
-offset_left = 180.0
-offset_top = 129.0
-offset_right = 251.0
-offset_bottom = 163.0
+offset_left = 156.0
+offset_top = 126.0
+offset_right = 242.0
+offset_bottom = 151.0
 theme_override_font_sizes/font_size = 8
 
 [node name="MenuNivel" type="Panel" parent="UI" unique_id=1647389241]
-offset_left = 101.0
-offset_top = 55.0
-offset_right = 301.0
-offset_bottom = 185.0
+visible = false
+offset_left = 76.0
+offset_top = 18.0
+offset_right = 276.0
+offset_bottom = 148.0
 
 [node name="TextureRect" type="TextureRect" parent="UI/MenuNivel" unique_id=1262239081]
 layout_mode = 1
@@ -128,34 +135,46 @@ texture = ExtResource("4_xftrl")
 expand_mode = 2
 
 [node name="LabelHistoria" type="Label" parent="UI/MenuNivel" unique_id=80217161]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 71.0
-offset_right = 153.0
-offset_bottom = 98.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = 9.0
+offset_right = 81.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 8
-text = "\"Y despues de tanto cancelar 
-materias. El SIA despertó\"....."
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="BotonJugar" type="TextureButton" parent="UI/MenuNivel" unique_id=1587398051]
 layout_mode = 0
+offset_left = 70.0
+offset_top = 99.0
+offset_right = 134.0
+offset_bottom = 131.0
+scale = Vector2(0.91429895, 0.8898338)
+texture_normal = ExtResource("10_wsj7p")
+texture_pressed = ExtResource("11_3t17l")
+texture_hover = ExtResource("10_4t3mf")
+
+[node name="BotonCerrar" type="TextureButton" parent="UI/MenuNivel" unique_id=889475349]
+layout_mode = 0
 offset_left = 171.0
-offset_top = 16.0
+offset_top = 12.000001
 offset_right = 187.0
-offset_bottom = 32.0
+offset_bottom = 28.0
+scale = Vector2(0.9056161, 0.78926253)
 texture_normal = ExtResource("8_qursa")
 texture_pressed = ExtResource("9_4t3mf")
 texture_hover = ExtResource("9_4t3mf")
 
-[node name="BotonCerrar" type="TextureButton" parent="UI/MenuNivel" unique_id=889475349]
-layout_mode = 0
-offset_left = 71.00003
-offset_top = 101.0
-offset_right = 135.00005
-offset_bottom = 133.0
-scale = Vector2(0.9056161, 0.78926253)
-texture_normal = ExtResource("10_wsj7p")
-texture_pressed = ExtResource("11_3t17l")
+[node name="ArbolHabilidades" parent="." unique_id=1337936077 instance=ExtResource("13_wsj7p")]
+visible = false
 
 [connection signal="pressed" from="UI/MenuNivel/BotonJugar" to="." method="_al_presionar_jugar"]
 [connection signal="pressed" from="UI/MenuNivel/BotonCerrar" to="." method="_al_presionar_cerrar"]

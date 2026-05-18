@@ -21,3 +21,5 @@ func _hover_salir():
 
 func _cerrar():
 	visible = false
+	# Devolver control al personaje
+	get_tree().get_first_node_in_group("personaje").puede_moverse = true

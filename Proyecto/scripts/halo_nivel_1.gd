@@ -1,8 +1,11 @@
 extends Area2D
 
+
 @export var escena_destino : String = ""
 @export var texto_accion   : String = "Entrar"
 @export var nivel_activo   : bool   = true
+@export var imagen_jefe    : Texture2D
+@export var texto_historia : String = ""
 
 signal personaje_entro(halo)
 signal personaje_salio(halo)
