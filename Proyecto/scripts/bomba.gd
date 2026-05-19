@@ -1,7 +1,7 @@
 extends Area2D
 
 const VELOCIDAD = 120.0
-const DAÑO = 10
+var DAÑO :int =10
 const DURACION_ADVERTENCIA = 1.5
 
 @onready var sprite = $AnimatedSprite2D
@@ -15,6 +15,10 @@ var jugador: Node2D = null
 var cayendo: bool = true
 
 func _ready():
+	match GameManager.dificultad_actual:
+		1: DAÑO = 10
+		2: DAÑO = 18
+		3: DAÑO = 25
 	explosion.hide()
 	advertencia.hide()
 	sprite.play("Bomba")

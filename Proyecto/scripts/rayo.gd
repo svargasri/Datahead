@@ -1,6 +1,6 @@
 extends Area2D
 
-const DAÑO_POR_SEGUNDO = 20
+var DAÑO_POR_SEGUNDO : float=20.0
 const DURACION_DELGADO = 0.4
 const DURACION_MEDIO = 0.1
 const DURACION_CASI_GRUESO = 0.1
@@ -16,6 +16,12 @@ var tick_timer: float = 0.0
 const INTERVALO_TICK: float = 0.1
 
 func _ready():
+	match GameManager.dificultad_actual:
+		
+		1: DAÑO_POR_SEGUNDO = 20.0
+		2: DAÑO_POR_SEGUNDO = 35.0
+		3: DAÑO_POR_SEGUNDO = 50.0
+		
 	collision.set_deferred("disabled", true)
 	sprite.scale.x = 15.0
 	jugador = get_tree().get_first_node_in_group("player")

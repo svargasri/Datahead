@@ -1,7 +1,7 @@
 extends Area2D
 
 const VELOCIDAD = 150.0
-const DAÑO = 10
+var DAÑO : int = 10
 const TIEMPO_VIDA = 4.0
 
 @onready var sprite = $AnimatedSprite2D
@@ -11,6 +11,10 @@ const TIEMPO_VIDA = 4.0
 @onready var raycast = $RayCast2D
 
 func _ready():
+	match GameManager.dificultad_actual:
+		1: DAÑO = 10
+		2: DAÑO = 18
+		3: DAÑO = 25
 	explosion.hide()
 	sprite.play("VolarA")
 	timer.wait_time = TIEMPO_VIDA

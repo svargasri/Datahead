@@ -112,7 +112,6 @@ offset_bottom = 151.0
 theme_override_font_sizes/font_size = 8
 
 [node name="MenuNivel" type="Panel" parent="UI" unique_id=1647389241]
-visible = false
 offset_left = 76.0
 offset_top = 18.0
 offset_right = 276.0
@@ -172,6 +171,33 @@ scale = Vector2(0.9056161, 0.78926253)
 texture_normal = ExtResource("8_qursa")
 texture_pressed = ExtResource("9_4t3mf")
 texture_hover = ExtResource("9_4t3mf")
+
+[node name="BotonDif1" type="TextureButton" parent="UI/MenuNivel" unique_id=90562239]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 54.0
+offset_right = 19.0
+offset_bottom = 70.0
+texture_normal = ExtResource("8_qursa")
+texture_pressed = ExtResource("9_4t3mf")
+
+[node name="BotonDif2" type="TextureButton" parent="UI/MenuNivel" unique_id=54521365]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 54.0
+offset_right = 37.0
+offset_bottom = 70.0
+texture_normal = ExtResource("8_qursa")
+texture_pressed = ExtResource("9_4t3mf")
+
+[node name="BotonDif3" type="TextureButton" parent="UI/MenuNivel" unique_id=957986689]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 52.0
+offset_right = 56.0
+offset_bottom = 68.0
+texture_normal = ExtResource("8_qursa")
+texture_pressed = ExtResource("9_4t3mf")
 
 [node name="ArbolHabilidades" parent="." unique_id=1337936077 instance=ExtResource("13_wsj7p")]
 visible = false

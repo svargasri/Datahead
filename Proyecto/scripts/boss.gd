@@ -4,40 +4,74 @@ extends CharacterBody2D
 @export var attack_cooldown: float = 2.0
 var current_hp: int
 
-@onready var sprite = $AnimatedSprite2D
-@onready var hurtbox = $Hurtbox
+@onready var sprite      = $AnimatedSprite2D
+@onready var hurtbox     = $Hurtbox
 @onready var attack_timer = $AttackTimer
-@onready var hp_bar = $BossHPBar
+@onready var hp_bar      = $BossHPBar
 @onready var shoot_point = $ShootPoint
 
-@export var rayo_scene: PackedScene
-@export var cohete_scene: PackedScene
-@export var bomba_scene: PackedScene
-@export var lluvia_scene: PackedScene
+@export var rayo_scene   : PackedScene
+@export var cohete_scene : PackedScene
+@export var bomba_scene  : PackedScene
+@export var lluvia_scene : PackedScene
+@export var imagen_victoria  : Texture2D
+@export var texto_victoria   : String = ""
 
-var ataques: Array = []
-var spawn_positions: Array = []
-var spawn_index: int = 0
-var priority_queue: Array = []
-var cohetes_activos: Array = []
-var glitch_activo: bool = false
-var muerto: bool = false
+# ── Estructuras de datos ──────────────────────────────────────
+var ataques        : Array = []
+var priority_queue : Array = []
+var cohetes_activos: Array = []   # Pila
 
-# FUNCIONES
+# Dificultad 2 — Árbol de decisión + Diccionario de estados
+var arbol_decision : Dictionary = {}
+var estado_actual  : String = "normal"
+var historial_ataques : Array = []  # Conjunto de últimos ataques
+
+var glitch_activo : bool = false
+var muerto        : bool = false
+
+# Clave del nivel para GameManager
+@export var nivel_key : String = "nivel1"
+
+# ── Parámetros por dificultad ─────────────────────────────────
+func _get_params() -> Dictionary:
+	match GameManager.dificultad_actual:
+		1:
+			return { "cooldown": 2.0, "hp": 100, "daño_rayo": 2.5, "daño_cohete": 10, "daño_bomba": 10 }
+		2:
+			return { "cooldown": 1.3, "hp": 150, "daño_rayo": 4.0, "daño_cohete": 15, "daño_bomba": 15 }
+		3:
+			return { "cooldown": 0.8, "hp": 200, "daño_rayo": 6.0, "daño_cohete": 20, "daño_bomba": 20 }
+	# Fallback seguro
+	return { "cooldown": 2.0, "hp": 100, "daño_rayo": 2.5, "daño_cohete": 10, "daño_bomba": 10 }
+
 func _ready():
-	current_hp = max_hp
+	var params       = _get_params()
+	max_hp           = params["hp"]
+	attack_cooldown  = params["cooldown"]
+	current_hp       = max_hp
 	hp_bar.max_value = max_hp
-	hp_bar.value = max_hp
-	motion_mode = MotionMode.MOTION_MODE_FLOATING
+	hp_bar.value     = max_hp
+	motion_mode      = MotionMode.MOTION_MODE_FLOATING
+
+	print("Boss listo — dificultad: ", GameManager.dificultad_actual)
+	print("HP: ", max_hp, " Cooldown: ", attack_cooldown)
 
 	_init_ataques()
-	_build_priority_queue()
+
+	match GameManager.dificultad_actual:
+		1: _build_priority_queue()
+		2: _build_arbol_decision()
+		3: _build_priority_queue()
 
 	attack_timer.wait_time = attack_cooldown
 	attack_timer.start()
+	print("Timer iniciado: ", attack_timer.wait_time)
 	sprite.play("Idle")
 
-# ARREGLO DE ATAQUES
+# ══════════════════════════════════════════════════════════════
+#  DIFICULTAD 1 — Cola con prioridad + Pila de cohetes
+# ══════════════════════════════════════════════════════════════
 func _init_ataques():
 	ataques = [
 		{ "nombre": "rayo",           "funcion": _ataque_rayo,           "peso": 20 },
@@ -46,55 +80,113 @@ func _init_ataques():
 		{ "nombre": "bomba",          "funcion": _ataque_bomba,          "peso": 20 },
 	]
 
-# COLA CON PRIORIDAD 
 func _build_priority_queue():
 	priority_queue = ataques.duplicate()
 	priority_queue.sort_custom(func(a, b): return a["peso"] > b["peso"])
 
-func _elegir_ataque() -> Dictionary:
+func _elegir_ataque_cola() -> Dictionary:
 	var total = 0
-	for ataque in ataques:
-		total += ataque["peso"]
-
+	for a in ataques:
+		total += a["peso"]
 	var roll = randi() % total
 	var acumulado = 0
-	for ataque in priority_queue:
-		acumulado += ataque["peso"]
+	for a in priority_queue:
+		acumulado += a["peso"]
 		if roll < acumulado:
-			return ataque
-
+			return a
 	return priority_queue[0]
 
-# PILA — gestionar cohetes
-func _push_cohete(cohete):
-	cohetes_activos.append(cohete)
-
+# Pila de cohetes
+func _push_cohete(cohete): cohetes_activos.append(cohete)
 func _pop_cohete():
-	if cohetes_activos.is_empty():
-		return null
+	if cohetes_activos.is_empty(): return null
 	return cohetes_activos.pop_back()
-
 func _explotar_ultimo_cohete():
-	var cohete = _pop_cohete()
-	if cohete and is_instance_valid(cohete):
-		cohete.explotar()
+	var c = _pop_cohete()
+	if c and is_instance_valid(c): c.explotar()
 
-# TIMER 
+# ══════════════════════════════════════════════════════════════
+#  DIFICULTAD 2 — Árbol de decisión + Diccionario de estados
+# ══════════════════════════════════════════════════════════════
+func _build_arbol_decision():
+	
+	arbol_decision = {
+		"condicion": "hp_bajo",          # HP < 50%
+		"rama_true": {
+			"condicion": "historial_rayo",  
+			"rama_true":  { "ataque": "bomba" },
+			"rama_false": { "ataque": "rayo" },
+		},
+		"rama_false": {
+			"condicion": "historial_cohete",
+			"rama_true":  { "ataque": "lluvia_cohetes" },
+			"rama_false": { "ataque": "cohetes" },
+		},
+	}
+
+	# Diccionario de estados del boss
+	estado_actual = "normal"
+
+func _evaluar_arbol(nodo: Dictionary) -> String:
+	if nodo.has("ataque"):
+		return nodo["ataque"]
+	var condicion = nodo["condicion"]
+	var resultado = _evaluar_condicion(condicion)
+	if resultado:
+		return _evaluar_arbol(nodo["rama_true"])
+	else:
+		return _evaluar_arbol(nodo["rama_false"])
+
+func _evaluar_condicion(condicion: String) -> bool:
+	match condicion:
+		"hp_bajo":
+			return current_hp < max_hp * 0.5
+		"historial_rayo":
+			return "rayo" in historial_ataques
+		"historial_cohete":
+			return "cohetes" in historial_ataques
+	return false
+
+func _elegir_ataque_arbol() -> Dictionary:
+	var nombre = _evaluar_arbol(arbol_decision)
+	# Registrar en historial (conjunto de máx 3)
+	historial_ataques.append(nombre)
+	if historial_ataques.size() > 3:
+		historial_ataques.pop_front()
+	for a in ataques:
+		if a["nombre"] == nombre:
+			return a
+	return ataques[0]
+
+# ══════════════════════════════════════════════════════════════
+#  TIMER — elige ataque según dificultad
+# ══════════════════════════════════════════════════════════════
+
 func _on_attack_timer_timeout():
-	var ataque = _elegir_ataque()
+	print("Timer disparado — eligiendo ataque")
+	var ataque : Dictionary
+	match GameManager.dificultad_actual:
+		1: ataque = _elegir_ataque_cola()
+		2: ataque = _elegir_ataque_arbol()
+		3: ataque = _elegir_ataque_cola()
+		_: ataque = _elegir_ataque_cola()
+	print("Ataque elegido: ", ataque.get("nombre", "ninguno"))
 	ataque["funcion"].call()
 
-# IMPLEMENTACION DE ATAQUES
+# ══════════════════════════════════════════════════════════════
+#  ATAQUES
+# ══════════════════════════════════════════════════════════════
 func _ataque_rayo():
+	print("Spawneando rayo — shoot_point: ", shoot_point.global_position)
 	if not rayo_scene:
+		print("ERROR: rayo_scene no asignado")
 		return
 	var rayo = rayo_scene.instantiate()
 	rayo.global_position = shoot_point.global_position
 	get_parent().add_child(rayo)
-
+	print("Rayo agregado al padre: ", get_parent().name)
 func _ataque_cohetes():
-	if not cohete_scene:
-		return
+	if not cohete_scene: return
 	var angulos = [-15.0, -5.0, 5.0, 15.0]
 	for angulo in angulos:
 		var cohete = cohete_scene.instantiate()
@@ -104,35 +196,35 @@ func _ataque_cohetes():
 		_push_cohete(cohete)
 
 func _ataque_lluvia_cohetes():
-	if not lluvia_scene:
-		return
+	if not lluvia_scene: return
 	var jugador = get_tree().get_first_node_in_group("player")
 	var base_x = 160.0
-	if jugador:
-		base_x = jugador.global_position.x
-	var cantidad = 3
-	for i in range(cantidad):
-		var offset = (i - cantidad / 2.0) * 10
+	if jugador: base_x = jugador.global_position.x
+	for i in range(3):
+		var offset = (i - 1.0) * 10
 		_spawn_cohete_lluvia_con_delay(base_x, offset)
 
 func _spawn_cohete_lluvia_con_delay(base_x: float, offset: float):
-	var delay = randf_range(0.1, 0.6)
-	await get_tree().create_timer(delay).timeout
+	await get_tree().create_timer(randf_range(0.1, 0.6)).timeout
 	var cohete = lluvia_scene.instantiate()
 	cohete.global_position = Vector2(base_x + offset, 0)
 	get_parent().add_child(cohete)
 
 func _ataque_bomba():
+	print("Spawneando bomba — shoot_point: ", shoot_point.global_position)
 	if not bomba_scene:
+		print("ERROR: bomba_scene no asignado")
 		return
 	var bomba = bomba_scene.instantiate()
 	bomba.position = shoot_point.global_position
 	get_parent().add_child(bomba)
+	print("Bomba agregada al padre: ", get_parent().name)
 
-# DAÑO Y MUERTE
+# ══════════════════════════════════════════════════════════════
+#  DAÑO Y MUERTE
+# ══════════════════════════════════════════════════════════════
 func recibir_daño(cantidad: int):
-	if muerto:
-		return
+	if muerto: return
 	current_hp -= cantidad
 	hp_bar.value = current_hp
 	sprite.play("Hit")
@@ -149,28 +241,10 @@ func morir():
 	attack_timer.stop()
 	sprite.play("Death")
 	await sprite.animation_finished
-	queue_free()
+	GameManager.desbloquear_siguiente(nivel_key)
+	_mostrar_victoria()
 
-
-func aplicar_glitch(dano_tick: int, duracion: float, intervalo: float):
-	if glitch_activo:
-		return
-	glitch_activo = true
-	$GlitchCabeza.visible = true
-	$GlitchBrazoIzq.visible = true
-	$GlitchBrazoDer.visible = true
-	$GlitchPiernas.visible = true
-	$GlitchCabeza.play("glitch")
-	$GlitchBrazoIzq.play("glitch")
-	$GlitchBrazoDer.play("glitch")
-	$GlitchPiernas.play("glitch")
-	var tiempo = 0.0
-	while tiempo < duracion and is_instance_valid(self):
-		recibir_daño(dano_tick)
-		await get_tree().create_timer(intervalo).timeout
-		tiempo += intervalo
-	$GlitchCabeza.visible = false
-	$GlitchBrazoIzq.visible = false
-	$GlitchBrazoDer.visible = false
-	$GlitchPiernas.visible = false
-	glitch_activo = false
+func _mostrar_victoria():
+	var pantalla = preload("res://Proyecto/scenes/pantalla_victoria.tscn").instantiate()
+	get_tree().root.add_child(pantalla)
+	pantalla.mostrar(imagen_victoria, texto_victoria)

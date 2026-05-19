@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bkurehodr41r1" path="res://Proyecto/scenes/bomba.tscn" id="4_jyovd"]
 [ext_resource type="PackedScene" uid="uid://bgn6j65nay21k" path="res://Proyecto/scenes/rocketLL.tscn" id="5_uflkr"]
 [ext_resource type="Texture2D" uid="uid://dm83s4858daod" path="res://assets/AssetsBoss/Muerte/Jefe7.png" id="6_hfhjd"]
+[ext_resource type="Texture2D" uid="uid://cqoj56qjbplsl" path="res://assets/AssetsHUD/Muerte_Transmi.png" id="6_tnsqg"]
 [ext_resource type="Texture2D" uid="uid://d3i0cullt3q47" path="res://assets/AssetsBoss/Muerte/Jefe8.png" id="7_bigwm"]
 [ext_resource type="Texture2D" uid="uid://7boyombew7n" path="res://assets/AssetsBoss/Muerte/Jefe9.png" id="8_o5ggl"]
 [ext_resource type="Texture2D" uid="uid://bqds38oghrpai" path="res://assets/AssetsBoss/Muerte/Jefe10.png" id="9_31xin"]
@@ -333,6 +334,8 @@ rayo_scene = ExtResource("2_tnsqg")
 cohete_scene = ExtResource("3_hj4lr")
 bomba_scene = ExtResource("4_jyovd")
 lluvia_scene = ExtResource("5_uflkr")
+imagen_victoria = ExtResource("6_tnsqg")
+texto_victoria = "Y asi fue como el pobre Transmilenio ,El K43 que lo llevaba todas las mañanas a la universidad .Termino con irreparables daños en 2 de sus tres modulos.  La decision de la alcaldia fue subastar lo que quedaba al mejor postor ,sin embargo con la llegada del nuevo metro,el antiguo y ahora obseleto transmilenio termino en el botadero Doña Juana."
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1095773606]
 sprite_frames = SubResource("SpriteFrames_juacg")

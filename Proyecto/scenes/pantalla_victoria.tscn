@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dflax81suvu24"]
+
+[ext_resource type="Script" uid="uid://bef23466gw2ks" path="res://Proyecto/scripts/pantalla_victoria.gd" id="1_cpjm5"]
+[ext_resource type="Texture2D" uid="uid://cqoj56qjbplsl" path="res://assets/AssetsHUD/Muerte_Transmi.png" id="2_4c8cc"]
+[ext_resource type="FontFile" uid="uid://c4el4jnvwvspy" path="res://assets/AssetsMejoras/PixelifySans-Medium.ttf" id="2_pk1cj"]
+[ext_resource type="Texture2D" uid="uid://dn0inkybc6ivv" path="res://assets/AssetsHUD/Animacion boton quit1.png" id="3_pk1cj"]
+[ext_resource type="Texture2D" uid="uid://batkcy3fnx6np" path="res://assets/AssetsHUD/Animacion boton quit2.png" id="4_2p6xg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpjm5"]
+bg_color = Color(0.7137827, 0.582403, 0.270234, 1)
+border_color = Color(0.08094656, 0.055807658, 0.04367221, 1)
+shadow_color = Color(0.5165738, 0.23932406, 0.14473927, 0.6)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p6xg"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="PantallaVictoria" type="CanvasLayer" unique_id=1347120600]
+script = ExtResource("1_cpjm5")
+
+[node name="Panel" type="Panel" parent="." unique_id=625295260]
+custom_minimum_size = Vector2(200, 130)
+offset_left = 41.0
+offset_top = 14.0
+offset_right = 241.0
+offset_bottom = 144.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cpjm5")
+
+[node name="Panel" type="Panel" parent="Panel" unique_id=639535311]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 6.0
+offset_right = 112.0
+offset_bottom = 46.0
+scale = Vector2(1.4677618, 1.6483198)
+theme_override_styles/panel = SubResource("StyleBoxFlat_2p6xg")
+
+[node name="LabelVictoria" type="Label" parent="Panel" unique_id=449075404]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.823
+anchor_right = 0.5
+anchor_bottom = 0.823
+offset_left = -84.0
+offset_top = -34.990005
+offset_right = 91.0
+offset_bottom = 22.009995
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.12475159, 0.12844124, 0.07606021, 1)
+theme_override_fonts/font = ExtResource("2_pk1cj")
+theme_override_font_sizes/font_size = 4
+text = "Y asi fue como el pobre Transmilenio ,El K43 que lo llevaba todas las mañanas a la universidad .Termino con irreparables daños en 2 de sus tres modulos.  
+
+La decision de la alcaldia fue subastar lo que quedaba al mejor postor ,sin embargo con la llegada del nuevo metro,el antiguo y ahora obseleto transmilenio termino en el botadero Doña Juana."
+autowrap_mode = 2
+
+[node name="ImagenJefe" type="TextureRect" parent="Panel" unique_id=732634586]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.514
+anchor_top = 0.377
+anchor_right = 0.514
+anchor_bottom = 0.377
+offset_left = -28.800003
+offset_top = -41.010002
+offset_right = 834.2
+offset_bottom = 1206.99
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.06439822, 0.049755335)
+texture = ExtResource("2_4c8cc")
+
+[node name="BotonSalir" type="TextureButton" parent="Panel" unique_id=1949133785]
+layout_mode = 0
+offset_left = 172.99998
+offset_top = 10.0
+offset_right = 188.99998
+offset_bottom = 26.0
+scale = Vector2(0.7096329, 0.7930263)
+texture_normal = ExtResource("3_pk1cj")
+texture_pressed = ExtResource("4_2p6xg")
+texture_hover = ExtResource("4_2p6xg")
