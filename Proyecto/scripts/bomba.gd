@@ -10,6 +10,7 @@ const DURACION_ADVERTENCIA = 1.5
 @onready var timer = $Timer
 @onready var collision = $CollisionShape2D
 @onready var area_explosion = $AreaExplosion
+@onready var audio_explosion = $AudioExplosion
 
 var jugador: Node2D = null
 var cayendo: bool = true
@@ -17,8 +18,8 @@ var cayendo: bool = true
 func _ready():
 	match GameManager.dificultad_actual:
 		1: DAÑO = 10
-		2: DAÑO = 18
-		3: DAÑO = 25
+		2: DAÑO = 20
+		3: DAÑO = 30
 	explosion.hide()
 	advertencia.hide()
 	sprite.play("Bomba")
@@ -57,6 +58,7 @@ func _explotar():
 	sprite.hide()
 	collision.set_deferred("disabled", true)
 	explosion.show()
+	audio_explosion.play()
 	explosion.play("ExplosionB")
 	for body in area_explosion.get_overlapping_bodies():
 		if body.is_in_group("player"):

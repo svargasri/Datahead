@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cn1qcuk2xpq8i" path="res://Proyecto/scripts/transmi.gd" id="1_x3nfg"]
 [ext_resource type="Texture2D" uid="uid://dbye7bh6of0r8" path="res://assets/AssetsBossAbilities/rayo transmi (1).png" id="2_x3nfg"]
+[ext_resource type="AudioStream" uid="uid://x4jfnc4fyag2" path="res://assets/EfectosDeSonido/SonidosJuego/explision.wav" id="3_bolgv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1mjn8"]
 animations = [{
@@ -31,3 +32,6 @@ shape = SubResource("RectangleShape2D_403sx")
 debug_color = Color(0.990779, 0.09413368, 1.92523e-07, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=2129093017]
+
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." unique_id=37865469]
+stream = ExtResource("3_bolgv")

@@ -9,6 +9,7 @@ const TIEMPO_VIDA = 3.0
 @onready var timer = $Timer
 @onready var collision = $CollisionShape2D
 @onready var raycast = $RayCast2D
+@onready var audio_explosion = $AudioExplosion
 
 var jugador: Node2D = null
 var direccion: Vector2 = Vector2.ZERO
@@ -18,9 +19,9 @@ var listo: bool = false
 
 func _ready():
 	match GameManager.dificultad_actual:
-		1: DAÑO = 10
-		2: DAÑO = 18
-		3: DAÑO = 25
+		1: DAÑO = 5
+		2: DAÑO = 10
+		3: DAÑO = 15
 	explosion.hide()
 	sprite.play("Volar")
 	timer.wait_time = TIEMPO_VIDA
@@ -58,6 +59,7 @@ func explotar():
 	collision.set_deferred("disabled", true)
 	sprite.hide()
 	explosion.show()
+	audio_explosion.play()
 	explosion.play("Explosion")
 	await explosion.animation_finished
 	queue_free()

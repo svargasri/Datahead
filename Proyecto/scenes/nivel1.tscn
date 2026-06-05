@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bmelps26md8nr" path="res://assets/AssetsHUD/Anim habilidades HUD.png" id="12_pcieb"]
 [ext_resource type="Texture2D" uid="uid://chvqxuly31ovb" path="res://assets/AssetsHUD/h1.png" id="12_qrhpj"]
 [ext_resource type="PackedScene" uid="uid://dee68nsantp44" path="res://Proyecto/scenes/boss2.tscn" id="15_vxvsb"]
+[ext_resource type="AudioStream" uid="uid://jif7bthnx3tl" path="res://assets/EfectosDeSonido/SonidosJuego/musica jefe.mp3" id="16_2gaa0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs4ue"]
 texture = ExtResource("1_odb7h")
@@ -410,3 +411,7 @@ sprite_frames = SubResource("SpriteFrames_0qj7i")
 animation = &"cooldown"
 
 [node name="Boss" parent="." unique_id=1431501249 instance=ExtResource("15_vxvsb")]
+
+[node name="MusicaJefe" type="AudioStreamPlayer2D" parent="." unique_id=1708670771]
+stream = ExtResource("16_2gaa0")
+autoplay = true

@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d0yud4rs0chrq" path="res://assets/AssetsMejoras/animacion compra habilidad.png" id="4_kwx6o"]
 [ext_resource type="Texture2D" uid="uid://bmc1knptyv20m" path="res://assets/AssetsMejoras/Animacion boton quit.png" id="7_nqm68"]
 [ext_resource type="Texture2D" uid="uid://dv2rdjsrct33u" path="res://assets/AssetsMejoras/animacion compra habilidadsada.png" id="7_qx76f"]
+[ext_resource type="AudioStream" uid="uid://dv0yb72o21pgg" path="res://assets/EfectosDeSonido/SonidosJuego/mejora.wav" id="7_s4ma7"]
+[ext_resource type="AudioStream" uid="uid://cwp3e234qucx7" path="res://assets/EfectosDeSonido/SonidosJuego/musica ambiente.mp3" id="10_6004n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmhwd"]
 atlas = ExtResource("4_kwx6o")
@@ -427,6 +429,9 @@ animation = &"bonus"
 frame = 4
 frame_progress = 1.0
 
+[node name="AudioMejora" type="AudioStreamPlayer2D" parent="tienda/nodoBonus" unique_id=1479802537]
+stream = ExtResource("7_s4ma7")
+
 [node name="monedas" type="Label" parent="tienda" unique_id=1797207382]
 layout_mode = 0
 offset_left = 11.0
@@ -454,6 +459,9 @@ position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_tn2l8")
 animation = &"compra"
 
+[node name="AudioMejora" type="AudioStreamPlayer2D" parent="tienda/arbolH/padreH" unique_id=1539593746]
+stream = ExtResource("7_s4ma7")
+
 [node name="h2" type="TextureButton" parent="tienda/arbolH" unique_id=1315591488]
 offset_left = 200.0
 offset_top = 93.0
@@ -469,6 +477,9 @@ visible = false
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_4ongm")
 animation = &"compra"
+
+[node name="AudioMejora" type="AudioStreamPlayer2D" parent="tienda/arbolH/h2" unique_id=1911790296]
+stream = ExtResource("7_s4ma7")
 
 [node name="h3" type="TextureButton" parent="tienda/arbolH" unique_id=928829728]
 offset_left = 200.0
@@ -486,6 +497,9 @@ position = Vector2(8, 7)
 sprite_frames = SubResource("SpriteFrames_eppjx")
 animation = &"compra"
 
+[node name="AudioMejora" type="AudioStreamPlayer2D" parent="tienda/arbolH/h3" unique_id=1380854930]
+stream = ExtResource("7_s4ma7")
+
 [node name="arbolP" type="Node2D" parent="tienda" unique_id=1249260089]
 
 [node name="padreP" type="TextureButton" parent="tienda/arbolP" unique_id=84767877]
@@ -501,6 +515,9 @@ visible = false
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_gqv3x")
 animation = &"compra"
+
+[node name="AudioMejora" type="AudioStreamPlayer2D" parent="tienda/arbolP/padreP" unique_id=197300876]
+stream = ExtResource("7_s4ma7")
 
 [node name="p2" type="TextureButton" parent="tienda/arbolP" unique_id=1170182628]
 offset_left = 229.0
@@ -518,6 +535,9 @@ position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_odpq7")
 animation = &"compra"
 
+[node name="AudioMejora" type="AudioStreamPlayer2D" parent="tienda/arbolP/p2" unique_id=1299338960]
+stream = ExtResource("7_s4ma7")
+
 [node name="p3" type="TextureButton" parent="tienda/arbolP" unique_id=692963958]
 offset_left = 229.0
 offset_top = 134.0
@@ -533,6 +553,9 @@ visible = false
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_xkfjl")
 animation = &"compra"
+
+[node name="AudioMejora" type="AudioStreamPlayer2D" parent="tienda/arbolP/p3" unique_id=825287054]
+stream = ExtResource("7_s4ma7")
 
 [node name="arbolE" type="Node2D" parent="tienda" unique_id=1273477707]
 
@@ -550,6 +573,9 @@ position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_ey52q")
 animation = &"compra"
 
+[node name="AudioMejora" type="AudioStreamPlayer2D" parent="tienda/arbolE/padreE" unique_id=650690155]
+stream = ExtResource("7_s4ma7")
+
 [node name="e2" type="TextureButton" parent="tienda/arbolE" unique_id=236716292]
 offset_left = 171.0
 offset_top = 104.0
@@ -565,6 +591,9 @@ visible = false
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_2n421")
 animation = &"compra"
+
+[node name="AudioMejora" type="AudioStreamPlayer2D" parent="tienda/arbolE/e2" unique_id=437348712]
+stream = ExtResource("7_s4ma7")
 
 [node name="e3" type="TextureButton" parent="tienda/arbolE" unique_id=184549869]
 offset_left = 171.0
@@ -583,6 +612,9 @@ sprite_frames = SubResource("SpriteFrames_6004n")
 animation = &"compra"
 frame_progress = 0.45900738
 
+[node name="AudioMejora" type="AudioStreamPlayer2D" parent="tienda/arbolE/e3" unique_id=4472189]
+stream = ExtResource("7_s4ma7")
+
 [node name="gestorMonedas" type="Node" parent="tienda" unique_id=530027359]
 script = ExtResource("2_1g42o")
 
@@ -598,3 +630,7 @@ position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_71ffc")
 animation = &"salir"
 frame_progress = 1.0
+
+[node name="Musicaambiente" type="AudioStreamPlayer2D" parent="." unique_id=801175202]
+stream = ExtResource("10_6004n")
+autoplay = true

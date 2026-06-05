@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6pwkkps32fe" path="res://Proyecto/scripts/habilidad_1.gd" id="1_5hflw"]
 [ext_resource type="Texture2D" uid="uid://lo4yndf5lju1" path="res://assets/AssetsJugador/basica1.png" id="2_6ks36"]
+[ext_resource type="AudioStream" uid="uid://x4jfnc4fyag2" path="res://assets/EfectosDeSonido/SonidosJuego/explision.wav" id="3_nx5j5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ks36"]
 atlas = ExtResource("2_6ks36")
@@ -121,3 +122,6 @@ frame = 2
 frame_progress = 1.0
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1540546786]
+
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." unique_id=1133807948]
+stream = ExtResource("3_nx5j5")

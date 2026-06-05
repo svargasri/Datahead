@@ -9,6 +9,7 @@ var impactando: bool = false
 
 @onready var raycast = $RayCast2D
 @onready var sprite = $AnimatedSprite2D
+@onready var audio_explosion = $AudioExplosion
 
 func _ready():
 	velocidad = Vector2(VELOCIDAD_X * direccion, VELOCIDAD_Y)
@@ -41,6 +42,7 @@ func _on_area_entered(area):
 func _impactar():
 	impactando = true
 	set_process(false)
+	audio_explosion.play()
 	sprite.play("impacto")
 	await sprite.animation_finished
 	queue_free()

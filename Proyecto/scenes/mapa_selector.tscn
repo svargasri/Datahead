@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bfu36vjac4br7" path="res://assets/AssetsHUD/Animacion boton jugar1.png" id="10_wsj7p"]
 [ext_resource type="Texture2D" uid="uid://chpow171fsvur" path="res://assets/AssetsHUD/Animacion boton jugar2.png" id="11_3t17l"]
 [ext_resource type="PackedScene" uid="uid://b7ddvylwuv3dl" path="res://Proyecto/scenes/arbol_habilidades.tscn" id="13_wsj7p"]
+[ext_resource type="AudioStream" uid="uid://cwp3e234qucx7" path="res://assets/EfectosDeSonido/SonidosJuego/musica ambiente.mp3" id="14_3t17l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3t17l"]
 texture = ExtResource("2_uk4xb")
@@ -201,6 +202,11 @@ texture_pressed = ExtResource("9_4t3mf")
 
 [node name="ArbolHabilidades" parent="." unique_id=1337936077 instance=ExtResource("13_wsj7p")]
 visible = false
+
+[node name="Musicaambiente" type="AudioStreamPlayer2D" parent="." unique_id=1946421761]
+position = Vector2(1, 0)
+stream = ExtResource("14_3t17l")
+autoplay = true
 
 [connection signal="pressed" from="UI/MenuNivel/BotonJugar" to="." method="_al_presionar_jugar"]
 [connection signal="pressed" from="UI/MenuNivel/BotonCerrar" to="." method="_al_presionar_cerrar"]

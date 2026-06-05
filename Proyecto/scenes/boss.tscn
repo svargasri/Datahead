@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dy4pmu3ia7pon" path="res://Proyecto/scenes/sitps.tscn" id="3_y6vuu"]
 [ext_resource type="PackedScene" uid="uid://dvsaxo1w4ubxs" path="res://Proyecto/scenes/registradora.tscn" id="4_0ca0p"]
 [ext_resource type="PackedScene" uid="uid://c23fhvwbuk01w" path="res://Proyecto/scenes/tullave.tscn" id="5_bvd6y"]
+[ext_resource type="AudioStream" uid="uid://d3hd83f5p6uei" path="res://assets/EfectosDeSonido/SonidosJuego/daño jefe.wav" id="10_bvd6y"]
+[ext_resource type="AudioStream" uid="uid://c5ci43gpabyni" path="res://assets/EfectosDeSonido/SonidosJuego/muerte.wav" id="11_armas"]
+[ext_resource type="AudioStream" uid="uid://r26stkbva8fj" path="res://assets/EfectosDeSonido/SonidosJuego/disparo general.wav" id="12_w124n"]
 [ext_resource type="Texture2D" uid="uid://crbgihokbvm38" path="res://assets/AssetsBoss/HPBar/Marco barra jefe1.png" id="15_mgse4"]
 [ext_resource type="Texture2D" uid="uid://co6iq18058y7s" path="res://assets/AssetsBoss/jefe transmi.png" id="15_trx0q"]
 [ext_resource type="Texture2D" uid="uid://da7mejcvdprud" path="res://assets/AssetsBoss/HPBar/Marco barra jefe2.png" id="16_ga8o7"]
@@ -457,6 +460,15 @@ position = Vector2(2, 60)
 sprite_frames = SubResource("SpriteFrames_18i6b")
 animation = &"glitch"
 frame_progress = 0.04988339
+
+[node name="AudioDaño" type="AudioStreamPlayer2D" parent="." unique_id=1193443234]
+stream = ExtResource("10_bvd6y")
+
+[node name="AudioMuerte" type="AudioStreamPlayer2D" parent="." unique_id=1119960164]
+stream = ExtResource("11_armas")
+
+[node name="AudioDisparo" type="AudioStreamPlayer2D" parent="." unique_id=918137716]
+stream = ExtResource("12_w124n")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

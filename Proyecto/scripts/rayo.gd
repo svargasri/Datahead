@@ -18,9 +18,9 @@ const INTERVALO_TICK: float = 0.1
 func _ready():
 	match GameManager.dificultad_actual:
 		
-		1: DAÑO_POR_SEGUNDO = 20.0
-		2: DAÑO_POR_SEGUNDO = 35.0
-		3: DAÑO_POR_SEGUNDO = 50.0
+		1: DAÑO_POR_SEGUNDO = 10.0
+		2: DAÑO_POR_SEGUNDO = 25.0
+		3: DAÑO_POR_SEGUNDO = 40.0
 		
 	collision.set_deferred("disabled", true)
 	sprite.scale.x = 15.0
@@ -65,5 +65,5 @@ func _process(delta):
 		if overlaps_body(jugador):
 			tick_timer += delta
 			if tick_timer >= INTERVALO_TICK:
-				jugador.recibir_daño(2.5)
+				jugador.recibir_daño(int(DAÑO_POR_SEGUNDO * INTERVALO_TICK))
 				tick_timer = 0.0

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://0y6amelt5txx" path="res://Proyecto/scripts/habilidad_2.gd" id="1_q41v1"]
 [ext_resource type="Texture2D" uid="uid://bs3kidxcen7fn" path="res://assets/AssetsJugador/especialm1.png" id="2_ejqjr"]
 [ext_resource type="Texture2D" uid="uid://c28hoxbtaan2f" path="res://assets/AssetsJugador/explosion.png" id="3_0shaa"]
+[ext_resource type="AudioStream" uid="uid://x4jfnc4fyag2" path="res://assets/EfectosDeSonido/SonidosJuego/explision.wav" id="4_0shaa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75s4p"]
 atlas = ExtResource("3_0shaa")
@@ -232,3 +233,6 @@ sprite_frames = SubResource("SpriteFrames_75s4p")
 animation = &"impacto"
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1958522270]
+
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." unique_id=294255779]
+stream = ExtResource("4_0shaa")

@@ -1,3 +1,5 @@
+AudioStreamPlayer2D
+AudioListener2D
 Panel
 TextureButton
 TextureRect
@@ -10,5 +12,3 @@ RayCast2D
 VisibleOnScreenNotifier2D
 VisibleOnScreenEnabler2D
 CollisionShape2D
-Area2D
-TileMap

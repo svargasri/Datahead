@@ -5,6 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bo4q41h3mj2xi" path="res://Proyecto/scenes/habilidad_2.tscn" id="3_haw3e"]
 [ext_resource type="Texture2D" uid="uid://wtcni6m32xvs" path="res://assets/AssetsJugador/personajeMartin.png" id="3_ik3h8"]
 [ext_resource type="PackedScene" uid="uid://c0v4ie8qvomhh" path="res://Proyecto/scenes/habilidad_3.tscn" id="4_won7n"]
+[ext_resource type="AudioStream" uid="uid://r26stkbva8fj" path="res://assets/EfectosDeSonido/SonidosJuego/disparo general.wav" id="6_dgoop"]
+[ext_resource type="AudioStream" uid="uid://bu4y5y42evitr" path="res://assets/EfectosDeSonido/SonidosJuego/daño prota.wav" id="7_8fyft"]
+[ext_resource type="AudioStream" uid="uid://cmicvsfxmiy4m" path="res://assets/EfectosDeSonido/SonidosJuego/salto.wav" id="8_yx5g2"]
+[ext_resource type="AudioStream" uid="uid://c5ci43gpabyni" path="res://assets/EfectosDeSonido/SonidosJuego/muerte.wav" id="9_rkcs8"]
+[ext_resource type="AudioStream" uid="uid://b1anpap1ythaj" path="res://assets/EfectosDeSonido/SonidosJuego/coldown.wav" id="10_8fyft"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ik3h8"]
 atlas = ExtResource("3_ik3h8")
@@ -268,3 +273,18 @@ shape = SubResource("CapsuleShape2D_ki88i")
 [node name="Muzzle" type="Marker2D" parent="." unique_id=1123494627]
 position = Vector2(10.000003, 2.0000124)
 scale = Vector2(1, -21.277)
+
+[node name="AudioDisparo" type="AudioStreamPlayer2D" parent="." unique_id=1928568235]
+stream = ExtResource("6_dgoop")
+
+[node name="AudioDaño" type="AudioStreamPlayer2D" parent="." unique_id=382919793]
+stream = ExtResource("7_8fyft")
+
+[node name="AudioSalto" type="AudioStreamPlayer2D" parent="." unique_id=416856156]
+stream = ExtResource("8_yx5g2")
+
+[node name="AudioMuerte" type="AudioStreamPlayer2D" parent="." unique_id=807965240]
+stream = ExtResource("9_rkcs8")
+
+[node name="AudioCooldown" type="AudioStreamPlayer2D" parent="." unique_id=1460398445]
+stream = ExtResource("10_8fyft")

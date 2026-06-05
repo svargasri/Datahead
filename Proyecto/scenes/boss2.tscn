@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bkurehodr41r1" path="res://Proyecto/scenes/bomba.tscn" id="4_jyovd"]
 [ext_resource type="PackedScene" uid="uid://bgn6j65nay21k" path="res://Proyecto/scenes/rocketLL.tscn" id="5_uflkr"]
 [ext_resource type="Texture2D" uid="uid://dm83s4858daod" path="res://assets/AssetsBoss/Muerte/Jefe7.png" id="6_hfhjd"]
-[ext_resource type="Texture2D" uid="uid://cqoj56qjbplsl" path="res://assets/AssetsHUD/Muerte_Transmi.png" id="6_tnsqg"]
 [ext_resource type="Texture2D" uid="uid://d3i0cullt3q47" path="res://assets/AssetsBoss/Muerte/Jefe8.png" id="7_bigwm"]
 [ext_resource type="Texture2D" uid="uid://7boyombew7n" path="res://assets/AssetsBoss/Muerte/Jefe9.png" id="8_o5ggl"]
 [ext_resource type="Texture2D" uid="uid://bqds38oghrpai" path="res://assets/AssetsBoss/Muerte/Jefe10.png" id="9_31xin"]
@@ -22,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://crbgihokbvm38" path="res://assets/AssetsBoss/HPBar/Marco barra jefe1.png" id="19_x28g2"]
 [ext_resource type="Texture2D" uid="uid://da7mejcvdprud" path="res://assets/AssetsBoss/HPBar/Marco barra jefe2.png" id="20_5wupx"]
 [ext_resource type="Texture2D" uid="uid://5sx6oggbcxmk" path="res://assets/AssetsJugador/efecto glitch.png" id="21_gwo8l"]
+[ext_resource type="AudioStream" uid="uid://d3hd83f5p6uei" path="res://assets/EfectosDeSonido/SonidosJuego/daño jefe.wav" id="22_jyovd"]
+[ext_resource type="AudioStream" uid="uid://c5ci43gpabyni" path="res://assets/EfectosDeSonido/SonidosJuego/muerte.wav" id="23_uflkr"]
+[ext_resource type="AudioStream" uid="uid://r26stkbva8fj" path="res://assets/EfectosDeSonido/SonidosJuego/disparo general.wav" id="24_hfhjd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_juacg"]
 animations = [{
@@ -334,8 +336,6 @@ rayo_scene = ExtResource("2_tnsqg")
 cohete_scene = ExtResource("3_hj4lr")
 bomba_scene = ExtResource("4_jyovd")
 lluvia_scene = ExtResource("5_uflkr")
-imagen_victoria = ExtResource("6_tnsqg")
-texto_victoria = "Y asi fue como el pobre Transmilenio ,El K43 que lo llevaba todas las mañanas a la universidad .Termino con irreparables daños en 2 de sus tres modulos.  La decision de la alcaldia fue subastar lo que quedaba al mejor postor ,sin embargo con la llegada del nuevo metro,el antiguo y ahora obseleto transmilenio termino en el botadero Doña Juana."
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1095773606]
 sprite_frames = SubResource("SpriteFrames_juacg")
@@ -395,6 +395,15 @@ position = Vector2(2, 60)
 sprite_frames = SubResource("SpriteFrames_18i6b")
 animation = &"glitch"
 frame_progress = 0.04988339
+
+[node name="AudioDaño" type="AudioStreamPlayer2D" parent="." unique_id=1348569635]
+stream = ExtResource("22_jyovd")
+
+[node name="AudioMuerte" type="AudioStreamPlayer2D" parent="." unique_id=1490077955]
+stream = ExtResource("23_uflkr")
+
+[node name="AudioDisparo" type="AudioStreamPlayer2D" parent="." unique_id=1794767018]
+stream = ExtResource("24_hfhjd")
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

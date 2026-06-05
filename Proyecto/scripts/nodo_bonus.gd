@@ -7,6 +7,7 @@ var comprado: bool = false
 @onready var raiz_empanada = $"../arbolE/padreE"
 @onready var raiz_pizza = $"../arbolP/padreP"
 @onready var animacion = $AnimatedSprite2D
+@onready var audio_mejora = $AudioMejora
 
 func _ready():
 	pressed.connect(_intentar_comprar)
@@ -27,6 +28,7 @@ func _intentar_comprar():
 	if gestor and gestor.monedas >= costo:
 		gestor.monedas -= costo
 		comprado = true
+		audio_mejora.play()
 		_actualizar_visual()
 	else:
 		print("No tienes suficientes monedas")

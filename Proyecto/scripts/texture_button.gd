@@ -3,6 +3,7 @@ extends TextureButton
 @export var costo: int = 10
 @export var nodo_padre: NodePath
 @export var efecto: String = ""
+@onready var audio_mejora = $AudioMejora
 
 var comprado: bool = false
 
@@ -29,6 +30,7 @@ func _intentar_comprar():
 	if gestor and gestor.monedas >= costo:
 		gestor.monedas -= costo
 		comprado = true
+		audio_mejora.play()
 		_actualizar_visual()
 		_aplicar_efecto()
 	else:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwp3e234qucx7"
+path="res://.godot/imported/musica ambiente.mp3-8d555eb08ef9cd6f90d957d3d969a452.mp3str"
+
+[deps]
+
+source_file="res://assets/EfectosDeSonido/SonidosJuego/musica ambiente.mp3"
+dest_files=["res://.godot/imported/musica ambiente.mp3-8d555eb08ef9cd6f90d957d3d969a452.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

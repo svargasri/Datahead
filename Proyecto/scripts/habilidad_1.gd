@@ -7,6 +7,7 @@ var impactando: bool = false
 
 @onready var raycast = $RayCast2D
 @onready var sprite = $AnimatedSprite2D
+@onready var audio_explosion = $AudioExplosion
 
 func _ready():
 	sprite.play("volar")
@@ -38,6 +39,7 @@ func _on_area_entered(area):
 func _impactar():
 	impactando = true
 	set_process(false)
+	audio_explosion.play()
 	sprite.play("impacto")
 	sprite.flip_h = direccion == -1
 	await sprite.animation_finished

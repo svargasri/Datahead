@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://jtiv4hnr63hd" path="res://Proyecto/scripts/rocket_ll.gd" id="1_lmuri"]
 [ext_resource type="Texture2D" uid="uid://dldhpu105j023" path="res://assets/AssetsBossAbilities/lluvia cohetes (1).png" id="2_lmuri"]
 [ext_resource type="Texture2D" uid="uid://d21m2h6lkb73e" path="res://assets/AssetsBossAbilities/Explosion/explosion.png" id="3_h48bd"]
+[ext_resource type="AudioStream" uid="uid://x4jfnc4fyag2" path="res://assets/EfectosDeSonido/SonidosJuego/explision.wav" id="4_jpmur"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jpmur"]
 atlas = ExtResource("2_lmuri")
@@ -123,6 +124,9 @@ frame_progress = 0.17179571
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1515480193]
 target_position = Vector2(0, 16)
+
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." unique_id=223122510]
+stream = ExtResource("4_jpmur")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dlip2bsfypb2k" path="res://Proyecto/scripts/habilidad_3.gd" id="1_gn6kw"]
 [ext_resource type="Texture2D" uid="uid://b7hw4hkevx86x" path="res://assets/AssetsJugador/definitiva.png" id="2_nnfcx"]
+[ext_resource type="AudioStream" uid="uid://x4jfnc4fyag2" path="res://assets/EfectosDeSonido/SonidosJuego/explision.wav" id="3_hnd1e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hnd1e"]
 atlas = ExtResource("2_nnfcx")
@@ -110,3 +111,6 @@ shape = SubResource("CircleShape2D_krtxn")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1455288613]
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1139094714]
+
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." unique_id=1244160304]
+stream = ExtResource("3_hnd1e")

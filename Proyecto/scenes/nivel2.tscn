@@ -14,8 +14,8 @@
 [ext_resource type="Script" uid="uid://etujloubr10j" path="res://Proyecto/scripts/boton_pausa.gd" id="11_i1xf0"]
 [ext_resource type="Texture2D" uid="uid://chvqxuly31ovb" path="res://assets/AssetsHUD/h1.png" id="12_i1gj8"]
 [ext_resource type="Texture2D" uid="uid://bmelps26md8nr" path="res://assets/AssetsHUD/Anim habilidades HUD.png" id="13_g5olg"]
-[ext_resource type="Texture2D" uid="uid://cqoj56qjbplsl" path="res://assets/AssetsHUD/Muerte_Transmi.png" id="15_1vpty"]
 [ext_resource type="PackedScene" uid="uid://6g50dnarqmj2" path="res://Proyecto/scenes/transmi.tscn" id="15_ciyyo"]
+[ext_resource type="AudioStream" uid="uid://jif7bthnx3tl" path="res://assets/EfectosDeSonido/SonidosJuego/musica jefe.mp3" id="16_ciyyo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs4ue"]
 texture = ExtResource("1_j4d60")
@@ -425,6 +425,10 @@ animation = &"cooldown"
 [node name="Boss" parent="." unique_id=1431501249 instance=ExtResource("3_1vpty")]
 position = Vector2(294, 106)
 rayo_scene = ExtResource("15_ciyyo")
-imagen_victoria = ExtResource("15_1vpty")
-texto_victoria = "Y asi fue como el pobre Transmilenio ,El K43 que lo llevaba todas las mañanas a la universidad .Termino con irreparables daños en 2 de sus tres modulos.  La decision de la alcaldia fue subastar lo que quedaba al mejor postor ,sin embargo con la llegada del nuevo metro,el antiguo y ahora obseleto transmilenio termino en el botadero Doña Juana."
 nivel_key = "nivel2"
+
+[node name="MusicaJefe" type="AudioStreamPlayer2D" parent="." unique_id=1172313426]
+position = Vector2(294, 106)
+stream = ExtResource("16_ciyyo")
+volume_db = 1.351
+autoplay = true

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bcqn8pl5hynfx" path="res://assets/AssetsBossAbilities/Bomba/aviso caida explosion.png" id="3_lrku0"]
 [ext_resource type="Texture2D" uid="uid://c36udo41c72l1" path="res://assets/AssetsBossAbilities/explosion en area4 (1).png" id="3_y3uwi"]
 [ext_resource type="Texture2D" uid="uid://bqx00aax1n4hl" path="res://assets/AssetsBossAbilities/Bomba/explosion.png" id="4_y3uwi"]
+[ext_resource type="AudioStream" uid="uid://x4jfnc4fyag2" path="res://assets/EfectosDeSonido/SonidosJuego/explision.wav" id="6_lrku0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvh2p"]
 animations = [{
@@ -144,6 +145,9 @@ shape = SubResource("RectangleShape2D_x86cx")
 debug_color = Color(1, 0.608052, 0.5399055, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=623818749]
+
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." unique_id=947072848]
+stream = ExtResource("6_lrku0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
