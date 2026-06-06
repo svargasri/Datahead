@@ -24,6 +24,7 @@ var vida: int = 100
 var max_vida: int = 100
 var vidas: int = 3
 var recibiendo_daño: bool = false
+var bonus_activo: bool = false
 var muerto: bool = false
 var cooldown_h1: float = 0.3
 var cooldown_h2: float = 5
@@ -43,6 +44,10 @@ var apunta_derecha = true
 func _ready():
 	hp_bar.max_value = max_vida
 	hp_bar.value = vida
+	dano_h1 += GameManager.get_bonus_daño_h1()
+	dano_h2 += GameManager.get_bonus_daño_h2()
+	dano_h3 += GameManager.get_bonus_daño_h3()
+	bonus_activo = GameManager.esta_comprada("bonus")
 	corazon1.play("girar")
 	corazon2.play("girar")
 	corazon3.play("girar")
@@ -78,6 +83,7 @@ func _usar_h1() -> void:
 	sprite.play("disparar")
 	var p = proyectil_h1.instantiate()
 	p.dano = dano_h1
+	p.dano = dano_h1 + (10 if bonus_activo else 0)
 	p.global_position = $Muzzle.global_position + Vector2(20 * (1 if apunta_derecha else -1), 0)
 	p.direccion = 1 if apunta_derecha else -1
 	get_tree().current_scene.add_child(p)
@@ -91,6 +97,7 @@ func _usar_h2() -> void:
 	sprite.play("disparar")
 	var p = proyectil_h2.instantiate()
 	p.dano = dano_h2
+	p.dano = dano_h2 + (10 if bonus_activo else 0)
 	p.global_position = $Muzzle.global_position
 	p.direccion = 1 if apunta_derecha else -1
 	get_tree().current_scene.add_child(p)
@@ -106,6 +113,7 @@ func _usar_h3() -> void:
 	sprite.play("disparar")
 	var p = proyectil_h3.instantiate()
 	p.dano = dano_h3
+	p.dano = dano_h3 + (2 if bonus_activo else 0)
 	p.global_position = $Muzzle.global_position
 	p.direccion = 1 if apunta_derecha else -1
 	get_tree().current_scene.add_child(p)

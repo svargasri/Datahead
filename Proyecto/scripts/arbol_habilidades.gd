@@ -10,9 +10,10 @@ func _input(event):
 		visible = false
 	if event.is_action_pressed("abrir_tienda"):
 		visible = !visible
-
+		
 func abrir():
 	visible = true
+	$tienda.mouse_filter = Control.MOUSE_FILTER_STOP
 
 @onready var boton_salir = $tienda/BotonSalir
 
@@ -21,5 +22,7 @@ func _hover_salir():
 
 func _cerrar():
 	visible = false
-	# Devolver control al personaje
-	get_tree().get_first_node_in_group("personaje").puede_moverse = true
+	var mapa = get_tree().get_first_node_in_group("mapa_selector")
+	if mapa:
+		mapa.menu_abierto = false
+		mapa.personaje.puede_moverse = true

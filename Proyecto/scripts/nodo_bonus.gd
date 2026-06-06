@@ -8,9 +8,12 @@ var comprado: bool = false
 @onready var raiz_pizza = $"../arbolP/padreP"
 @onready var animacion = $AnimatedSprite2D
 @onready var audio_mejora = $AudioMejora
+@export var id_habilidad: String = "bonus"
 
 func _ready():
 	pressed.connect(_intentar_comprar)
+	if GameManager.esta_comprada(id_habilidad):
+		comprado = true
 	_actualizar_visual()
 
 func _todos_completos() -> bool:
@@ -24,10 +27,10 @@ func _intentar_comprar():
 	if not _todos_completos():
 		print("Debes completar los 3 árboles primero")
 		return
-	var gestor = get_tree().get_first_node_in_group("gestor_monedas")
-	if gestor and gestor.monedas >= costo:
-		gestor.monedas -= costo
+	if GameManager.monedas >= costo:
+		GameManager.monedas -= costo
 		comprado = true
+		GameManager.marcar_comprada(id_habilidad)
 		audio_mejora.play()
 		_actualizar_visual()
 	else:

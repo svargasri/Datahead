@@ -240,9 +240,14 @@ func morir():
 	attack_timer.stop()
 	audio_muerte.play()
 	sprite.play("Death")
+	var tree = get_tree()
 	await sprite.animation_finished
 	GameManager.desbloquear_siguiente(nivel_key)
-	get_tree().change_scene_to_file("res://Proyecto/scenes/mapa_selector.tscn")
+	match GameManager.dificultad_actual:
+		1: GameManager.agregar_monedas(10)
+		2: GameManager.agregar_monedas(20)
+		3: GameManager.agregar_monedas(30)
+	tree.change_scene_to_file("res://Proyecto/scenes/mapa_selector.tscn")
 
 func aplicar_glitch(dano_tick: int, duracion: float, intervalo: float):
 	if glitch_activo: return

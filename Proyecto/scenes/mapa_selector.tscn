@@ -37,7 +37,7 @@ radius = 36.05551
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0reaw"]
 size = Vector2(79, 82)
 
-[node name="Mapa selector" type="Node2D" unique_id=386519054]
+[node name="Mapa selector" type="Node2D" unique_id=386519054 groups=["mapa_selector"]]
 script = ExtResource("1_4mv3e")
 
 [node name="Terreno" type="TileMapLayer" parent="." unique_id=1690358656]

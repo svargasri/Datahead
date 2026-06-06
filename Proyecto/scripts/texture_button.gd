@@ -4,6 +4,7 @@ extends TextureButton
 @export var nodo_padre: NodePath
 @export var efecto: String = ""
 @onready var audio_mejora = $AudioMejora
+@export var id_habilidad: String = ""
 
 var comprado: bool = false
 
@@ -11,6 +12,8 @@ var comprado: bool = false
 
 func _ready():
 	pressed.connect(_intentar_comprar)
+	if id_habilidad != "" and GameManager.esta_comprada(id_habilidad):
+		comprado = true
 	_actualizar_visual()
 
 func esta_disponible() -> bool:
@@ -26,10 +29,11 @@ func _intentar_comprar():
 	if not esta_disponible():
 		print("Debes comprar el nodo anterior primero")
 		return
-	var gestor = get_tree().get_first_node_in_group("gestor_monedas")
-	if gestor and gestor.monedas >= costo:
-		gestor.monedas -= costo
+	if GameManager.monedas >= costo:
+		GameManager.monedas -= costo
 		comprado = true
+		if id_habilidad != "":
+			GameManager.marcar_comprada(id_habilidad)
 		audio_mejora.play()
 		_actualizar_visual()
 		_aplicar_efecto()
@@ -66,5 +70,5 @@ func _aplicar_efecto():
 	match efecto:
 		"daño_h1": jugador.dano_h1 += 5
 		"daño_h2": jugador.dano_h2 += 5
-		"daño_h3": jugador.dano_h3 += 5
+		"daño_h3": jugador.dano_h3 += 1
 		"bonus": jugador.bonus_activo = true
