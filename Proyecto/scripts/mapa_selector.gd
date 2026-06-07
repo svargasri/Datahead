@@ -7,7 +7,7 @@ extends Node2D
 @onready var label_accion      = $UI/LabelAccion
 @onready var menu_nivel        = $UI/MenuNivel
 @onready var imagen_jefe       = $UI/MenuNivel/TextureRect
-@onready var label_historia    = $UI/MenuNivel/LabelHistoria
+
 @onready var boton_dif1        = $UI/MenuNivel/BotonDif1
 @onready var boton_dif2        = $UI/MenuNivel/BotonDif2
 @onready var boton_dif3        = $UI/MenuNivel/BotonDif3
@@ -56,7 +56,7 @@ func _abrir_menu():
 		return
 
 	imagen_jefe.texture     = halo_activo.imagen_jefe
-	label_historia.text     = halo_activo.texto_historia
+	
 	menu_nivel.visible      = true
 	label_accion.visible    = false
 	menu_abierto            = true
