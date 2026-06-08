@@ -16,6 +16,7 @@ const JUMP_VELOCITY = -300.0
 @onready var audio_muerte = $AudioMuerte
 @onready var audio_cooldown = $AudioCooldown
 
+
 # 2. HABILIDADES
 var dano_h1: int = 5
 var dano_h2: int = 10
@@ -53,6 +54,9 @@ func _ready():
 	corazon3.play("girar")
 	icono_h2.play("activo")
 	icono_h3.play("activo")
+	dano_h1 += GameManager.bonus_quiz_h1
+	dano_h2 += GameManager.bonus_quiz_h2
+	dano_h3 += GameManager.bonus_quiz_h3
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

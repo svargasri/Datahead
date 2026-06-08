@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bwhghfkfkya7y"]
+
+[ext_resource type="Script" uid="uid://bfha3gymwgycl" path="res://Proyecto/scripts/preguntas.gd" id="1_5ityq"]
+[ext_resource type="Texture2D" uid="uid://ch1m2t8l4ldvc" path="res://assets/AssetsBoss/jefe Jonatan (1).png" id="2_2hcal"]
+[ext_resource type="FontFile" uid="uid://g0rpmf6i3fs3" path="res://assets/new_font_file.tres" id="3_tma8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6lsw"]
+atlas = ExtResource("2_2hcal")
+region = Rect2(0, 0, 80, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxnox"]
+atlas = ExtResource("2_2hcal")
+region = Rect2(80, 0, 80, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0dve"]
+atlas = ExtResource("2_2hcal")
+region = Rect2(160, 0, 80, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7inr7"]
+atlas = ExtResource("2_2hcal")
+region = Rect2(240, 0, 80, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uro8g"]
+atlas = ExtResource("2_2hcal")
+region = Rect2(320, 0, 80, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_446u0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6lsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxnox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0dve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7inr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uro8g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eo7ga"]
+radius = 34.0
+height = 128.0
+
+[node name="Node2D" type="Area2D" unique_id=2044426451]
+script = ExtResource("1_5ityq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1535839929]
+sprite_frames = SubResource("SpriteFrames_446u0")
+autoplay = "default"
+frame_progress = 0.13002977
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=411249802]
+position = Vector2(6, 14)
+shape = SubResource("CapsuleShape2D_eo7ga")
+
+[node name="menu_quiz" type="CanvasLayer" parent="." unique_id=477774346]
+
+[node name="Panel" type="Panel" parent="menu_quiz" unique_id=1361039336]
+offset_left = 60.0
+offset_top = 30.0
+offset_right = 260.0
+offset_bottom = 160.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="label_pregunta" type="Label" parent="menu_quiz/Panel" unique_id=647531311]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 190.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("3_tma8y")
+theme_override_font_sizes/font_size = 10
+
+[node name="boton_a" type="Button" parent="menu_quiz/Panel" unique_id=2010423933]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 40.0
+offset_right = 190.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_tma8y")
+theme_override_font_sizes/font_size = 8
+autowrap_mode = 2
+autowrap_trim_flags = 192
+clip_text = true
+
+[node name="label_resultado" type="Label" parent="menu_quiz/Panel" unique_id=115115565]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 131.0
+offset_right = 137.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("3_tma8y")
+theme_override_font_sizes/font_size = 10
+
+[node name="boton_b" type="Button" parent="menu_quiz/Panel" unique_id=514930523]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = 190.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("3_tma8y")
+theme_override_font_sizes/font_size = 8
+autowrap_mode = 3
+autowrap_trim_flags = 192
+clip_text = true
+
+[node name="boton_c" type="Button" parent="menu_quiz/Panel" unique_id=2055630739]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 100.0
+offset_right = 190.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("3_tma8y")
+theme_override_font_sizes/font_size = 8
+autowrap_mode = 2
+autowrap_trim_flags = 192
+clip_text = true

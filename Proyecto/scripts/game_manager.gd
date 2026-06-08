@@ -49,3 +49,7 @@ func get_bonus_daño_h3() -> int:
 	if esta_comprada("e2"):     bonus += 1
 	if esta_comprada("e3"):     bonus += 1
 	return bonus
+
+var bonus_quiz_h1: int = 0
+var bonus_quiz_h2: int = 0
+var bonus_quiz_h3: int = 0
