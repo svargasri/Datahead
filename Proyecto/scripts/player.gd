@@ -165,11 +165,13 @@ func _morir():
 	puede_h3 = false
 	audio_muerte.play()
 	sprite.play("muerte")
+	var menu = get_tree().get_first_node_in_group("menu_resultado")
 	await sprite.animation_finished
 	vidas -= 1
 	_actualizar_corazones()
 	if vidas <= 0:
-		queue_free()
+		if menu:
+			menu.mostrar_derrota()
 	else:
 		_respawnear()
 

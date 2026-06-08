@@ -34,7 +34,6 @@ texture_region_size = Vector2i(32, 32)
 4:0/0 = 0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bdl1g"]
-load_path = "res://.godot/imported/tileset2.0.png-fb6180f9aae6cf8303397b3ffce467e1.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jr51l"]
 texture = SubResource("CompressedTexture2D_bdl1g")

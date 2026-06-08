@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ditldlc08nq62" path="res://assets/TileSet/PlazaChe/tile set plaza che preview.png" id="1_j4d60"]
 [ext_resource type="Texture2D" uid="uid://d4dspbn88026r" path="res://assets/TileSet/EstacionTransmi/tile set Sia.png" id="2_1vpty"]
 [ext_resource type="PackedScene" uid="uid://bkbb0i6kajp6d" path="res://Proyecto/scenes/player.tscn" id="2_cibhh"]
-[ext_resource type="PackedScene" uid="uid://btuib7pwsalnx" path="res://Proyecto/scenes/boss.tscn" id="3_1vpty"]
+[ext_resource type="PackedScene" uid="uid://btuib7pwsalnx" path="res://Proyecto/scenes/boss2.tscn" id="3_1vpty"]
 [ext_resource type="Texture2D" uid="uid://btv1a1hy1h6tn" path="res://assets/TileSet/EstacionTransmi/fondo transmi (3).png" id="5_ciyyo"]
 [ext_resource type="Texture2D" uid="uid://btu6jnqqb4fk" path="res://assets/AssetsHUD/Animacion barra jugador1.png" id="5_w65pk"]
 [ext_resource type="Texture2D" uid="uid://duaqgelhydmlu" path="res://assets/AssetsHUD/Animacion barra jugador2.png" id="6_vwdlb"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bmelps26md8nr" path="res://assets/AssetsHUD/Anim habilidades HUD.png" id="13_g5olg"]
 [ext_resource type="PackedScene" uid="uid://6g50dnarqmj2" path="res://Proyecto/scenes/transmi.tscn" id="15_ciyyo"]
 [ext_resource type="AudioStream" uid="uid://jif7bthnx3tl" path="res://assets/EfectosDeSonido/SonidosJuego/musica jefe.mp3" id="16_ciyyo"]
+[ext_resource type="PackedScene" uid="uid://b7vr8gg7u4cus" path="res://Proyecto/scenes/MenuResultado.tscn" id="17_w65pk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs4ue"]
 texture = ExtResource("1_j4d60")
@@ -432,3 +433,5 @@ position = Vector2(294, 106)
 stream = ExtResource("16_ciyyo")
 volume_db = 1.351
 autoplay = true
+
+[node name="MenuResultado" parent="." unique_id=402974457 instance=ExtResource("17_w65pk")]

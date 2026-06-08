@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bfr0tpc12c1qh"]
+
+[ext_resource type="Script" uid="uid://cn1qcuk2xpq8i" path="res://Proyecto/scripts/transmi.gd" id="1_67riu"]
+[ext_resource type="Texture2D" uid="uid://buo1wutk77n3x" path="res://assets/AssetsBossAbilities/rayo jonatan.png" id="2_67riu"]
+[ext_resource type="AudioStream" uid="uid://x4jfnc4fyag2" path="res://assets/EfectosDeSonido/SonidosJuego/explision.wav" id="3_jhg12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8a64"]
+atlas = ExtResource("2_67riu")
+region = Rect2(0, 0, 112, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhg12"]
+atlas = ExtResource("2_67riu")
+region = Rect2(112, 0, 112, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mjn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8a64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhg12")
+}],
+"loop": true,
+"name": &"Transmi",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_403sx"]
+size = Vector2(109, 28)
+
+[node name="transmi" type="Area2D" unique_id=363431824]
+script = ExtResource("1_67riu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=839707215]
+sprite_frames = SubResource("SpriteFrames_1mjn8")
+animation = &"Transmi"
+frame = 1
+frame_progress = 0.2688325
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1962211716]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_403sx")
+debug_color = Color(0.990779, 0.09413368, 1.92523e-07, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=2129093017]
+
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." unique_id=37865469]
+stream = ExtResource("3_jhg12")

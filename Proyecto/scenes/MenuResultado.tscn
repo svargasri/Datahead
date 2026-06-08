@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b7vr8gg7u4cus"]
+
+[ext_resource type="Script" uid="uid://cn8ma0pejnnlo" path="res://Proyecto/scripts/menu_resultado.gd" id="1_31w5k"]
+[ext_resource type="Texture2D" uid="uid://gr66tk1opv6r" path="res://assets/AssetsHUD/fondo aulas (1)6.png" id="2_40eyy"]
+[ext_resource type="Texture2D" uid="uid://fsk45s06pduh" path="res://assets/AssetsHUD/fondo aulas (1)7.png" id="3_b8rue"]
+[ext_resource type="Texture2D" uid="uid://bheyqlfh1r7dv" path="res://assets/AssetsHUD/Animacion boton menu1.png" id="4_igdw8"]
+[ext_resource type="Texture2D" uid="uid://24ax4kcoown5" path="res://assets/AssetsHUD/Animacion boton menu3.png" id="5_anbn1"]
+[ext_resource type="Texture2D" uid="uid://byx4bh8va0dx4" path="res://assets/AssetsHUD/Animacion boton menu2.png" id="6_4qn5r"]
+
+[node name="MenuResultado" type="CanvasLayer" unique_id=402974457 groups=["menu_resultado"]]
+process_mode = 3
+script = ExtResource("1_31w5k")
+textura_victoria = ExtResource("2_40eyy")
+textura_derrota = ExtResource("3_b8rue")
+
+[node name="Panel" type="Panel" parent="." unique_id=964378765]
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1428233466]
+layout_mode = 0
+
+[node name="TextureButton" type="TextureButton" parent="Panel" unique_id=1074108836]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 192.0
+offset_bottom = 168.0
+texture_normal = ExtResource("4_igdw8")
+texture_pressed = ExtResource("5_anbn1")
+texture_hover = ExtResource("6_4qn5r")

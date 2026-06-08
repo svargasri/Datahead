@@ -30,6 +30,7 @@ window/stretch/scale=4.0
 
 player=""
 mapa_selector=""
+menu_resultado=""
 
 [input]
 

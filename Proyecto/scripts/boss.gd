@@ -241,13 +241,16 @@ func morir():
 	audio_muerte.play()
 	sprite.play("Death")
 	var tree = get_tree()
+	var menu = get_tree().get_first_node_in_group("menu_resultado")
 	await sprite.animation_finished
 	GameManager.desbloquear_siguiente(nivel_key)
 	match GameManager.dificultad_actual:
 		1: GameManager.agregar_monedas(10)
 		2: GameManager.agregar_monedas(20)
 		3: GameManager.agregar_monedas(30)
-	tree.change_scene_to_file("res://Proyecto/scenes/mapa_selector.tscn")
+	print("Menu encontrado: ", menu)
+	if menu:
+		menu.mostrar_victoria()
 
 func aplicar_glitch(dano_tick: int, duracion: float, intervalo: float):
 	if glitch_activo: return
