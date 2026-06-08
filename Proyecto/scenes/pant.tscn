@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bfr0tpc12c1qh"]
+[gd_scene format=3 uid="uid://c8o62ec2dbmns"]
 
 [ext_resource type="Script" uid="uid://cn1qcuk2xpq8i" path="res://Proyecto/scripts/transmi.gd" id="1_67riu"]
 [ext_resource type="Texture2D" uid="uid://buo1wutk77n3x" path="res://assets/AssetsBossAbilities/rayo jonatan.png" id="2_67riu"]

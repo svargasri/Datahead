@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://canqjkea54pd7" path="res://assets/AssetsHUD/Animacion boton pausa2.png" id="10_qrhpj"]
 [ext_resource type="Texture2D" uid="uid://bmelps26md8nr" path="res://assets/AssetsHUD/Anim habilidades HUD.png" id="12_pcieb"]
 [ext_resource type="Texture2D" uid="uid://chvqxuly31ovb" path="res://assets/AssetsHUD/h1.png" id="12_qrhpj"]
-[ext_resource type="PackedScene" uid="uid://dee68nsantp44" path="res://Proyecto/scenes/boss.tscn" id="15_vxvsb"]
+[ext_resource type="PackedScene" uid="uid://dee68nsantp44" path="res://Proyecto/scenes/boss2.tscn" id="15_vxvsb"]
 [ext_resource type="AudioStream" uid="uid://jif7bthnx3tl" path="res://assets/EfectosDeSonido/SonidosJuego/musica jefe.mp3" id="16_2gaa0"]
-[ext_resource type="PackedScene" uid="uid://b7vr8gg7u4cus" path="res://Proyecto/scenes/MenuResultado.tscn" id="17_ngc2o"]
+[ext_resource type="PackedScene" uid="uid://q6fximp6ubyd" path="res://Proyecto/scenes/MenuResultado.tscn" id="17_ngc2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs4ue"]
 texture = ExtResource("1_odb7h")

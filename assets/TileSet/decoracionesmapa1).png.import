@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx0u0jvb4kwnf"
-path="res://.godot/imported/tileset_vendedores.png-d240bd5570002d193c32151f02eceacb.ctex"
+uid="uid://brg0eydk2nt22"
+path="res://.godot/imported/decoracionesmapa1).png-9d367922e5eb5d769e01cfaccd308a05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TileSet/Windows95/tileset_vendedores.png"
-dest_files=["res://.godot/imported/tileset_vendedores.png-d240bd5570002d193c32151f02eceacb.ctex"]
+source_file="res://assets/TileSet/decoracionesmapa1).png"
+dest_files=["res://.godot/imported/decoracionesmapa1).png-9d367922e5eb5d769e01cfaccd308a05.ctex"]
 
 [params]
 

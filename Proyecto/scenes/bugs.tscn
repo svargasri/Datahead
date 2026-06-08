@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bdxbrnf14o22v"]
+[gd_scene format=3 uid="uid://csdub1o06s1eu"]
 
 [ext_resource type="Script" uid="uid://bq6vivakpb8hj" path="res://Proyecto/scripts/rocket_t.gd" id="1_wfich"]
 [ext_resource type="Texture2D" uid="uid://b33aisv0v55cg" path="res://assets/AssetsBossAbilities/bug.png" id="2_wfich"]

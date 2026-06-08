@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dxbn8uoqbjamj"]
+[gd_scene format=3 uid="uid://dantsgfg1r3wt"]
 
 [ext_resource type="Script" uid="uid://cvd3l5chx0irs" path="res://Proyecto/scripts/bomba.gd" id="1_ulnkf"]
 [ext_resource type="Texture2D" uid="uid://clq35va26v3fj" path="res://assets/AssetsBossAbilities/explosion en area (1).png" id="2_otxfj"]

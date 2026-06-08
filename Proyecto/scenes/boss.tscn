@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dee68nsantp44"]
+[gd_scene format=3 uid="uid://btuib7pwsalnx"]
 
 [ext_resource type="Script" uid="uid://b5eoxpbaoxbal" path="res://Proyecto/scripts/boss.gd" id="1_y6t4x"]
 [ext_resource type="PackedScene" uid="uid://qoj3xg1xlv33" path="res://Proyecto/scenes/rayo.tscn" id="2_tnsqg"]

@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://batkcy3fnx6np" path="res://assets/AssetsHUD/Animacion boton quit2.png" id="12_4mpwo"]
 [ext_resource type="Texture2D" uid="uid://mov1w3sgunty" path="res://assets/AssetsHUD/HUD (1)1.png" id="13_okxxe"]
 
-
 [node name="Menu" type="Control" unique_id=2064999400]
 layout_mode = 3
 anchors_preset = 15

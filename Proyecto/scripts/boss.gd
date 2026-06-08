@@ -30,18 +30,25 @@ var arbol_decision    : Dictionary = {}
 var estado_actual     : String = "normal"
 var historial_ataques : Array = []
 
+# ── Dificultad 3 — Grafo probabilístico ──────────────────────
+var grafo           : Dictionary = {}
+var nodo_actual     : String = ""
+var en_furia        : bool = false
+
 var glitch_activo : bool = false
 var muerto        : bool = false
 
 @export var nivel_key : String = "nivel1"
 
-# ── Parámetros por dificultad ─────────────────────────────────
+# ══════════════════════════════════════════════════════════════
+#  PARÁMETROS POR DIFICULTAD
+# ══════════════════════════════════════════════════════════════
 func _get_params() -> Dictionary:
 	match GameManager.dificultad_actual:
-		1: return { "cooldown": 2.0, "hp": 500, "daño_rayo": 2.5 }
-		2: return { "cooldown": 1.3, "hp": 750, "daño_rayo": 4.0 }
-		3: return { "cooldown": 0.8, "hp": 1000, "daño_rayo": 6.0 }
-	return { "cooldown": 2.0, "hp": 500, "daño_rayo": 2.5 }
+		1: return { "cooldown": 2.0,  "hp": 500,  "daño_rayo": 2.5 }
+		2: return { "cooldown": 1.3,  "hp": 750,  "daño_rayo": 4.0 }
+		3: return { "cooldown": 0.8,  "hp": 1000, "daño_rayo": 6.0 }
+	return   { "cooldown": 2.0,  "hp": 500,  "daño_rayo": 2.5 }
 
 func _ready():
 	var params      = _get_params()
@@ -53,19 +60,15 @@ func _ready():
 	hp_bar.value     = max_hp
 	motion_mode     = MotionMode.MOTION_MODE_FLOATING
 
-	print("Boss listo — dificultad: ", GameManager.dificultad_actual)
-	print("HP: ", max_hp, " Cooldown: ", attack_cooldown)
-
 	_init_ataques()
 
 	match GameManager.dificultad_actual:
 		1: _build_priority_queue()
 		2: _build_arbol_decision()
-		3: _build_priority_queue()
+		3: _build_grafo()
 
 	attack_timer.wait_time = attack_cooldown
 	attack_timer.start()
-	print("Timer iniciado: ", attack_timer.wait_time)
 	sprite.play("Idle")
 
 # ══════════════════════════════════════════════════════════════
@@ -121,13 +124,11 @@ func _build_arbol_decision():
 		},
 	}
 	estado_actual = "normal"
-	print("Árbol de decisión construido")
 
 func _evaluar_arbol(nodo: Dictionary) -> String:
 	if nodo.has("ataque"):
 		return nodo["ataque"]
-	var condicion = nodo["condicion"]
-	var resultado = _evaluar_condicion(condicion)
+	var resultado = _evaluar_condicion(nodo["condicion"])
 	if resultado:
 		return _evaluar_arbol(nodo["rama_true"])
 	else:
@@ -145,38 +146,138 @@ func _elegir_ataque_arbol() -> Dictionary:
 	historial_ataques.append(nombre)
 	if historial_ataques.size() > 3:
 		historial_ataques.pop_front()
-	print("Ataque por árbol: ", nombre, " | Historial: ", historial_ataques)
 	for a in ataques:
 		if a["nombre"] == nombre:
 			return a
 	return ataques[0]
 
 # ══════════════════════════════════════════════════════════════
-#  TIMER
+#  DIFICULTAD 3 — Grafo probabilístico
 # ══════════════════════════════════════════════════════════════
+func _build_grafo():
+	# Lista de adyacencia — cada nodo tiene vecinos con peso (probabilidad)
+	# Los pesos de cada nodo deben sumar 100
+	grafo = {
+		"rayo": {
+			"funcion": _ataque_rayo,
+			"vecinos": [
+				{ "destino": "cohetes",        "peso": 40 },
+				{ "destino": "bomba",          "peso": 35 },
+				{ "destino": "lluvia_cohetes", "peso": 25 },
+			]
+		},
+		"cohetes": {
+			"funcion": _ataque_cohetes,
+			"vecinos": [
+				{ "destino": "lluvia_cohetes", "peso": 45 },
+				{ "destino": "rayo",           "peso": 30 },
+				{ "destino": "bomba",          "peso": 25 },
+			]
+		},
+		"lluvia_cohetes": {
+			"funcion": _ataque_lluvia_cohetes,
+			"vecinos": [
+				{ "destino": "bomba",          "peso": 40 },
+				{ "destino": "cohetes",        "peso": 35 },
+				{ "destino": "rayo",           "peso": 25 },
+			]
+		},
+		"bomba": {
+			"funcion": _ataque_bomba,
+			"vecinos": [
+				{ "destino": "rayo",           "peso": 40 },
+				{ "destino": "lluvia_cohetes", "peso": 35 },
+				{ "destino": "cohetes",        "peso": 25 },
+			]
+		},
+		# Fase FURIA — se activa cuando HP < 25%
+		# Todos los ataques con igual probabilidad y cooldown reducido
+		"furia_rayo": {
+			"funcion": _ataque_rayo,
+			"vecinos": [
+				{ "destino": "furia_cohetes",        "peso": 34 },
+				{ "destino": "furia_lluvia_cohetes", "peso": 33 },
+				{ "destino": "furia_bomba",          "peso": 33 },
+			]
+		},
+		"furia_cohetes": {
+			"funcion": _ataque_cohetes,
+			"vecinos": [
+				{ "destino": "furia_rayo",           "peso": 34 },
+				{ "destino": "furia_lluvia_cohetes", "peso": 33 },
+				{ "destino": "furia_bomba",          "peso": 33 },
+			]
+		},
+		"furia_lluvia_cohetes": {
+			"funcion": _ataque_lluvia_cohetes,
+			"vecinos": [
+				{ "destino": "furia_rayo",    "peso": 34 },
+				{ "destino": "furia_cohetes", "peso": 33 },
+				{ "destino": "furia_bomba",   "peso": 33 },
+			]
+		},
+		"furia_bomba": {
+			"funcion": _ataque_bomba,
+			"vecinos": [
+				{ "destino": "furia_rayo",           "peso": 34 },
+				{ "destino": "furia_cohetes",        "peso": 33 },
+				{ "destino": "furia_lluvia_cohetes", "peso": 33 },
+			]
+		},
+	}
+	# Nodo inicial aleatorio
+	nodo_actual = ["rayo", "cohetes", "lluvia_cohetes", "bomba"].pick_random()
+
+func _transicion_grafo() -> String:
+	# Si HP < 25% y aún no está en furia → activar fase furia
+	if current_hp < max_hp * 0.25 and not en_furia:
+		en_furia    = true
+		nodo_actual = "furia_" + nodo_actual
+		# Cooldown se reduce a la mitad en furia
+		attack_timer.wait_time = attack_cooldown * 0.5
+
+	# Selección probabilística del siguiente nodo
+	var vecinos = grafo[nodo_actual]["vecinos"]
+	var total   = 0
+	for v in vecinos:
+		total += v["peso"]
+
+	var roll      = randi() % total
+	var acumulado = 0
+	for v in vecinos:
+		acumulado += v["peso"]
+		if roll < acumulado:
+			return v["destino"]
+
+	return vecinos[0]["destino"]
+
+func _elegir_ataque_grafo() -> Dictionary:
+	# Ejecuta el ataque del nodo actual
+	var ataque_actual = grafo[nodo_actual]["funcion"]
+	# Transiciona al siguiente nodo
+	nodo_actual = _transicion_grafo()
+	return { "nombre": nodo_actual, "funcion": ataque_actual }
+
+
+#  TIMER
+
 func _on_attack_timer_timeout():
-	print("Timer disparado — eligiendo ataque")
 	var ataque : Dictionary
 	match GameManager.dificultad_actual:
 		1: ataque = _elegir_ataque_cola()
 		2: ataque = _elegir_ataque_arbol()
-		3: ataque = _elegir_ataque_cola()
+		3: ataque = _elegir_ataque_grafo()
 		_: ataque = _elegir_ataque_cola()
-	print("Ataque elegido: ", ataque.get("nombre", "ninguno"))
 	ataque["funcion"].call()
 
-# ══════════════════════════════════════════════════════════════
+
 #  ATAQUES
-# ══════════════════════════════════════════════════════════════
+
 func _ataque_rayo():
-	print("Spawneando rayo — shoot_point: ", shoot_point.global_position)
-	if not rayo_scene:
-		print("ERROR: rayo_scene no asignado")
-		return
+	if not rayo_scene: return
 	var rayo = rayo_scene.instantiate()
 	rayo.global_position = shoot_point.global_position
 	get_parent().add_child(rayo)
-	print("Rayo agregado al padre: ", get_parent().name)
 
 func _ataque_cohetes():
 	audio_disparo.play()
@@ -188,18 +289,16 @@ func _ataque_cohetes():
 		get_parent().add_child(cohete)
 		cohete.set_direccion(deg_to_rad(angulo))
 		_push_cohete(cohete)
-	print("Cohetes lanzados")
 
 func _ataque_lluvia_cohetes():
 	audio_disparo.play()
 	if not lluvia_scene: return
 	var jugador = get_tree().get_first_node_in_group("player")
-	var base_x = 160.0
+	var base_x  = 160.0
 	if jugador: base_x = jugador.global_position.x
 	for i in range(3):
 		var offset = (i - 1.0) * 10
 		_spawn_cohete_lluvia_con_delay(base_x, offset)
-	print("Lluvia de cohetes iniciada")
 
 func _spawn_cohete_lluvia_con_delay(base_x: float, offset: float):
 	await get_tree().create_timer(randf_range(0.1, 0.6)).timeout
@@ -209,18 +308,14 @@ func _spawn_cohete_lluvia_con_delay(base_x: float, offset: float):
 
 func _ataque_bomba():
 	audio_disparo.play()
-	print("Spawneando bomba — shoot_point: ", shoot_point.global_position)
-	if not bomba_scene:
-		print("ERROR: bomba_scene no asignado")
-		return
+	if not bomba_scene: return
 	var bomba = bomba_scene.instantiate()
 	bomba.position = shoot_point.global_position
 	get_parent().add_child(bomba)
-	print("Bomba agregada al padre: ", get_parent().name)
 
-# ══════════════════════════════════════════════════════════════
+
 #  DAÑO Y MUERTE
-# ══════════════════════════════════════════════════════════════
+
 func recibir_daño(cantidad: int):
 	if muerto: return
 	current_hp -= cantidad
@@ -240,17 +335,18 @@ func morir():
 	attack_timer.stop()
 	audio_muerte.play()
 	sprite.play("Death")
-	var tree = get_tree()
-	var menu = get_tree().get_first_node_in_group("menu_resultado")
 	await sprite.animation_finished
 	GameManager.desbloquear_siguiente(nivel_key)
 	match GameManager.dificultad_actual:
 		1: GameManager.agregar_monedas(10)
 		2: GameManager.agregar_monedas(20)
 		3: GameManager.agregar_monedas(30)
-	print("Menu encontrado: ", menu)
+	var menu = get_tree().get_first_node_in_group("menu_resultado")
 	if menu:
 		menu.mostrar_victoria()
+
+
+#  GLITCH — ataque del personaje (intacto)
 
 func aplicar_glitch(dano_tick: int, duracion: float, intervalo: float):
 	if glitch_activo: return

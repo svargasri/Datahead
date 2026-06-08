@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://vbysxpb7fe5r"]
+[gd_scene format=3 uid="uid://bnipf51hn8r64"]
 
 [ext_resource type="Texture2D" uid="uid://ditldlc08nq62" path="res://assets/TileSet/PlazaChe/tile set plaza che preview.png" id="1_jj0jh"]
 [ext_resource type="Texture2D" uid="uid://d4dspbn88026r" path="res://assets/TileSet/EstacionTransmi/tile set Sia.png" id="2_s38ul"]
@@ -13,9 +13,9 @@
 [ext_resource type="Script" uid="uid://etujloubr10j" path="res://Proyecto/scripts/boton_pausa.gd" id="11_h0lvp"]
 [ext_resource type="Texture2D" uid="uid://chvqxuly31ovb" path="res://assets/AssetsHUD/h1.png" id="12_jovs1"]
 [ext_resource type="Texture2D" uid="uid://bmelps26md8nr" path="res://assets/AssetsHUD/Anim habilidades HUD.png" id="13_dk1g5"]
-[ext_resource type="PackedScene" uid="uid://c74hfoxyhtxvu" path="res://Proyecto/scenes/boss3.tscn" id="15_jj0jh"]
+[ext_resource type="PackedScene" uid="uid://vl37dx7004ae" path="res://Proyecto/scenes/boss3.tscn" id="15_jj0jh"]
 [ext_resource type="AudioStream" uid="uid://jif7bthnx3tl" path="res://assets/EfectosDeSonido/SonidosJuego/musica jefe.mp3" id="16_ca1ms"]
-[ext_resource type="PackedScene" uid="uid://b7vr8gg7u4cus" path="res://Proyecto/scenes/MenuResultado.tscn" id="16_jj0jh"]
+[ext_resource type="PackedScene" uid="uid://q6fximp6ubyd" path="res://Proyecto/scenes/MenuResultado.tscn" id="16_jj0jh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs4ue"]
 texture = ExtResource("1_jj0jh")
@@ -431,5 +431,9 @@ autoplay = true
 
 [node name="Boss" parent="." unique_id=1431501249 instance=ExtResource("15_jj0jh")]
 position = Vector2(282, 108)
+rayo_scene = null
+cohete_scene = null
+bomba_scene = null
+lluvia_scene = null
 
 [node name="MenuResultado" parent="." unique_id=402974457 instance=ExtResource("16_jj0jh")]

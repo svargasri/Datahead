@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://4pn61kro3ihk"]
+[gd_scene format=3 uid="uid://h1vm0rj2qayp"]
 
 [ext_resource type="Script" uid="uid://jtiv4hnr63hd" path="res://Proyecto/scripts/rocket_ll.gd" id="1_hmdy1"]
 [ext_resource type="Texture2D" uid="uid://nfw6mdak0qsg" path="res://assets/AssetsBossAbilities/lluvia cohetes (1) (2).png" id="2_hmdy1"]

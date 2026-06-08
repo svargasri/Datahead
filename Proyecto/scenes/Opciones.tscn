@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://cye1v5gg7iddg" path="res://assets/AssetsHUD/Animacion boton mutet3.png" id="10_k7w5g"]
 [ext_resource type="Texture2D" uid="uid://dx5ln6bt3yxuw" path="res://assets/AssetsHUD/Animacion boton mutet2.png" id="11_j58h0"]
 
-
 [node name="Opciones" type="Control" unique_id=2064999400]
 layout_mode = 3
 anchors_preset = 15
