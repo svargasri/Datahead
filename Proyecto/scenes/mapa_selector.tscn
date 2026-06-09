@@ -9,15 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://pufiix8klsdd" path="res://assets/TileSet/tileset_cafeteria_64x64.png" id="5_jr51l"]
 [ext_resource type="Texture2D" uid="uid://m4i7y6e5lhmn" path="res://assets/AssetsHUD/halos de luz (1)2.png" id="5_qursa"]
 [ext_resource type="Texture2D" uid="uid://blakdwbkuned0" path="res://assets/AssetsHUD/halos de luz (1)3.png" id="6_4t3mf"]
+[ext_resource type="Texture2D" uid="uid://ihio7x6so7ow" path="res://assets/fondo aulas (1)4 (1).png" id="7_8b0w5"]
 [ext_resource type="PackedScene" uid="uid://dl20pepfo7exh" path="res://Proyecto/scenes/player_controller.tscn" id="7_wsj7p"]
 [ext_resource type="Texture2D" uid="uid://84rkk4ssbtmq" path="res://assets/AssetsHUD/halos de luz 3.png" id="7_yg1kr"]
 [ext_resource type="Texture2D" uid="uid://dx17gin76oct4" path="res://assets/AssetsHUD/M1.png" id="8_o1d04"]
 [ext_resource type="Texture2D" uid="uid://dn0inkybc6ivv" path="res://assets/AssetsHUD/Animacion boton quit1.png" id="8_qursa"]
 [ext_resource type="Texture2D" uid="uid://batkcy3fnx6np" path="res://assets/AssetsHUD/Animacion boton quit2.png" id="9_4t3mf"]
 [ext_resource type="Texture2D" uid="uid://87ufmmfxh43y" path="res://assets/AssetsHUD/halos de luz 4.png" id="9_6vu13"]
+[ext_resource type="Texture2D" uid="uid://c1bx56ofiwfim" path="res://assets/fondo aulas (1)3 (1).png" id="9_shxmm"]
 [ext_resource type="Texture2D" uid="uid://bjmm2ypc2b1rk" path="res://assets/AssetsHUD/Animacion boton jugar3.png" id="10_4t3mf"]
 [ext_resource type="Texture2D" uid="uid://bfu36vjac4br7" path="res://assets/AssetsHUD/Animacion boton jugar1.png" id="10_wsj7p"]
 [ext_resource type="Texture2D" uid="uid://chpow171fsvur" path="res://assets/AssetsHUD/Animacion boton jugar2.png" id="11_3t17l"]
+[ext_resource type="Texture2D" uid="uid://pt7iqmxj3ah" path="res://assets/fondo aulas (1)5 (1).png" id="12_irqy8"]
 [ext_resource type="PackedScene" uid="uid://b7ddvylwuv3dl" path="res://Proyecto/scenes/arbol_habilidades.tscn" id="13_wsj7p"]
 [ext_resource type="AudioStream" uid="uid://cwp3e234qucx7" path="res://assets/EfectosDeSonido/SonidosJuego/musica ambiente.mp3" id="14_3t17l"]
 [ext_resource type="Texture2D" uid="uid://c1il5kolkjgoh" path="res://assets/AssetsHUD/boton dificultad1.png" id="14_55asr"]
@@ -127,7 +130,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAABAAEAAAACAAA
 tile_set = SubResource("TileSet_y3jir")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1121220685]
-tile_map_data = PackedByteArray("AAACAAAAAAAAAAIAAAADAAAAAAABAAIAAAACAAEAAAAAAAMAAAADAAEAAAABAAMAAAAIAAAAAAAAAAQAAAAJAAAAAAABAAQAAAAIAAEAAAAAAAUAAAAJAAEAAAABAAUAAAAIAAYAAAAEAAIAAAAJAAYAAAAFAAIAAAAIAAcAAAAEAAMAAAAJAAcAAAAFAAMAAAACAAYAAAACAAIAAAADAAYAAAADAAIAAAACAAcAAAACAAMAAAADAAcAAAADAAMAAAA=")
+tile_map_data = PackedByteArray("AAACAAAAAQAAAAIAAAADAAAAAQABAAIAAAACAAEAAQAAAAMAAAADAAEAAQABAAMAAAAIAAAAAQACAAIAAAAJAAAAAQADAAIAAAAIAAEAAQACAAMAAAAJAAEAAQADAAMAAAAIAAYAAQAEAAIAAAAJAAYAAQAFAAIAAAAIAAcAAQAEAAMAAAAJAAcAAQAFAAMAAAACAAYAAQAAAAQAAAADAAYAAQABAAQAAAACAAcAAQAAAAUAAAADAAcAAQABAAUAAAAKAA8AAQAGAAIAAAALAA8AAQAHAAIAAAALABAAAQAHAAMAAAAKABAAAQAGAAMAAAA=")
 tile_set = SubResource("TileSet_yg1kr")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=612118235]
@@ -143,6 +146,7 @@ tile_set = SubResource("TileSet_shxmm")
 [node name="HaloNivel1" type="Area2D" parent="Halos" unique_id=1653643445]
 script = ExtResource("3_30ftl")
 escena_destino = "res://Proyecto/scenes/nivel2.tscn"
+imagen_menu = ExtResource("7_8b0w5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Halos/HaloNivel1" unique_id=789528384]
 position = Vector2(1, 176)
@@ -156,7 +160,8 @@ shape = SubResource("CircleShape2D_ogcll")
 
 [node name="HaloNivel2" type="Area2D" parent="Halos" unique_id=1913671054]
 script = ExtResource("3_30ftl")
-escena_destino = "res://Proyecto/scenes/nivel2.tscn"
+escena_destino = "res://Proyecto/scenes/nivel1.tscn"
+imagen_menu = ExtResource("9_shxmm")
 
 [node name="Sprite2D" type="Sprite2D" parent="Halos/HaloNivel2" unique_id=1341666418]
 position = Vector2(414, 144)
@@ -166,20 +171,6 @@ region_rect = Rect2(0, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Halos/HaloNivel2" unique_id=1842702525]
 position = Vector2(413, 146)
-shape = SubResource("CircleShape2D_ugond")
-
-[node name="HaloNivel3" type="Area2D" parent="Halos" unique_id=1860271936]
-script = ExtResource("3_30ftl")
-escena_destino = "res://Proyecto/scenes/nivel3.tscn"
-
-[node name="Sprite2D" type="Sprite2D" parent="Halos/HaloNivel3" unique_id=1356857662]
-position = Vector2(-40, 487)
-texture = ExtResource("9_6vu13")
-region_enabled = true
-region_rect = Rect2(0, 0, 64, 64)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Halos/HaloNivel3" unique_id=1665728611]
-position = Vector2(-38, 487)
 shape = SubResource("CircleShape2D_ugond")
 
 [node name="ChazaMejoras" type="Area2D" parent="Halos" unique_id=1780730628]
@@ -195,13 +186,28 @@ region_rect = Rect2(0, 0, 64, 64)
 position = Vector2(381, 315)
 shape = SubResource("RectangleShape2D_0reaw")
 
-[node name="Personaje" parent="." unique_id=538202706 instance=ExtResource("7_wsj7p")]
+[node name="HaloNivel3" type="Area2D" parent="Halos" unique_id=1741331982]
+script = ExtResource("3_30ftl")
+escena_destino = "res://Proyecto/scenes/nivel3.tscn"
+imagen_menu = ExtResource("12_irqy8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Halos/HaloNivel3" unique_id=1303188366]
+position = Vector2(0, 519)
+texture = ExtResource("9_6vu13")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Halos/HaloNivel3" unique_id=799497085 groups=["personaje"]]
+position = Vector2(0, 520)
+shape = SubResource("CircleShape2D_ugond")
+
+[node name="Personaje" parent="." unique_id=538202706 groups=["mapa_selector", "menu_resultado", "player"] instance=ExtResource("7_wsj7p")]
 position = Vector2(197, 336)
 
 [node name="Camera2D" type="Camera2D" parent="Personaje" unique_id=95282108]
-limit_left = -200
+limit_left = -66
 limit_top = -50
-limit_right = 525
+limit_right = 482
 limit_bottom = 675
 position_smoothing_enabled = true
 

@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dn0inkybc6ivv" path="res://assets/AssetsHUD/Animacion boton quit1.png" id="11_5iawq"]
 [ext_resource type="Texture2D" uid="uid://batkcy3fnx6np" path="res://assets/AssetsHUD/Animacion boton quit2.png" id="12_4mpwo"]
 [ext_resource type="Texture2D" uid="uid://mov1w3sgunty" path="res://assets/AssetsHUD/HUD (1)1.png" id="13_okxxe"]
+[ext_resource type="AudioStream" uid="uid://cwp3e234qucx7" path="res://assets/EfectosDeSonido/SonidosJuego/musica ambiente.mp3" id="14_jnsy8"]
 
 [node name="Menu" type="Control" unique_id=2064999400]
 layout_mode = 3
@@ -112,6 +113,11 @@ size_flags_horizontal = 4
 texture_normal = ExtResource("8_vsesn")
 texture_pressed = ExtResource("9_yk6r3")
 texture_hover = ExtResource("10_gv3u1")
+
+[node name="Musicaambiente" type="AudioStreamPlayer2D" parent="." unique_id=1479676373]
+position = Vector2(1, 0)
+stream = ExtResource("14_jnsy8")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Control/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Control/Quit" to="." method="_on_quit_pressed"]
