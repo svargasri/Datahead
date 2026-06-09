@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://ditldlc08nq62" path="res://assets/TileSet/PlazaChe/tile set plaza che preview.png" id="1_j4d60"]
 [ext_resource type="Texture2D" uid="uid://d4dspbn88026r" path="res://assets/TileSet/EstacionTransmi/tile set Sia.png" id="2_1vpty"]
 [ext_resource type="PackedScene" uid="uid://bkbb0i6kajp6d" path="res://Proyecto/scenes/player.tscn" id="2_cibhh"]
-[ext_resource type="PackedScene" uid="uid://btuib7pwsalnx" path="res://Proyecto/scenes/boss.tscn" id="3_1vpty"]
 [ext_resource type="Texture2D" uid="uid://btv1a1hy1h6tn" path="res://assets/TileSet/EstacionTransmi/fondo transmi (3).png" id="5_ciyyo"]
 [ext_resource type="Texture2D" uid="uid://btu6jnqqb4fk" path="res://assets/AssetsHUD/Animacion barra jugador1.png" id="5_w65pk"]
 [ext_resource type="Texture2D" uid="uid://duaqgelhydmlu" path="res://assets/AssetsHUD/Animacion barra jugador2.png" id="6_vwdlb"]
@@ -14,7 +13,7 @@
 [ext_resource type="Script" uid="uid://etujloubr10j" path="res://Proyecto/scripts/boton_pausa.gd" id="11_i1xf0"]
 [ext_resource type="Texture2D" uid="uid://chvqxuly31ovb" path="res://assets/AssetsHUD/h1.png" id="12_i1gj8"]
 [ext_resource type="Texture2D" uid="uid://bmelps26md8nr" path="res://assets/AssetsHUD/Anim habilidades HUD.png" id="13_g5olg"]
-[ext_resource type="PackedScene" uid="uid://6g50dnarqmj2" path="res://Proyecto/scenes/transmi.tscn" id="15_ciyyo"]
+[ext_resource type="PackedScene" uid="uid://dee68nsantp44" path="res://Proyecto/scenes/boss2.tscn" id="14_ciyyo"]
 [ext_resource type="AudioStream" uid="uid://jif7bthnx3tl" path="res://assets/EfectosDeSonido/SonidosJuego/musica jefe.mp3" id="16_ciyyo"]
 [ext_resource type="PackedScene" uid="uid://q6fximp6ubyd" path="res://Proyecto/scenes/MenuResultado.tscn" id="17_w65pk"]
 
@@ -423,10 +422,8 @@ position = Vector2(83, 176)
 sprite_frames = SubResource("SpriteFrames_0qj7i")
 animation = &"cooldown"
 
-[node name="Boss" parent="." unique_id=1431501249 instance=ExtResource("3_1vpty")]
-position = Vector2(294, 106)
-rayo_scene = ExtResource("15_ciyyo")
-nivel_key = "nivel2"
+[node name="Boss2" parent="." unique_id=1431501249 instance=ExtResource("14_ciyyo")]
+position = Vector2(283, 109)
 
 [node name="MusicaJefe" type="AudioStreamPlayer2D" parent="." unique_id=1172313426]
 position = Vector2(294, 106)

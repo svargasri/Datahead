@@ -1,4 +1,4 @@
-[gd_resource type="FontFile" format=4 uid="uid://g0rpmf6i3fs3"]
+[gd_resource type="FontFile" format=4 uid="uid://b12lx6046dvaj"]
 
 [sub_resource type="Image" id="Image_0p1f8"]
 data = {
@@ -137,3 +137,8 @@ cache/0/50/0/glyphs/141/offset = Vector2(2, -33)
 cache/0/50/0/glyphs/141/size = Vector2(26, 35)
 cache/0/50/0/glyphs/141/uv_rect = Rect2(188, 1, 26, 35)
 cache/0/50/0/glyphs/141/texture_idx = 0
+cache/0/10/0/ascent = 10.0
+cache/0/10/0/descent = 3.0
+cache/0/10/0/underline_position = 1.0
+cache/0/10/0/underline_thickness = 0.5
+cache/0/10/0/scale = 1.0

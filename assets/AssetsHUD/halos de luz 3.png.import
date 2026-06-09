@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b65t8wrsb1355"
-path="res://.godot/imported/decoracionesmapa1).png-f7d31c5015f59e4cf4bb8d72ea59b8de.ctex"
+uid="uid://84rkk4ssbtmq"
+path="res://.godot/imported/halos de luz 3.png-071dd655b6fc16e8a25aa8ac341ddd4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TileSet/Windows95/decoracionesmapa1).png"
-dest_files=["res://.godot/imported/decoracionesmapa1).png-f7d31c5015f59e4cf4bb8d72ea59b8de.ctex"]
+source_file="res://assets/AssetsHUD/halos de luz 3.png"
+dest_files=["res://.godot/imported/halos de luz 3.png-071dd655b6fc16e8a25aa8ac341ddd4c.ctex"]
 
 [params]
 

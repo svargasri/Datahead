@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b7ddvylwuv3dl"]
 
 [ext_resource type="Script" uid="uid://dimjd312av3vv" path="res://Proyecto/scripts/texture_button.gd" id="1_1sgf3"]
-[ext_resource type="Script" uid="uid://djw1lhwjv3jg0" path="res://Proyecto/scripts/arbol_habilidades.gd" id="1_8io41"]
 [ext_resource type="Script" uid="uid://dkp2ja01m5csk" path="res://Proyecto/scripts/gestor_monedas.gd" id="2_1g42o"]
 [ext_resource type="Script" uid="uid://c8bjt5hx1ynyl" path="res://Proyecto/scripts/nodo_bonus.gd" id="2_620fl"]
 [ext_resource type="Texture2D" uid="uid://brpqdx7h8foeu" path="res://assets/AssetsMejoras/arbol de habilidades (2).png" id="2_cmhwd"]
@@ -397,7 +396,6 @@ animations = [{
 }]
 
 [node name="ArbolHabilidades" type="CanvasLayer" unique_id=1337936077]
-script = ExtResource("1_8io41")
 
 [node name="tienda" type="Panel" parent="." unique_id=1966545624]
 offset_right = 320.0

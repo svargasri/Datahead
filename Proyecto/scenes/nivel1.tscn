@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://canqjkea54pd7" path="res://assets/AssetsHUD/Animacion boton pausa2.png" id="10_qrhpj"]
 [ext_resource type="Texture2D" uid="uid://bmelps26md8nr" path="res://assets/AssetsHUD/Anim habilidades HUD.png" id="12_pcieb"]
 [ext_resource type="Texture2D" uid="uid://chvqxuly31ovb" path="res://assets/AssetsHUD/h1.png" id="12_qrhpj"]
-[ext_resource type="PackedScene" uid="uid://dee68nsantp44" path="res://Proyecto/scenes/boss2.tscn" id="15_vxvsb"]
 [ext_resource type="AudioStream" uid="uid://jif7bthnx3tl" path="res://assets/EfectosDeSonido/SonidosJuego/musica jefe.mp3" id="16_2gaa0"]
+[ext_resource type="PackedScene" uid="uid://btuib7pwsalnx" path="res://Proyecto/scenes/boss.tscn" id="17_ieyqv"]
 [ext_resource type="PackedScene" uid="uid://q6fximp6ubyd" path="res://Proyecto/scenes/MenuResultado.tscn" id="17_ngc2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs4ue"]
@@ -413,9 +413,10 @@ animation = &"cooldown"
 
 [node name="MenuResultado" parent="." unique_id=402974457 instance=ExtResource("17_ngc2o")]
 
-[node name="Boss" parent="." unique_id=1431501249 instance=ExtResource("15_vxvsb")]
-
 [node name="MusicaJefe" type="AudioStreamPlayer2D" parent="." unique_id=1708670771]
 stream = ExtResource("16_2gaa0")
 volume_db = 6.0
 autoplay = true
+
+[node name="Boss2" parent="." unique_id=1431501249 instance=ExtResource("17_ieyqv")]
+position = Vector2(282, 108)

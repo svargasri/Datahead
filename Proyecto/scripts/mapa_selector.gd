@@ -25,19 +25,25 @@ var menu_abierto = false
 func _ready():
 	label_accion.visible = false
 	menu_nivel.visible   = false
-
+	
+	print("Conectando señales...")
+	print("halo_nivel1 es: ", halo_nivel1)
+	
 	halo_nivel1.personaje_entro.connect(_al_entrar_halo)
 	halo_nivel1.personaje_salio.connect(_al_salir_halo)
 	halo_nivel2.personaje_entro.connect(_al_entrar_halo)
 	halo_nivel2.personaje_salio.connect(_al_salir_halo)
 	halo_mejoras.personaje_entro.connect(_al_entrar_halo)
 	halo_mejoras.personaje_salio.connect(_al_salir_halo)
-
+	
+	print("Señales conectadas OK")
+	
 	boton_dif1.pressed.connect(_seleccionar_dif.bind(1))
 	boton_dif2.pressed.connect(_seleccionar_dif.bind(2))
 	boton_dif3.pressed.connect(_seleccionar_dif.bind(3))
 
 func _al_entrar_halo(halo):
+	print("SEÑAL RECIBIDA EN MAPA:  ", halo.name)
 	halo_activo          = halo
 	label_accion.text    = "Presiona Enter para: " + halo.texto_accion
 	label_accion.visible = true
