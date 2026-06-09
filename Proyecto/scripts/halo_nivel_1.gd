@@ -5,6 +5,7 @@ extends Area2D
 @export var nivel_activo   : bool   = true
 @export var imagen_jefe    : Texture2D
 @export var texto_historia : String = ""
+@export var imagen_menu: Texture2D
 
 signal personaje_entro(halo)
 signal personaje_salio(halo)

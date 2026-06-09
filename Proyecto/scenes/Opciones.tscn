@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://by5jgbjx2e8xp" path="res://assets/AssetsHUD/Animacion boton mutet1.png" id="9_eidec"]
 [ext_resource type="Texture2D" uid="uid://cye1v5gg7iddg" path="res://assets/AssetsHUD/Animacion boton mutet3.png" id="10_k7w5g"]
 [ext_resource type="Texture2D" uid="uid://dx5ln6bt3yxuw" path="res://assets/AssetsHUD/Animacion boton mutet2.png" id="11_j58h0"]
+[ext_resource type="AudioStream" uid="uid://cwp3e234qucx7" path="res://assets/EfectosDeSonido/SonidosJuego/musica ambiente.mp3" id="14_eidec"]
 
 [node name="Opciones" type="Control" unique_id=2064999400]
 layout_mode = 3
@@ -104,6 +105,11 @@ offset_bottom = 22.5
 texture_normal = ExtResource("9_eidec")
 texture_pressed = ExtResource("10_k7w5g")
 texture_hover = ExtResource("11_j58h0")
+
+[node name="Musicaambiente" type="AudioStreamPlayer2D" parent="." unique_id=304515382]
+position = Vector2(1, 0)
+stream = ExtResource("14_eidec")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Control/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/Control/Quit" to="." method="_on_quit_pressed"]

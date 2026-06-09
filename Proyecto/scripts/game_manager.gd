@@ -12,6 +12,7 @@ func agregar_monedas(cantidad: int) -> void:
 var progreso : Dictionary = {
 	"nivel1": 1,
 	"nivel2": 1,
+	"nivel3": 1,
 }
 
 func desbloquear_siguiente(nivel: String) -> void:
@@ -53,3 +54,7 @@ func get_bonus_daño_h3() -> int:
 var bonus_quiz_h1: int = 0
 var bonus_quiz_h2: int = 0
 var bonus_quiz_h3: int = 0
+
+func _process(_delta):
+	if Input.is_action_just_pressed("opciones"):
+		get_tree().change_scene_to_file("res://Proyecto/scenes/Opciones.tscn")
