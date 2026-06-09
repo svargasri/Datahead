@@ -4,6 +4,7 @@ extends Node2D
 @onready var halo_nivel1       = $Halos/HaloNivel1
 @onready var halo_nivel2       = $Halos/HaloNivel2
 @onready var halo_nivel3       = $Halos/HaloNivel3
+@onready var halo_easter_egg = $Halos/HaloEasterEgg
 @onready var halo_mejoras      = $Halos/ChazaMejoras
 @onready var label_accion      = $UI/LabelAccion
 @onready var menu_nivel        = $UI/MenuNivel
@@ -37,6 +38,8 @@ func _ready():
 	halo_nivel2.personaje_salio.connect(_al_salir_halo)
 	halo_nivel3.personaje_entro.connect(_al_entrar_halo)
 	halo_nivel3.personaje_salio.connect(_al_salir_halo)
+	halo_easter_egg.personaje_entro.connect(_al_entrar_halo)
+	halo_easter_egg.personaje_salio.connect(_al_salir_halo)
 	halo_mejoras.personaje_entro.connect(_al_entrar_halo)
 	halo_mejoras.personaje_salio.connect(_al_salir_halo)
 	
@@ -63,6 +66,12 @@ func _abrir_menu():
 		label_accion.visible    = false
 		menu_abierto            = true
 		personaje.puede_moverse = false
+		return
+	if halo_activo == halo_easter_egg:
+		if GameManager.easter_egg_completado:
+			label_accion.text = "Ya completaste el easter egg"
+			return
+		get_tree().change_scene_to_file("res://Proyecto/scenes/nivelEasterEgg.tscn")
 		return
 	imagen_jefe.texture     = halo_activo.imagen_jefe
 	$UI/MenuNivel/TextureRect2.texture = halo_activo.imagen_menu

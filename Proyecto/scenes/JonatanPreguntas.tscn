@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfha3gymwgycl" path="res://Proyecto/scripts/preguntas.gd" id="1_5ityq"]
 [ext_resource type="Texture2D" uid="uid://ch1m2t8l4ldvc" path="res://assets/AssetsBoss/jefe Jonatan (1).png" id="2_2hcal"]
-[ext_resource type="FontFile" uid="uid://g0rpmf6i3fs3" path="res://assets/new_font_file.tres" id="3_tma8y"]
+[ext_resource type="FontFile" uid="uid://b12lx6046dvaj" path="res://assets/new_font_file.tres" id="3_tma8y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k6lsw"]
 atlas = ExtResource("2_2hcal")

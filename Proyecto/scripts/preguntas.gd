@@ -37,7 +37,7 @@ func _ready():
 	boton_c.pressed.connect(_responder.bind(2))
 
 func _on_body_entered(body):
-	if body.is_in_group("player") and not quiz_activo:
+	if body.is_in_group("player") and not quiz_activo and not GameManager.easter_egg_completado:
 		quiz_activo = true
 		pregunta_actual = 0
 		respuestas_correctas = 0
@@ -75,6 +75,7 @@ func _terminar_quiz():
 	menu_quiz.visible = false
 	quiz_activo = false
 	GameManager.agregar_monedas(100)
+	GameManager.easter_egg_completado = true
 	var menu = get_tree().get_first_node_in_group("menu_resultado")
 	if menu:
 		if respuestas_correctas >= 2:

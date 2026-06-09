@@ -117,7 +117,7 @@ sources/2 = SubResource("TileSetAtlasSource_jr51l")
 radius = 37.054016
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ugond"]
-radius = 36.05551
+radius = 13.038404
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0reaw"]
 size = Vector2(79, 82)
@@ -199,6 +199,22 @@ region_rect = Rect2(0, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Halos/HaloNivel3" unique_id=799497085 groups=["personaje"]]
 position = Vector2(0, 520)
+shape = SubResource("CircleShape2D_ugond")
+
+[node name="HaloEasterEgg" type="Area2D" parent="Halos" unique_id=897767413]
+script = ExtResource("3_30ftl")
+escena_destino = "func _abrir_menu():if halo_activo == halo_mejoras:arbol_habilidades.abrir()label_accion.visible    = falsemenu_abierto            = truepersonaje.puede_moverse = falsereturnif halo_activo == halo_easter_egg:if GameManager.easter_egg_completado:label_accion.text = \"Ya completaste el easter egg\"returnget_tree().change_scene_to_file(\"res://Proyecto/scenes/nivelEasterEgg.tscn\")returnimagen_jefe.texture     = halo_activo.imagen_jefe$UI/MenuNivel/TextureRect2.texture = halo_activo.imagen_menumenu_nivel.visible      = truelabel_accion.visible    = falsemenu_abierto            = truepersonaje.puede_moverse = falseGameManager.dificultad_actual = 1_actualizar_botones_dificultad()"
+imagen_menu = ExtResource("9_shxmm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Halos/HaloEasterEgg" unique_id=1793001446]
+position = Vector2(462, 627)
+scale = Vector2(0.421875, 0.40625)
+texture = ExtResource("4_xftrl")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Halos/HaloEasterEgg" unique_id=2044423237]
+position = Vector2(462, 627)
 shape = SubResource("CircleShape2D_ugond")
 
 [node name="Personaje" parent="." unique_id=538202706 groups=["mapa_selector", "menu_resultado", "player"] instance=ExtResource("7_wsj7p")]

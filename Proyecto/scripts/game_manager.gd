@@ -14,6 +14,7 @@ var progreso : Dictionary = {
 	"nivel2": 1,
 	"nivel3": 1,
 }
+var easter_egg_completado: bool = false
 
 func desbloquear_siguiente(nivel: String) -> void:
 	if progreso.has(nivel):
