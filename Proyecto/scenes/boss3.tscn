@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://vl37dx7004ae"]
 
 [ext_resource type="Script" uid="uid://b5eoxpbaoxbal" path="res://Proyecto/scripts/boss.gd" id="1_6fsro"]
-[ext_resource type="PackedScene" uid="uid://c8o62ec2dbmns" path="res://Proyecto/scenes/pant.tscn" id="2_5c4f8"]
-[ext_resource type="PackedScene" uid="uid://csdub1o06s1eu" path="res://Proyecto/scenes/bugs.tscn" id="3_1wsq4"]
-[ext_resource type="PackedScene" uid="uid://dantsgfg1r3wt" path="res://Proyecto/scenes/servidor.tscn" id="4_lqv7b"]
-[ext_resource type="PackedScene" uid="uid://h1vm0rj2qayp" path="res://Proyecto/scenes/signos.tscn" id="5_gtcd0"]
+[ext_resource type="PackedScene" path="res://Proyecto/scenes/pant.tscn" id="2_5c4f8"]
+[ext_resource type="PackedScene" path="res://Proyecto/scenes/bugs.tscn" id="3_1wsq4"]
+[ext_resource type="PackedScene" path="res://Proyecto/scenes/servidor.tscn" id="4_lqv7b"]
+[ext_resource type="PackedScene" path="res://Proyecto/scenes/signos.tscn" id="5_gtcd0"]
 [ext_resource type="Texture2D" uid="uid://ch1m2t8l4ldvc" path="res://assets/AssetsBoss/jefe Jonatan (1).png" id="6_5c4f8"]
 [ext_resource type="Texture2D" uid="uid://crbgihokbvm38" path="res://assets/AssetsBoss/HPBar/Marco barra jefe1.png" id="19_bhxk4"]
 [ext_resource type="Texture2D" uid="uid://da7mejcvdprud" path="res://assets/AssetsBoss/HPBar/Marco barra jefe2.png" id="20_3lkjh"]
@@ -364,7 +364,6 @@ rayo_scene = ExtResource("2_5c4f8")
 cohete_scene = ExtResource("3_1wsq4")
 bomba_scene = ExtResource("4_lqv7b")
 lluvia_scene = ExtResource("5_gtcd0")
-nivel_key = "nivel3"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1095773606]
 position = Vector2(-7, -1)

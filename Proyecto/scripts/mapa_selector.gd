@@ -3,7 +3,6 @@ extends Node2D
 @onready var personaje         = $Personaje
 @onready var halo_nivel1       = $Halos/HaloNivel1
 @onready var halo_nivel2       = $Halos/HaloNivel2
-@onready var halo_nivel3       = $Halos/HaloNivel3
 @onready var halo_mejoras      = $Halos/ChazaMejoras
 @onready var label_accion      = $UI/LabelAccion
 @onready var menu_nivel        = $UI/MenuNivel
@@ -18,7 +17,6 @@ extends Node2D
 const NIVEL_KEY = {
 	"HaloNivel1": "nivel1",
 	"HaloNivel2": "nivel2",
-	"HaloNivel3": "nivel3",
 }
 
 var halo_activo  = null
@@ -35,8 +33,6 @@ func _ready():
 	halo_nivel1.personaje_salio.connect(_al_salir_halo)
 	halo_nivel2.personaje_entro.connect(_al_entrar_halo)
 	halo_nivel2.personaje_salio.connect(_al_salir_halo)
-	halo_nivel3.personaje_entro.connect(_al_entrar_halo)
-	halo_nivel3.personaje_salio.connect(_al_salir_halo)
 	halo_mejoras.personaje_entro.connect(_al_entrar_halo)
 	halo_mejoras.personaje_salio.connect(_al_salir_halo)
 	
@@ -64,12 +60,15 @@ func _abrir_menu():
 		menu_abierto            = true
 		personaje.puede_moverse = false
 		return
+
 	imagen_jefe.texture     = halo_activo.imagen_jefe
-	$UI/MenuNivel/TextureRect2.texture = halo_activo.imagen_menu
+	
 	menu_nivel.visible      = true
 	label_accion.visible    = false
 	menu_abierto            = true
 	personaje.puede_moverse = false
+
+	# Selecciona dificultad 1 por defecto al abrir
 	GameManager.dificultad_actual = 1
 	_actualizar_botones_dificultad()
 

@@ -431,5 +431,9 @@ autoplay = true
 
 [node name="Boss" parent="." unique_id=1431501249 instance=ExtResource("15_jj0jh")]
 position = Vector2(282, 108)
+rayo_scene = null
+cohete_scene = null
+bomba_scene = null
+lluvia_scene = null
 
 [node name="MenuResultado" parent="." unique_id=402974457 instance=ExtResource("16_jj0jh")]
